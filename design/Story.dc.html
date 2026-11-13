@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Animaka 스토리와 캐스트</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0f0d17}
+a{color:#ff7aa8}a:hover{color:#ffa3c2}
+input::placeholder{color:#8a8296}
+</style>
+</helmet>
+<div style="min-height: 1080px; background: #0f0d17; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #f3f1fa; display: flex; flex-direction: column">
+  <div style="height: 40px; background: #000000; display: flex; align-items: center; padding: 0 14px; font-size: 11px; color: #c9c1d4">Powered by FANZA キャラチャット</div>
+  <div style="display: flex; flex-wrap: wrap; flex: 1">
+    <div style="flex: 0 0 296px">
+      <dc-import name="Sidebar" hint-size="296px,1080px"></dc-import>
+    </div>
+    <main style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column">
+
+      <header style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 14px 28px; border-bottom: 1px solid rgba(255,255,255,0.08); background: #13111c">
+        <div style="display: flex; align-items: center; gap: 12px">
+          <span style="font-family: Poppins, sans-serif; font-weight: 700; font-size: 18px; color: #ff3d7f">ANIMAKA</span>
+          <span style="font-size: 14px; color: #d9d2e2">비 오는 거리의 크로키</span>
+        </div>
+        <ol style="list-style: none; margin: 0; padding: 0; display: flex; gap: 6px; flex-wrap: wrap; font-size: 12px">
+          <li style="padding: 6px 12px; border-radius: 999px; background: #3a1428; color: #ffffff; font-weight: 700; border: 1px solid #6b2148">1 스토리·캐스트</li>
+          <li style="padding: 6px 12px; border-radius: 999px; color: #a19db3; border: 1px solid rgba(255,255,255,0.08)">2 스토리보드·결제</li>
+          <li style="padding: 6px 12px; border-radius: 999px; color: #a19db3; border: 1px solid rgba(255,255,255,0.08)">3 영상 만들기·편집</li>
+          <li style="padding: 6px 12px; border-radius: 999px; color: #a19db3; border: 1px solid rgba(255,255,255,0.08)">4 저장·공개</li>
+        </ol>
+        <a href="Storyboard.dc.html" style="display: inline-flex; align-items: center; height: 46px; box-sizing: border-box; padding: 0 22px; background: linear-gradient(95deg, #ff3d7f 0%, #c04dff 55%, #6f5bff 100%); color: #ffffff; font-weight: 800; font-size: 15px; border-radius: 12px; box-shadow: 0 8px 24px rgba(192,77,255,0.28); text-decoration: none">스토리보드 그리기 · 22장</a>
+      </header>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; padding: 24px 28px 48px; align-items: flex-start">
+
+
+        <section aria-label="등장인물" style="flex: 1 1 100%; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap">
+            <h2 style="margin: 0; font-size: 24px; font-weight: 800">등장인물 <span style="color: #a19db3; font-weight: 500; font-size: 16px">3</span></h2>
+            <span style="font-size: 13px; color: #a19db3">얼굴·의상을 한 번 고정하면 모든 씬에서 같은 모습으로 나와요</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+            <sc-for list="{{cast}}" as="c" hint-placeholder-count="3">
+              <article style="background: #1a1726; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column">
+                <div style="position: relative; width: 100%; aspect-ratio: 3 / 4; background: {{c.tone}}">
+                  <sc-if value="{{c.hasImg}}" hint-placeholder-val="{{ false }}">
+                    <img src="{{c.img}}" alt="{{c.name}} 캐릭터 이미지" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center">
+                  </sc-if>
+                  <span style="position: absolute; top: 12px; left: 12px; font-size: 11px; font-weight: 700; color: #ffffff; background: rgba(15,13,23,0.72); border-radius: 99px; padding: 4px 10px">{{c.lock}}</span>
+                  <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 16px 14px; background: linear-gradient(180deg, rgba(15,13,23,0) 0%, rgba(15,13,23,0.92) 100%); display: flex; flex-direction: column; gap: 4px">
+                    <span style="font-size: 24px; font-weight: 800; color: #ffffff">{{c.name}}</span>
+                    <span style="font-size: 13px; color: #d9d6e6; line-height: 1.5">{{c.desc}}</span>
+                  </div>
+                </div>
+                <div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 10px">
+                  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+                    <button type="button" aria-label="앞모습 보기" style="position: relative; aspect-ratio: 1 / 1; border-radius: 10px; overflow: hidden; background: {{c.tone}}; border: 2px solid #ff3d7f; padding: 0">
+                      <sc-if value="{{c.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{c.front}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center"></sc-if>
+                      <span style="position: absolute; left: 6px; bottom: 6px; font-size: 11px; font-weight: 700; color: #ffffff; background: rgba(15,13,23,0.72); border-radius: 6px; padding: 1px 6px">앞</span>
+                    </button>
+                    <button type="button" aria-label="뒷모습 보기" style="position: relative; aspect-ratio: 1 / 1; border-radius: 10px; overflow: hidden; background: {{c.tone}}; border: 1px solid rgba(255,255,255,0.08); padding: 0">
+                      <sc-if value="{{c.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{c.back}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center"></sc-if>
+                      <span style="position: absolute; left: 6px; bottom: 6px; font-size: 11px; font-weight: 700; color: #ffffff; background: rgba(15,13,23,0.72); border-radius: 6px; padding: 1px 6px">뒤</span>
+                    </button>
+                    <button type="button" aria-label="얼굴 보기" style="position: relative; aspect-ratio: 1 / 1; border-radius: 10px; overflow: hidden; background: {{c.tone}}; border: 1px solid rgba(255,255,255,0.08); padding: 0">
+                      <sc-if value="{{c.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{c.face}}" alt="" style="width: 100%; height: 100%; object-fit: cover"></sc-if>
+                      <span style="position: absolute; left: 6px; bottom: 6px; font-size: 11px; font-weight: 700; color: #ffffff; background: rgba(15,13,23,0.72); border-radius: 6px; padding: 1px 6px">얼굴</span>
+                    </button>
+                  </div>
+                  <div style="display: flex; align-items: center; justify-content: space-between; background: #231f33; border-radius: 12px; padding: 8px 8px 8px 12px">
+                    <span style="font-size: 13px">목소리 · {{c.voice}}</span>
+                    <button type="button" aria-label="목소리 듣기" style="background: rgba(255,255,255,0.12); border: 0; border-radius: 50%; width: 32px; height: 32px; color: #f3f1fa; display: flex; align-items: center; justify-content: center">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>
+                    </button>
+                  </div>
+                  <div style="display: flex; gap: 8px">
+                    <button type="button" style="flex: 1; height: 40px; font-family: inherit; font-size: 13px; font-weight: 700; background: #231f33; color: #f3f1fa; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px">다시 그리기</button>
+                    <button type="button" style="flex: 1; height: 40px; font-family: inherit; font-size: 13px; font-weight: 700; background: #231f33; color: #f3f1fa; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px">내 캐릭터로 교체</button>
+                  </div>
+                </div>
+              </article>
+            </sc-for>
+          </div>
+        </section>
+
+        <section aria-label="작품 정보" style="flex: 1 1 320px; min-width: 0; background: #1a1726; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; justify-content: space-between; align-items: center">
+            <h2 style="margin: 0; font-size: 15px; color: #a19db3">작품 정보</h2>
+            <span style="font-size: 11px; color: #4ade80">AI 정리 완료</span>
+          </div>
+          <p style="margin: 0; font-size: 17px; font-weight: 700; line-height: 1.55">마감에 쫓기던 일러스트레이터 유이가 비 오는 밤 문 닫은 카페로 스케치북을 찾으러 돌아온다. 그런데 사장 렌의 주문서 뒷면에도 그녀가 그려져 있었다.</p>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+            <div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 11px; color: #a19db3">장르</span><span style="font-size: 13px">로맨스 · 일상</span></div>
+            <div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 11px; color: #a19db3">분위기</span><span style="font-size: 13px">잔잔 → 설렘</span></div>
+            <div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 11px; color: #a19db3">길이</span><span style="font-size: 13px">5분 · 22씬</span></div>
+          </div>
+          <h3 style="margin: 6px 0 0; font-size: 13px; color: #a19db3">이야기 흐름</h3>
+          <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px">
+            <sc-for list="{{beats}}" as="b" hint-placeholder-count="5">
+              <li style="display: flex; gap: 10px; align-items: flex-start; background: #231f33; border-radius: 10px; padding: 10px 12px">
+                <span style="font-family: Poppins, sans-serif; font-size: 12px; color: #ff7aa8; flex: none; width: 22px">{{b.no}}</span>
+                <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+                  <span style="font-size: 13px; font-weight: 700">{{b.title}}</span>
+                  <span style="font-size: 12px; color: #a19db3">{{b.scenes}}</span>
+                </div>
+              </li>
+            </sc-for>
+          </ol>
+        </section>
+
+        <section aria-label="장소와 소품" style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          <div style="display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 12px">
+            <div style="background: #1a1726; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 10px">
+              <h3 style="margin: 0; font-size: 14px">장소 <span style="color: #a19db3; font-weight: 500">2</span></h3>
+              <div style="display: flex; gap: 8px">
+                <div style="position: relative; flex: 1; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: #2b2a38"><img src="../images/loc_cafe_night.png" alt="밤의 카페" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"><span style="position: absolute; left: 8px; bottom: 8px; font-size: 12px; font-weight: 700; color: #ffffff; background: rgba(15,13,23,0.72); border-radius: 6px; padding: 2px 8px">밤의 카페</span></div>
+                <div style="position: relative; flex: 1; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: #26303a"><img src="../images/loc_rainy_alley.png" alt="비 내리는 골목" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"><span style="position: absolute; left: 8px; bottom: 8px; font-size: 12px; font-weight: 700; color: #ffffff; background: rgba(15,13,23,0.72); border-radius: 6px; padding: 2px 8px">비 내리는 골목</span></div>
+              </div>
+            </div>
+            <div style="background: #1a1726; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 10px">
+              <h3 style="margin: 0; font-size: 14px">소품 <span style="color: #a19db3; font-weight: 500">3</span></h3>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap">
+                <span style="font-size: 12px; background: #231f33; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 6px 12px">유이의 스케치북</span>
+                <span style="font-size: 12px; background: #231f33; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 6px 12px">주문서 크로키</span>
+                <span style="font-size: 12px; background: #231f33; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 6px 12px">남색 우산</span>
+                <button type="button" style="font-family: inherit; font-size: 12px; background: transparent; color: #ff7aa8; border: 1px dashed #6b2148; border-radius: 999px; padding: 6px 12px">+ 추가</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside aria-label="AI 도우미" style="flex: 1 1 300px; min-width: 0; background: #1a1726; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+          <div style="display: flex; align-items: center; gap: 8px">
+            <span style="width: 28px; height: 28px; border-radius: 8px; background: #4c3a8c; display: flex; align-items: center; justify-content: center">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></svg>
+            </span>
+            <h2 style="margin: 0; font-size: 15px">AI 연출 도우미</h2>
+          </div>
+          <div style="align-self: flex-start; max-width: 92%; background: #231f33; border-radius: 12px 12px 12px 4px; padding: 10px 12px; font-size: 13px; line-height: 1.55">아이디어를 5막 22씬으로 정리했어요. 렌이 주문서를 꺼내는 장면을 이야기의 절정으로 잡았어요.</div>
+          <div style="align-self: flex-end; max-width: 85%; background: #3a1428; border-radius: 12px 12px 4px 12px; padding: 10px 12px; font-size: 13px; line-height: 1.55">렌이 좀 더 무뚝뚝했으면 좋겠어</div>
+          <div style="align-self: flex-start; max-width: 92%; background: #231f33; border-radius: 12px 12px 12px 4px; padding: 10px 12px; font-size: 13px; line-height: 1.55">렌의 대사를 짧게 줄이고, 말투를 반말로 바꿨어요. 목소리도 낮은 톤으로 바꿀까요?</div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap">
+            <button type="button" style="font-family: inherit; font-size: 12px; background: #231f33; color: #d9d2e2; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 6px 10px">네, 바꿔줘</button>
+            <button type="button" style="font-family: inherit; font-size: 12px; background: #231f33; color: #d9d2e2; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 6px 10px">결말을 더 설레게</button>
+            <button type="button" style="font-family: inherit; font-size: 12px; background: #231f33; color: #d9d2e2; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 6px 10px">씬 수 줄이기</button>
+          </div>
+          <div style="margin-top: auto; display: flex; gap: 6px">
+            <label for="ask" style="position: absolute; width: 1px; height: 1px; overflow: hidden">도우미에게 요청</label>
+            <input id="ask" placeholder="이야기를 이렇게 바꿔줘…" style="flex: 1; min-width: 0; font-family: inherit; font-size: 13px; color: #f3f1fa; background: #0f0d17; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 10px 12px">
+            <button type="button" aria-label="보내기" style="background: #ff3d7f; border: 0; border-radius: 10px; width: 44px; color: #ffffff; display: flex; align-items: center; justify-content: center">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1080}}'>
+class Component extends DCLogic {
+  withImages(list) {
+    const IMG = { yui: { front: '../images/yui_front.png', back: '../images/yui_back.png', face: '../images/yui_face.png' }, ren: { front: '../images/ren_front.png', back: '../images/ren_back.png', face: '../images/ren_face.png' }, sato: { front: '../images/sato_front.png', back: '../images/sato_back.png', face: '../images/sato_face.png' } };
+    return list.map((c) => {
+      const set = IMG[c.key];
+      return { ...c, hasImg: !!set, img: set ? set.front : '', front: set ? set.front : '', back: set ? set.back : '', face: set ? set.face : '' };
+    });
+  }
+  renderVals() {
+    return {
+      beats: [
+        { no: '01', title: '비 오는 밤, 닫힌 카페', scenes: '씬 1–4 · 유이가 뛰어 들어온다' },
+        { no: '02', title: '맡겨둔 스케치북', scenes: '씬 5–8 · 렌이 차를 내어준다' },
+        { no: '03', title: '들켜버린 그림', scenes: '씬 9–13 · 렌을 그린 페이지' },
+        { no: '04', title: '주문서 뒷면의 그녀', scenes: '씬 14–18 · 렌의 고백' },
+        { no: '05', title: '우산을 나눠 쓰고', scenes: '씬 19–22 · 다리 앞까지' }
+      ],
+      cast: this.withImages([
+        { name: '유이', desc: '26세 일러스트레이터. 어깨까지 오는 검은 머리, 크림색 가디건.', voice: '맑은 20대 여성', lock: '얼굴 고정', tone: '#3b3348', key: 'yui' },
+        { name: '렌', desc: '28세 카페 사장. 남색 셔츠, 말수가 적다.', voice: '낮은 20대 남성', lock: '얼굴 고정', tone: '#2d3446', key: 'ren' },
+        { name: '사토 편집자', desc: '유이의 담당 편집자. 짧은 단발, 안경.', voice: '차분한 30대 여성', lock: '얼굴 고정', tone: '#3f3a33', key: 'sato' }
+      ])
+    };
+  }
+}
+</script>
+</body>
+</html>
