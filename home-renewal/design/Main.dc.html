@@ -11,12 +11,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#0f0d17}
+body{margin:0;background:#0b0a10}
 a{color:#ff9cc0}a:hover{color:#ffc2d8}
 .rail{scrollbar-width:none}.rail::-webkit-scrollbar{display:none}
 </style>
 </helmet>
-<div style="min-height: 3400px; background: #0f0d17; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #f3f1fa; display: flex; flex-direction: column">
+<div style="min-height: 4200px; background: radial-gradient(1100px 520px at 70% -120px, rgba(192,77,255,0.18), rgba(192,77,255,0) 70%), radial-gradient(800px 420px at 0% 0%, rgba(255,61,127,0.10), rgba(255,61,127,0) 70%), #0b0a10; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #f3f1fa; display: flex; flex-direction: column">
   <div style="height: 40px; background: #000000; display: flex; align-items: center; justify-content: space-between; padding: 0 14px; font-size: 11px; color: #c9c1d4">
     <span>Powered by FANZA キャラチャット</span>
   </div>
@@ -52,7 +52,7 @@ a{color:#ff9cc0}a:hover{color:#ffc2d8}
               </sc-for>
             </div>
           </div>
-          <a href="#" style="display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; background: #1a1726; color: #d9d6e6; font-size: 13px; text-decoration: none">
+          <a href="#" style="display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; background: #16131f; color: #d9d6e6; font-size: 13px; text-decoration: none">
             <span style="font-weight: 800; color: #ff9cc0">공지</span>
             <span style="flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">보너스 포인트 유효기간 설정 안내 · 11/30까지 받은 보너스는 90일 동안 쓸 수 있어요</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
@@ -61,20 +61,41 @@ a{color:#ff9cc0}a:hover{color:#ffc2d8}
 
         <section aria-label="이어서 대화하기" style="display: flex; flex-direction: column; gap: 14px">
           <div style="display: flex; justify-content: space-between; align-items: baseline">
-            <h2 style="margin: 0; font-size: 22px; font-weight: 800">이어서 대화하기</h2>
+            <div style="display: flex; align-items: baseline; gap: 10px">
+              <h2 style="margin: 0; font-size: 22px; font-weight: 800">이어서 대화하기</h2>
+              <span style="font-size: 13px; font-weight: 800; color: #ff9cc0">새 메시지 3</span>
+            </div>
             <a href="#" style="font-size: 13px; color: #a19db3; text-decoration: none">내 채팅방 전체</a>
           </div>
-          <div class="rail" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
-            <sc-for list="{{recent}}" as="r" hint-placeholder-count="4">
-              <a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 16px; background: #1a1726; border: 1px solid rgba(255,255,255,0.08); color: #f3f1fa; text-decoration: none; min-width: 0">
-                <span style="position: relative; flex: none; width: 52px; height: 52px; border-radius: 50%; overflow: hidden; background: {{r.tone}}">
-                  <sc-if value="{{r.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{r.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center"></sc-if>
+          <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
+            <a href="Characters.dc.html" style="position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 10px; min-height: 132px; padding: 16px; border-radius: 18px; overflow: hidden; background: linear-gradient(135deg, #3a1530 0%, #24163d 100%); border: 1px solid rgba(255,61,127,0.35); color: #ffffff; text-decoration: none">
+              <span style="position: absolute; right: -6px; top: 14px; display: flex">
+                <sc-for list="{{faces}}" as="fc" hint-placeholder-count="3">
+                  <span style="width: 46px; height: 46px; margin-left: -14px; border-radius: 50%; overflow: hidden; border: 2px solid #2a1534; background: #3a2a44"><img src="{{fc}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center"></span>
+                </sc-for>
+              </span>
+              <span style="display: flex; flex-direction: column; gap: 4px; max-width: 62%">
+                <span style="font-size: 11px; font-weight: 800; color: #ff9cc0">오늘의 운명</span>
+                <span style="font-size: 16px; font-weight: 800; line-height: 1.35">아직 못 만난<br>최애가 기다리고 있어요</span>
+              </span>
+              <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 14px; border-radius: 99px; background: #ffffff; color: #17151f; font-size: 13px; font-weight: 800">최애 찾으러 가기
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+              </span>
+            </a>
+            <sc-for list="{{recent}}" as="r" hint-placeholder-count="3">
+              <a href="#" style="position: relative; display: flex; flex-direction: column; gap: 10px; min-height: 132px; box-sizing: border-box; padding: 14px; border-radius: 18px; background: {{r.bg}}; border: {{r.bd}}; box-shadow: {{r.glow}}; color: #f3f1fa; text-decoration: none; min-width: 0">
+                <span style="display: flex; align-items: center; gap: 12px; min-width: 0">
+                  <span style="position: relative; flex: none; width: 54px; height: 54px; border-radius: 50%; padding: 2px; background: {{r.ring}}">
+                    <span style="display: block; width: 100%; height: 100%; border-radius: 50%; overflow: hidden; border: 2px solid #16131f; box-sizing: border-box; background: {{r.tone}}"><img src="{{r.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center"></span>
+                    <sc-if value="{{r.unread}}" hint-placeholder-val="{{ false }}"><span style="position: absolute; right: -4px; top: -4px; min-width: 22px; height: 22px; padding: 0 6px; box-sizing: border-box; border-radius: 99px; background: #ff3d7f; border: 2px solid #16131f; color: #ffffff; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center">{{r.count}}</span></sc-if>
+                  </span>
+                  <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+                    <span style="font-size: 14px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.name}}</span>
+                    <span style="font-size: 11px; color: {{r.timeColor}}; font-weight: 700">{{r.time}}</span>
+                  </span>
                 </span>
-                <span style="display: flex; flex-direction: column; gap: 3px; min-width: 0">
-                  <span style="font-size: 14px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.name}}</span>
-                  <span style="font-size: 12px; color: #a19db3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.last}}</span>
-                </span>
-                <sc-if value="{{r.unread}}" hint-placeholder-val="{{ false }}"><span style="margin-left: auto; flex: none; width: 8px; height: 8px; border-radius: 50%; background: #ff3d7f"></span></sc-if>
+                <span style="font-size: 13px; line-height: 1.5; color: {{r.lastColor}}; font-weight: {{r.lastWeight}}; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden">{{r.last}}</span>
+                <sc-if value="{{r.unread}}" hint-placeholder-val="{{ false }}"><span style="position: absolute; right: 14px; bottom: 14px; font-size: 11px; font-weight: 800; color: #ff9cc0">답장하기 →</span></sc-if>
               </a>
             </sc-for>
           </div>
@@ -105,7 +126,7 @@ a{color:#ff9cc0}a:hover{color:#ffc2d8}
         <section aria-label="추천 캐릭터" style="display: flex; flex-direction: column; gap: 14px">
           <div style="display: flex; justify-content: space-between; align-items: baseline">
             <h2 style="margin: 0; font-size: 22px; font-weight: 800">당신을 위한 추천</h2>
-            <a href="Characters.dc.html" style="font-size: 13px; color: #a19db3; text-decoration: none">캐릭터 홈에서 더 보기</a>
+            <a href="Characters.dc.html" style="font-size: 13px; color: #a19db3; text-decoration: none">캐릭터 홈에서 더 보기 →</a>
           </div>
           <div class="rail" style="display: flex; gap: 8px; overflow-x: auto">
             <sc-for list="{{tagChips}}" as="tc" hint-placeholder-count="9">
@@ -125,7 +146,7 @@ a{color:#ff9cc0}a:hover{color:#ffc2d8}
               <h2 style="margin: 0; font-size: 22px; font-weight: 800">오늘의 랭킹 TOP 10</h2>
               <span style="font-size: 12px; color: #a19db3">11.14 12:00 기준 · 대화 수 + 좋아요</span>
             </div>
-            <a href="Characters.dc.html" style="font-size: 13px; color: #a19db3; text-decoration: none">전체 랭킹</a>
+            <a href="Ranking.dc.html" style="font-size: 13px; color: #a19db3; text-decoration: none">전체 랭킹 →</a>
           </div>
           <div class="rail" style="display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 70px) / 6); gap: 14px; overflow-x: auto; padding-bottom: 4px">
             <sc-for list="{{ranked}}" as="p" hint-placeholder-count="10">
@@ -140,7 +161,7 @@ a{color:#ff9cc0}a:hover{color:#ffc2d8}
               <h2 style="margin: 0; font-size: 22px; font-weight: 800">무대 위와 무대 뒤가 다른 그녀</h2>
               <span style="font-size: 13px; color: #a19db3">#アイドル × #ギャップ萌え 인기 캐릭터</span>
             </div>
-            <a href="Characters.dc.html" style="font-size: 13px; color: #a19db3; text-decoration: none">더 보기</a>
+            <a href="Collection.dc.html" style="font-size: 13px; color: #a19db3; text-decoration: none">더 보기 →</a>
           </div>
           <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px 14px">
             <sc-for list="{{gap}}" as="p" hint-placeholder-count="6">
@@ -156,7 +177,7 @@ a{color:#ff9cc0}a:hover{color:#ffc2d8}
               <h2 style="margin: 0; font-size: 22px; font-weight: 800">그녀에게는 이미 그가 있다</h2>
               <span style="font-size: 13px; color: rgba(255,255,255,0.72)">관계가 있는 상대와 시작하는 이야기. 엿보기·선택지로 결말이 바뀌어요.</span>
             </div>
-            <a href="#" style="display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 12px; background: #e11d63; color: #ffffff; font-size: 13px; font-weight: 800; text-decoration: none">NTR 전체 보기</a>
+            <a href="Collection.dc.html" style="display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 12px; background: #e11d63; color: #ffffff; font-size: 13px; font-weight: 800; text-decoration: none">NTR 전체 보기</a>
           </div>
           <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px 14px">
             <sc-for list="{{ntr}}" as="p" hint-placeholder-count="6">
@@ -171,7 +192,7 @@ a{color:#ff9cc0}a:hover{color:#ffc2d8}
               <h2 style="margin: 0; font-size: 22px; font-weight: 800">모두의 작품</h2>
               <span style="font-size: 13px; color: #a19db3">유저가 캐릭터로 만든 이미지·망가·영상. 마음에 들면 같은 캐릭터로 바로 만들어 보세요.</span>
             </div>
-            <div role="tablist" aria-label="작품 종류" style="display: flex; gap: 6px; background: #1a1726; border-radius: 99px; padding: 4px">
+            <div role="tablist" aria-label="작품 종류" style="display: flex; gap: 6px; background: #16131f; border-radius: 99px; padding: 4px">
               <sc-for list="{{ugcTabs}}" as="ut" hint-placeholder-count="5">
                 <button type="button" role="tab" aria-selected="{{ut.on}}" onClick="{{ut.pick}}" style="height: 34px; padding: 0 14px; border-radius: 99px; border: 0; background: {{ut.bg}}; color: {{ut.color}}; font-family: inherit; font-size: 13px; font-weight: 800">{{ut.name}}</button>
               </sc-for>
@@ -188,7 +209,7 @@ a{color:#ff9cc0}a:hover{color:#ffc2d8}
                   </span>
                 </div>
                 <span style="font-size: 12px; color: #a19db3; display: flex; align-items: center; gap: 6px"><span style="width: 16px; height: 16px; border-radius: 50%; background: {{u.creatorTone}}"></span>{{u.creator}}</span>
-                <a href="#" style="height: 34px; border-radius: 10px; background: #231f33; color: #f3f1fa; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; text-decoration: none">이 캐릭터로 만들기</a>
+                <a href="MakeWith.dc.html" style="height: 34px; border-radius: 10px; background: #231f33; color: #f3f1fa; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; text-decoration: none">이 캐릭터로 만들기</a>
               </article>
             </sc-for>
           </div>
@@ -205,7 +226,7 @@ a{color:#ff9cc0}a:hover{color:#ffc2d8}
               <a href="#" style="display: inline-flex; align-items: center; height: 46px; padding: 0 18px; border-radius: 12px; background: rgba(255,255,255,0.12); color: #ffffff; font-size: 15px; font-weight: 700; text-decoration: none">보상 규칙 보기</a>
             </div>
           </div>
-          <div style="border-radius: 24px; background: #1a1726; border: 1px solid rgba(255,255,255,0.08); padding: 20px; display: flex; flex-direction: column; gap: 12px">
+          <div style="border-radius: 24px; background: #16131f; border: 1px solid rgba(255,255,255,0.08); padding: 20px; display: flex; flex-direction: column; gap: 12px">
             <div style="display: flex; justify-content: space-between; align-items: baseline">
               <h2 style="margin: 0; font-size: 18px; font-weight: 800">이번 주 인기 크리에이터</h2>
               <span style="font-size: 12px; color: #a19db3">대화 수 기준</span>
@@ -228,21 +249,53 @@ a{color:#ff9cc0}a:hover{color:#ffc2d8}
 
         <section aria-label="Stipop 기능" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px">
           <sc-for list="{{feats}}" as="f" hint-placeholder-count="3">
-            <div style="border-radius: 20px; background: #1a1726; border: 1px solid rgba(255,255,255,0.08); padding: 20px; display: flex; flex-direction: column; gap: 8px">
+            <div style="border-radius: 20px; background: #16131f; border: 1px solid rgba(255,255,255,0.08); padding: 20px; display: flex; flex-direction: column; gap: 8px">
               <span style="width: 40px; height: 40px; border-radius: 12px; background: {{f.tone}}; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #ffffff">{{f.mark}}</span>
               <span style="font-size: 16px; font-weight: 800">{{f.title}}</span>
               <span style="font-size: 13px; color: #a19db3; line-height: 1.55">{{f.desc}}</span>
             </div>
           </sc-for>
         </section>
+
+        <section aria-label="자주 묻는 질문" style="border-radius: 24px; background: #16131f; border: 1px solid rgba(255,255,255,0.06); padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <h2 style="margin: 0; font-size: 22px; font-weight: 800">자주 묻는 질문</h2>
+            <span style="font-size: 13px; color: #a19db3">궁금한 점이 있다면 먼저 확인해 보세요.</span>
+          </div>
+          <sc-for list="{{faqs}}" as="q" hint-placeholder-count="5">
+            <div style="border-radius: 14px; background: {{q.bg}}; border: {{q.bd}}">
+              <button type="button" aria-expanded="{{q.open}}" onClick="{{q.pick}}" style="width: 100%; min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 18px; border: 0; background: transparent; color: #f3f1fa; font-family: inherit; font-size: 15px; font-weight: 800; text-align: left">
+                {{q.q}}
+                <span style="flex: none; width: 24px; height: 24px; border-radius: 50%; background: {{q.iconBg}}; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 16px; line-height: 1">{{q.icon}}</span>
+              </button>
+              <sc-if value="{{q.open}}" hint-placeholder-val="{{ false }}">
+                <p style="margin: 0; padding: 0 18px 18px; font-size: 14px; line-height: 1.7; color: #c9c4da">{{q.a}}</p>
+              </sc-if>
+            </div>
+          </sc-for>
+          <a href="#" style="align-self: flex-start; font-size: 13px; font-weight: 800; color: #ff9cc0; text-decoration: none">더 많은 질문·문의하기 →</a>
+        </section>
+
+        <footer style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; display: flex; flex-direction: column; gap: 28px">
+          <div style="display: grid; grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr)); gap: 24px">
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <span style="display: flex; align-items: center; gap: 8px"><img src="../../images/fanza-app-icon-c4.png" alt="" style="width: 28px; height: 28px; border-radius: 8px"><span style="font-size: 18px; font-weight: 800">stipop</span></span>
+              <span style="font-size: 13px; color: #a19db3">AI 캐릭터와 대화하고, 만들고, 움직이고.</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px"><span style="font-size: 12px; color: #8a8598">회사</span><a href="#" style="font-size: 13px; font-weight: 700; color: #f3f1fa; text-decoration: none">운영 회사</a><a href="#" style="font-size: 13px; font-weight: 700; color: #f3f1fa; text-decoration: none">특정상거래법에 따른 표기</a></div>
+            <div style="display: flex; flex-direction: column; gap: 10px"><span style="font-size: 12px; color: #8a8598">정책</span><a href="#" style="font-size: 13px; font-weight: 700; color: #f3f1fa; text-decoration: none">이용약관</a><a href="#" style="font-size: 13px; font-weight: 700; color: #f3f1fa; text-decoration: none">개인정보 처리방침</a></div>
+            <div style="display: flex; flex-direction: column; gap: 10px"><span style="font-size: 12px; color: #8a8598">도움말</span><a href="#" style="font-size: 13px; font-weight: 700; color: #f3f1fa; text-decoration: none">자주 묻는 질문</a><a href="#" style="font-size: 13px; font-weight: 700; color: #f3f1fa; text-decoration: none">문의하기</a><a href="#" style="font-size: 13px; font-weight: 700; color: #f3f1fa; text-decoration: none">권리 침해 신고</a></div>
+          </div>
+          <span style="font-size: 12px; color: #8a8598">© 2026 Stipop Inc. All rights reserved.</span>
+        </footer>
       </div>
     </main>
   </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3400}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4200}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { b: 0, tag: 'すべて', ugcTab: '전체' }; }
+  constructor(props) { super(props); this.state = { b: 0, tag: 'すべて', ugcTab: '전체', faq: 0 }; }
   componentDidMount() { this.t = setInterval(() => this.setState({ b: (this.state.b + 1) % 4 }), 5000); }
   componentWillUnmount() { clearInterval(this.t); }
   renderVals() {
@@ -272,7 +325,10 @@ class Component extends DCLogic {
     const b = this.state.b;
     const ban = banners[b];
     const dots = banners.map((_, i) => ({ w: i === b ? '22px' : '6px', c: i === b ? '#ffffff' : 'rgba(255,255,255,0.45)' }));
-    const recent = ['c06', 'c05', 'c09', 'c01'].map((k, i) => { const c = by(k); return { name: c.title, last: ['…なんで顔赤いの？って聞かないでよ', '既読、つけちゃった。', '明日の会議、遅れないでね', 'また楽屋に来てくれる？'][i], tone: c.tone, img: c.img, hasImg: !!c.img, unread: i < 2 }; });
+    const faces = ['c01', 'c06', 'c08'].map((k) => by(k).img);
+    const recent = [['c06', '…ねえ、さっきの返事まだ？　べ、別に待ってないけど', '방금', 2], ['c05', '彼氏から電話きた。…でも、出ないでおくね', '12분 전', 1], ['c09', '明日の会議、遅れないでね。…今日はありがとう', '어제', 0]].map(([k, last, time, n]) => { const c = by(k); const u = n > 0; return { name: c.title, last, time, count: n, unread: u, tone: c.tone, img: c.img,
+      bg: u ? 'linear-gradient(180deg, rgba(255,61,127,0.10) 0%, #16131f 70%)' : '#16131f', bd: u ? '1px solid rgba(255,61,127,0.55)' : '1px solid rgba(255,255,255,0.06)', glow: u ? '0 0 0 3px rgba(255,61,127,0.10), 0 10px 30px rgba(255,61,127,0.12)' : 'none',
+      ring: u ? 'linear-gradient(135deg, #ff3d7f 0%, #c04dff 100%)' : 'rgba(255,255,255,0.12)', timeColor: u ? '#ff9cc0' : '#8a8598', lastColor: u ? '#ffffff' : '#a19db3', lastWeight: u ? 700 : 400 }; });
     const makers = [
       { title: '이미지 만들기', desc: '캐릭터를 원하는 옷·장소·포즈로', badge: '첫 5장 50%', badgeBg: '#ff3d7f', cta: '만들어 보기', ctaBg: 'rgba(255,255,255,0.16)', tone: '#3a2a44', img: UGC_IMG.u01 || by('c01').img },
       { title: 'AI 미니 망가', desc: '이야기 한 줄이면 나만의 만화 완성', badge: 'NEW', badgeBg: '#8b5cf6', cta: '망가 만들기', ctaBg: 'rgba(255,255,255,0.16)', tone: '#2f2a45', img: UGC_IMG.u02 || by('c06').img },
@@ -280,7 +336,7 @@ class Component extends DCLogic {
       { title: 'Animaka 애니', desc: '대사·목소리·자막이 들어간 1~10분 애니', badge: 'NEW', badgeBg: '#8b5cf6', cta: '애니 만들기', ctaBg: 'linear-gradient(95deg, #ff3d7f 0%, #c04dff 55%, #6f5bff 100%)', tone: '#352a4d', img: UGC_IMG.u05 || by('c09').img }
     ].map((m) => ({ ...m, hasImg: !!m.img }));
     const TAGS = ['すべて', 'アイドル', 'ハーレム', 'NTR', 'ギャップ萌え', 'ツンデレ', '幼なじみ', '現代', '巨乳', '純愛'];
-    const tagChips = TAGS.map((n) => ({ name: n, bg: this.state.tag === n ? '#3a1428' : '#1a1726', bd: this.state.tag === n ? '1px solid #ff3d7f' : '1px solid rgba(255,255,255,0.08)', pick: () => this.setState({ tag: n }) }));
+    const tagChips = TAGS.map((n) => ({ name: n, bg: this.state.tag === n ? '#3a1428' : '#16131f', bd: this.state.tag === n ? '1px solid #ff3d7f' : '1px solid rgba(255,255,255,0.08)', pick: () => this.setState({ tag: n }) }));
     const pool = this.state.tag === 'すべて' ? CH : CH.filter((c) => c.tags.indexOf(this.state.tag) >= 0 || (this.state.tag === 'NTR' && c.type === 'NTR') || (this.state.tag === 'ハーレム' && c.type === 'グループ'));
     const picks = (pool.length >= 6 ? pool : pool.concat(CH.filter((c) => pool.indexOf(c) < 0))).slice(0, 6);
     const order = ['c05', 'c01', 'c09', 'c06', 'c02', 'c03', 'c08', 'c04', 'c07', 'c10'];
@@ -311,7 +367,15 @@ class Component extends DCLogic {
       { mark: 'V', tone: '#e11d63', title: '목소리로 듣기', desc: '캐릭터마다 다른 목소리. 답장을 귀로 듣고, 다시 듣기는 무료예요.' },
       { mark: 'AI', tone: '#8b5cf6', title: '대화 모델을 골라요', desc: '가볍게는 기본 모델, 몰입하고 싶을 땐 Premium·Ultra 모델로.' }
     ];
-    return { ban, dots, prev: () => this.setState({ b: (b + 3) % 4 }), next: () => this.setState({ b: (b + 1) % 4 }), recent, makers, tagChips, picks, ranked, gap, ntr, ugcTabs, ugc, creators, feats, contestImg: !!BAN_IMG.b02, contestSrc: BAN_IMG.b02 || '' };
+    const FAQ = [
+      ['Stipop(fan.stipop.ai)은 무엇인가요?', '공식 캐릭터, 다른 사용자가 만든 캐릭터, 직접 만든 캐릭터와 실시간으로 대화하는 AI 캐릭터 채팅입니다. 1:1 채팅 외에도 NTR 채팅, 그룹 채팅, 캐릭터 이미지로 씬 이미지·동영상을 만드는 기능이 있습니다. 로그인은 DMM 계정으로 합니다.'],
+      ['무료로 쓸 수 있나요?', '가입하면 300pt를 드리고, 7일 출석하면 보너스 포인트를 더 드려요. 캐릭터 탐색과 첫 대사 미리보기는 무료예요.'],
+      ['요금·포인트는 어떻게 되나요?', '대화 1통, 이미지·영상 제작마다 DMM 포인트를 써요. 금액은 버튼 안에 항상 표시돼요.'],
+      ['내 캐릭터를 만들 수 있나요?', '네. 좌측 "만들기"에서 외모와 성격을 정하면 바로 대화할 수 있어요. 공개하면 다른 사람이 대화할 때마다 포인트가 쌓여요.'],
+      ['캐릭터가 대화를 기억하나요?', '장기 기억 모델은 지난 대화와 약속, 취향을 기억해요. 며칠 뒤에 와도 이어서 얘기할 수 있어요.']
+    ];
+    const faqs = FAQ.map(([q, a], i) => { const open = this.state.faq === i; return { q, a, open, bg: open ? 'rgba(255,61,127,0.06)' : '#1d1928', bd: open ? '1px solid #ff3d7f' : '1px solid rgba(255,255,255,0.06)', icon: open ? '×' : '+', iconBg: open ? '#ff3d7f' : 'rgba(255,255,255,0.12)', pick: () => this.setState({ faq: open ? -1 : i }) }; });
+    return { faqs, ban, dots, prev: () => this.setState({ b: (b + 3) % 4 }), next: () => this.setState({ b: (b + 1) % 4 }), faces, recent, makers, tagChips, picks, ranked, gap, ntr, ugcTabs, ugc, creators, feats, contestImg: !!BAN_IMG.b02, contestSrc: BAN_IMG.b02 || '' };
   }
 }
 </script>

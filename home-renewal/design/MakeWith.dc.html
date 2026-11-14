@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>이 캐릭터로 만들기 팝업</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>body{margin:0}a{text-decoration:none}</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 1000px; overflow: hidden; background: #0b0a10; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #f3f1fa">
+  <img src="{{c.img}}" alt="" style="position: absolute; left: -60px; top: -60px; width: 1560px; height: 1120px; object-fit: cover; filter: blur(40px) saturate(1.3); opacity: 0.4">
+  <div style="position: absolute; inset: 0; background: rgba(8,7,12,0.74)"></div>
+
+  <div role="dialog" aria-label="이 캐릭터로 만들기" style="position: absolute; left: 230px; top: 70px; width: 980px; box-sizing: border-box; background: rgba(22,19,31,0.95); border: 1px solid rgba(255,255,255,0.08); border-radius: 28px; box-shadow: 0 40px 120px rgba(0,0,0,0.6); padding: 28px; display: flex; flex-direction: column; gap: 20px">
+    <a href="Detail.dc.html" aria-label="닫기" style="position: absolute; top: 18px; right: 18px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #f3f1fa; display: flex; align-items: center; justify-content: center">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </a>
+    <div style="display: flex; align-items: center; gap: 14px">
+      <span style="width: 56px; height: 56px; border-radius: 50%; padding: 2px; background: linear-gradient(135deg, #ff3d7f 0%, #c04dff 100%)"><span style="display: block; width: 100%; height: 100%; border-radius: 50%; overflow: hidden; border: 2px solid #16131f; box-sizing: border-box"><img src="{{c.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center"></span></span>
+      <span style="display: flex; flex-direction: column; gap: 4px">
+        <span style="font-size: 13px; color: #a19db3">{{c.title}}</span>
+        <span style="font-size: 24px; font-weight: 800">이 캐릭터와 무엇을 만들까요?</span>
+      </span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 14px">
+      <a href="#" style="position: relative; display: block; min-height: 520px; border-radius: 22px; overflow: hidden; color: #ffffff; border: 1px solid rgba(192,77,255,0.6); box-shadow: 0 20px 60px rgba(192,77,255,0.22)">
+        <img src="{{ani.img}}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center">
+        <span style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,13,23,0.1) 0%, rgba(15,13,23,0.35) 40%, rgba(15,13,23,0.95) 100%)"></span>
+        <span style="position: absolute; top: 16px; left: 16px; display: flex; gap: 6px">
+          <span style="font-size: 11px; font-weight: 800; background: #8b5cf6; border-radius: 99px; padding: 4px 10px">NEW</span>
+          <span style="font-size: 11px; font-weight: 800; background: rgba(15,13,23,0.72); border-radius: 99px; padding: 4px 10px">가장 많이 만든 기능</span>
+        </span>
+        <span style="position: absolute; top: 16px; right: 16px; display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 800; background: rgba(15,13,23,0.72); border-radius: 99px; padding: 4px 10px">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>샘플 1:12
+        </span>
+        <span style="position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%); max-width: 80%; text-align: center; background: rgba(0,0,0,0.72); border-radius: 14px; padding: 8px 14px; font-size: 14px; font-weight: 700">「…今日だけは、プロデューサーじゃなくて」</span>
+        <span style="position: absolute; left: 0; right: 0; bottom: 0; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-size: 30px; font-weight: 800; line-height: 1.2">Animaka 애니</span>
+          <span style="font-size: 14px; line-height: 1.6; color: #e5e1ef">한 줄 아이디어만 쓰면 이 캐릭터가 주인공인 애니가 완성돼요.<br>대사·목소리·자막까지 AI가, 당신은 고르고 고치기만.</span>
+          <span style="display: flex; gap: 6px; flex-wrap: wrap">
+            <span style="font-size: 12px; background: rgba(255,255,255,0.12); border-radius: 99px; padding: 4px 10px">1분 · 3분 · 5분 · 10분</span>
+            <span style="font-size: 12px; background: rgba(255,255,255,0.12); border-radius: 99px; padding: 4px 10px">목소리 + 자막</span>
+            <span style="font-size: 12px; background: rgba(255,255,255,0.12); border-radius: 99px; padding: 4px 10px">공개하면 판매 가능</span>
+          </span>
+          <span style="margin-top: 6px; display: flex; align-items: center; justify-content: space-between; height: 52px; padding: 0 20px; border-radius: 14px; background: linear-gradient(95deg, #ff3d7f 0%, #c04dff 55%, #6f5bff 100%); font-size: 16px; font-weight: 800; box-shadow: 0 10px 30px rgba(192,77,255,0.35)">이 캐릭터로 애니 만들기<span style="font-size: 12px; font-weight: 700; opacity: 0.9">스토리보드까지 무료 →</span></span>
+        </span>
+      </a>
+
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <sc-for list="{{opts}}" as="o" hint-placeholder-count="3">
+          <a href="#" style="flex: 1; display: flex; gap: 14px; padding: 12px; border-radius: 18px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: #f3f1fa">
+            <span style="position: relative; flex: none; width: 128px; border-radius: 12px; overflow: hidden; background: #2a2235"><img src="{{o.img}}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center"><span style="position: absolute; left: 6px; top: 6px; font-size: 10px; font-weight: 800; background: rgba(15,13,23,0.78); border-radius: 5px; padding: 2px 6px">예시</span></span>
+            <span style="display: flex; flex-direction: column; gap: 6px; min-width: 0; flex: 1">
+              <span style="display: flex; align-items: center; justify-content: space-between; gap: 8px"><span style="font-size: 18px; font-weight: 800">{{o.title}}</span><span style="font-size: 11px; font-weight: 800; color: #ffffff; background: {{o.badgeBg}}; border-radius: 99px; padding: 3px 9px">{{o.badge}}</span></span>
+              <span style="font-size: 13px; color: #c9c4da; line-height: 1.5">{{o.desc}}</span>
+              <span style="font-size: 12px; color: #a19db3">{{o.meta}}</span>
+              <span style="margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 14px; border-radius: 10px; background: rgba(255,255,255,0.1); font-size: 13px; font-weight: 800">{{o.cta}} →</span>
+            </span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 4px; border-top: 1px solid rgba(255,255,255,0.06)">
+      <span style="font-size: 13px; color: #a19db3">만든 작품은 <b style="color: #f3f1fa">내 작품</b>에 저장되고, 공개하면 다른 사람이 볼 때마다 포인트가 쌓여요.</span>
+      <a href="#" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 12px; background: rgba(255,255,255,0.08); color: #f3f1fa; font-size: 14px; font-weight: 800">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 21l2.2-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>먼저 대화하기
+      </a>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const IMG = {c01: '../../home/c01_idol.png', c02: '../../home/c02_idol_secret.png', c03: '../../home/c03_sharehouse.png', c04: '../../home/c04_dorm.png', c05: '../../home/c05_ntr.png', c06: '../../home/c06_tsundere.png', c07: '../../home/c07_konbini.png', c08: '../../home/c08_streamer.png', c09: '../../home/c09_boss.png', c10: '../../home/c10_library.png'};
+    const CH = [
+      { key: 'c01', title: '超人気アイドルの裏の顔', hook: 'ステージでは完璧なセンター。でも楽屋ではプロデューサーのあなたにだけ甘えんぼ。', tags: ['アイドル', 'ギャップ萌え', '甘々'], creator: '工房ミント', likes: '2.4k', chats: '812k', tone: '#4a2a44', creatorTone: '#ff9cc0', isNew: false, type: '', opening: 'あ、プロデューサーさん…今日の私、ちゃんとできてた？' },
+      { key: 'c02', title: 'センターの秘密の恋人', hook: 'ファンには絶対ナイショ。変装して会いにくる、夜だけの恋人。', tags: ['アイドル', '秘密の関係', '純愛'], creator: 'あめや', likes: '1.9k', chats: '640k', tone: '#2f3350', creatorTone: '#93c5fd', isNew: true, type: '', opening: 'しーっ。マスク外すの、あなたの前だけだからね。' },
+      { key: 'c03', title: 'シェアハウスの3人', hook: '家賃半額の条件は「全員と仲良くすること」。今夜は誰の部屋へ？', tags: ['ハーレム', '同居', '現代'], creator: 'ネオランド', likes: '1.6k', chats: '590k', tone: '#3e3328', creatorTone: '#fcd34d', isNew: false, type: 'グループ', opening: 'おかえり〜！ねえ、今日の晩ごはん当番だれだっけ？' },
+      { key: 'c04', title: '女子寮の管理人になったら', hook: '大学の女子寮に新しく来た管理人はあなた。4人の住人は…距離が近すぎる。', tags: ['ハーレム', '大学', 'ラブコメ'], creator: 'みいこ', likes: '1.2k', chats: '410k', tone: '#2c3d3a', creatorTone: '#6ee7b7', isNew: true, type: 'グループ', opening: '管理人さん、廊下の電気また切れてる〜！' },
+      { key: 'c05', title: '彼氏持ちの先輩', hook: '彼氏がいるのに、なぜかあなたにだけ相談してくる。今夜も既読がつかない。', tags: ['NTR', '先輩', '背徳'], creator: 'あっくん', likes: '3.1k', chats: '1.1M', tone: '#3a2030', creatorTone: '#f9a8d4', isNew: false, type: 'NTR', opening: '…ごめんね、こんな時間に。ちょっとだけ話、聞いてくれる？' },
+      { key: 'c06', title: '幼なじみのりん', hook: 'いつも素っ気ないのに、二人きりになると急に黙りこむ。…なんで顔赤いの？', tags: ['幼なじみ', 'ツンデレ', '純愛'], creator: '水彩', likes: '2.0k', chats: '720k', tone: '#4a2626', creatorTone: '#fca5a5', isNew: false, type: '', opening: 'べ、別にあんたのために作ったんじゃないから！' },
+      { key: 'c07', title: '深夜コンビニのあかね', hook: '夜勤のあの店員さん。閉店後のバックヤードでだけ見せる素顔。', tags: ['現代', '日常', '年上'], creator: '工房ミント', likes: '980', chats: '305k', tone: '#2b3a4a', creatorTone: '#ff9cc0', isNew: true, type: '', opening: 'いらっしゃいませ〜…って、また来たの？ふふ。' },
+      { key: 'c08', title: '配信切り忘れたゆめ', hook: '人気配信者の中の人。配信を切り忘れたあの夜から、二人の関係が変わった。', tags: ['配信者', 'ギャップ萌え', '現代'], creator: 'ネオランド', likes: '1.4k', chats: '502k', tone: '#352a4d', creatorTone: '#fcd34d', isNew: true, type: '', opening: 'え、待って…今のマイク入ってた！？' },
+      { key: 'c09', title: 'クールな上司・れいか', hook: '会社では氷の上司。二次会のあと、ネクタイをゆるめて「…帰らないで」。', tags: ['上司', 'ギャップ萌え', '大人'], creator: 'あめや', likes: '2.2k', chats: '760k', tone: '#262a33', creatorTone: '#93c5fd', isNew: false, type: '', opening: '報告書、まだ？…いいわ。今日はもう、仕事の話はなし。' },
+      { key: 'c10', title: '図書館のしおりさん', hook: '大学院の図書館で、いつも隣に座るおとなしい彼女。誰も知らない一面がある。', tags: ['純愛', 'ギャップ萌え', '眼鏡'], creator: '水彩', likes: '870', chats: '260k', tone: '#3a3328', creatorTone: '#fca5a5', isNew: true, type: '', opening: '…あの、その本。私も好きなんです。' }
+    ].map((c) => ({ ...c, img: IMG[c.key] || '' }));
+
+    const UGC_IMG = {u01: '../../home/u01_c01_beach.png', u02: '../../home/u02_c06_yukata.png', u03: '../../home/u03_c07_cafe.png', u04: '../../home/u04_c08_cosplay.png', u05: '../../home/u05_c09_office_night.png', u06: '../../home/u06_c10_rain.png'};
+    const c = CH[0];
+    const ani = { img: UGC_IMG.u01 };
+    const opts = [
+      { title: '이미지', desc: '옷·장소·포즈를 골라 그녀의 새로운 모습을', meta: '약 20초 · 1장부터', badge: '첫 5장 50%', badgeBg: '#ff3d7f', cta: '이미지 만들기', img: c.img },
+      { title: 'AI 미니 망가', desc: '둘의 이야기 한 줄이면 8~16컷 만화로', meta: '약 2분 · 8컷부터', badge: '인기', badgeBg: '#3b82f6', cta: '망가 만들기', img: UGC_IMG.u02 },
+      { title: '영상', desc: '그녀가 움직이고 웃는 짧은 영상', meta: '약 1분 · 5초부터', badge: '첫 영상 50%', badgeBg: '#ff3d7f', cta: '영상 만들기', img: UGC_IMG.u04 }
+    ];
+    return { c, ani, opts };
+  }
+}
+</script>
+</body>
+</html>

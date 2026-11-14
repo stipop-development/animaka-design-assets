@@ -12,14 +12,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>body{margin:0}.rail{scrollbar-width:none}.rail::-webkit-scrollbar{display:none}input::placeholder{color:#8a8296}</style>
 </helmet>
-<div style="position: relative; width: 390px; height: 2000px; overflow: hidden; background: #0f0d17; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #f3f1fa">
+<div style="position: relative; width: 390px; height: 2000px; overflow: hidden; background: radial-gradient(500px 300px at 80% -60px, rgba(192,77,255,0.20), rgba(192,77,255,0) 70%), #0b0a10; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #f3f1fa">
   <div style="padding: 12px 16px 10px; display: flex; flex-direction: column; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.06)">
     <label for="mq" style="position: absolute; width: 1px; height: 1px; overflow: hidden">캐릭터 검색</label>
-    <div style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 14px; border-radius: 12px; background: #1a1726">
+    <div style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 14px; border-radius: 12px; background: #16131f">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a19db3" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
       <input id="mq" placeholder="이름, 태그, 상황으로 찾기" style="flex: 1; min-width: 0; border: 0; background: transparent; color: #f3f1fa; font-family: inherit; font-size: 14px; outline: none">
     </div>
-    <div role="tablist" aria-label="캐릭터 보기" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; background: #1a1726; border-radius: 99px; padding: 4px">
+    <div role="tablist" aria-label="캐릭터 보기" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; background: #16131f; border-radius: 99px; padding: 4px">
       <sc-for list="{{tabs}}" as="tb" hint-placeholder-count="4">
         <button type="button" role="tab" aria-selected="{{tb.on}}" onClick="{{tb.pick}}" style="height: 36px; border: 0; border-radius: 99px; background: {{tb.bg}}; color: {{tb.color}}; font-family: inherit; font-size: 13px; font-weight: 800">{{tb.name}}</button>
       </sc-for>
@@ -34,7 +34,7 @@
     <ol style="margin: 0; padding: 12px 16px 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
       <sc-for list="{{top3}}" as="pp" hint-placeholder-count="3">
         <li>
-          <a href="Detail.dc.html" style="display: flex; gap: 12px; padding: 10px; border-radius: 16px; background: #1a1726; color: #f3f1fa; text-decoration: none">
+          <a href="Detail.dc.html" style="display: flex; gap: 12px; padding: 10px; border-radius: 16px; background: #16131f; color: #f3f1fa; text-decoration: none">
             <span style="position: relative; flex: none; width: 84px; aspect-ratio: 3 / 4; border-radius: 12px; overflow: hidden; background: {{pp.tone}}">
               <sc-if value="{{pp.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{pp.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center"></sc-if>
             </span>
@@ -77,7 +77,7 @@ class Component extends DCLogic {
     const s = this.state;
     const tabs = ['홈', '신작', '랭킹', '태그'].map((n) => ({ name: n, on: s.tab === n, bg: s.tab === n ? '#ffffff' : 'transparent', color: s.tab === n ? '#17151f' : '#c9c4da', pick: () => this.setState({ tab: n, chip: 0 }) }));
     const CHIPS = { '홈': ['#アイドル', '#ハーレム', '#NTR', '#ギャップ萌え', '#ツンデレ', '#純愛'], '신작': ['24시간', '3일', '1주'], '랭킹': ['일간', '주간', '월간', '1:1', 'NTR', '그룹'], '태그': ['#幼なじみ', '#上司', '#配信者', '#大学', '#巨乳', '#眼鏡'] };
-    const chips = CHIPS[s.tab].map((n, i) => ({ name: n, bg: s.chip === i ? '#3a1428' : '#1a1726', bd: s.chip === i ? '1px solid #ff3d7f' : '1px solid rgba(255,255,255,0.08)', pick: () => this.setState({ chip: i }) }));
+    const chips = CHIPS[s.tab].map((n, i) => ({ name: n, bg: s.chip === i ? '#3a1428' : '#16131f', bd: s.chip === i ? '1px solid #ff3d7f' : '1px solid rgba(255,255,255,0.08)', pick: () => this.setState({ chip: i }) }));
     const order = ['c05', 'c01', 'c09', 'c06', 'c02', 'c03', 'c08', 'c04', 'c07', 'c10', 'c06'];
     const isRank = s.tab === '랭킹';
     const rc = (i) => (i === 0 ? '#ffc847' : i === 1 ? '#e5e7eb' : '#f0a46b');

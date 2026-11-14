@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title>캐릭터 상세</title>
+<title>캐릭터 소개 팝업</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -10,75 +10,165 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
-<style>body{margin:0}</style>
+<style>body{margin:0}a{text-decoration:none}</style>
 </helmet>
-<div style="width: 1440px; height: 1000px; background: rgba(5,4,9,0.82); display: flex; align-items: center; justify-content: center; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #f3f1fa">
-  <div role="dialog" aria-label="{{c.title}}" style="position: relative; width: 920px; max-height: 900px; box-sizing: border-box; background: #1a1726; border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 24px; display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 24px">
-    <a href="Characters.dc.html" aria-label="닫기" style="position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border-radius: 50%; background: #231f33; color: #f3f1fa; display: flex; align-items: center; justify-content: center">
+<div style="position: relative; width: 1440px; height: 1100px; overflow: hidden; background: #0b0a10; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #f3f1fa">
+  <img src="{{c.img}}" alt="" style="position: absolute; left: -60px; top: -60px; width: 1560px; height: 1220px; object-fit: cover; filter: blur(40px) saturate(1.3); opacity: 0.45">
+  <div style="position: absolute; inset: 0; background: rgba(8,7,12,0.72)"></div>
+
+  <div role="dialog" aria-label="{{c.title}} 소개" style="position: absolute; left: 190px; top: 50px; width: 1060px; box-sizing: border-box; background: rgba(22,19,31,0.94); border: 1px solid rgba(255,255,255,0.08); border-radius: 28px; box-shadow: 0 40px 120px rgba(0,0,0,0.6); padding: 24px; display: grid; grid-template-columns: 420px minmax(0, 1fr); gap: 28px">
+    <a href="Main.dc.html" aria-label="닫기" style="position: absolute; top: 18px; right: 18px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #f3f1fa; display: flex; align-items: center; justify-content: center">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </a>
-    <div style="display: flex; flex-direction: column; gap: 10px">
-      <div style="position: relative; width: 100%; aspect-ratio: 3 / 4; border-radius: 18px; overflow: hidden; background: {{shot.tone}}">
-        <sc-if value="{{shot.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{shot.img}}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center"></sc-if>
-        <span style="position: absolute; left: 10px; bottom: 10px; font-size: 11px; font-weight: 800; background: rgba(15,13,23,0.78); color: #ffffff; border-radius: 6px; padding: 3px 8px">{{shot.label}}</span>
+
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <div style="position: relative; width: 100%; aspect-ratio: 3 / 4; border-radius: 22px; overflow: hidden; background: #2a2235; box-shadow: 0 20px 60px rgba(255,61,127,0.18)">
+        <img src="{{shot.img}}" alt="{{shot.label}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center">
+        <div style="position: absolute; top: 12px; left: 12px; display: flex; gap: 6px">
+          <span style="font-size: 11px; font-weight: 800; color: #17151f; background: #ffc847; border-radius: 99px; padding: 4px 10px">오늘 2위 ▲2</span>
+          <span style="font-size: 11px; font-weight: 800; color: #ffffff; background: rgba(15,13,23,0.72); border-radius: 99px; padding: 4px 10px">공식 추천</span>
+        </div>
+        <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 60px 16px 14px; background: linear-gradient(180deg, rgba(15,13,23,0) 0%, rgba(15,13,23,0.9) 100%); display: flex; justify-content: space-between; align-items: flex-end">
+          <span style="font-size: 12px; font-weight: 700; color: #d9d6e6">{{shot.label}}</span>
+          <span style="font-size: 12px; font-weight: 800; color: #ffffff">{{shotNo}}</span>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px">
+        <sc-for list="{{shots}}" as="sh" hint-placeholder-count="5">
+          <button type="button" aria-label="{{sh.label}}" onClick="{{sh.pick}}" style="position: relative; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; padding: 0; background: #2a2235; border: {{sh.bd}}; cursor: pointer">
+            <img src="{{sh.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: {{sh.filter}}">
+            <sc-if value="{{sh.locked}}" hint-placeholder-val="{{ false }}">
+              <span style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(15,13,23,0.45); color: #ffffff">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+              </span>
+            </sc-if>
+          </button>
+        </sc-for>
+      </div>
+      <span style="font-size: 12px; color: #a19db3; display: flex; align-items: center; gap: 6px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ff9cc0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        대화하면서 친해지면 열리는 이미지 <b style="color: #ff9cc0">12장</b>
+      </span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 16px; min-width: 0; padding-right: 40px">
+      <div style="display: flex; gap: 6px; flex-wrap: wrap">
+        <span style="font-size: 11px; font-weight: 800; color: #93c5fd; background: rgba(59,130,246,0.16); border-radius: 6px; padding: 4px 8px">1:1 채팅</span>
+        <span style="font-size: 11px; font-weight: 800; color: #ff9cc0; background: rgba(255,61,127,0.16); border-radius: 6px; padding: 4px 8px">목소리 대화</span>
+        <span style="font-size: 11px; font-weight: 800; color: #c4b5fd; background: rgba(139,92,246,0.18); border-radius: 6px; padding: 4px 8px">대화 중 AI 이미지</span>
+        <span style="font-size: 11px; font-weight: 800; color: #6ee7b7; background: rgba(16,163,127,0.18); border-radius: 6px; padding: 4px 8px">장기 기억</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <h2 style="margin: 0; font-size: 32px; font-weight: 800; line-height: 1.2">{{c.title}}</h2>
+        <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #a19db3">
+          <span style="width: 22px; height: 22px; border-radius: 50%; background: {{c.creatorTone}}"></span>
+          <b style="color: #f3f1fa">{{c.creator}}</b> · 캐릭터 12개 · 팔로워 3.8k
+          <button type="button" style="margin-left: 4px; height: 28px; padding: 0 12px; border-radius: 99px; border: 1px solid #ff3d7f; background: transparent; color: #ff9cc0; font-family: inherit; font-size: 12px; font-weight: 800">팔로우</button>
+        </span>
       </div>
       <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
-        <sc-for list="{{shots}}" as="sh" hint-placeholder-count="4">
-          <button type="button" aria-label="{{sh.label}}" onClick="{{sh.pick}}" style="position: relative; aspect-ratio: 1 / 1; border-radius: 10px; overflow: hidden; padding: 0; background: {{sh.tone}}; border: {{sh.bd}}">
-            <sc-if value="{{sh.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{sh.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center"></sc-if>
-          </button>
+        <div style="background: rgba(255,255,255,0.04); border-radius: 14px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; color: #a19db3">대화</span><span style="font-size: 18px; font-weight: 800">{{c.chats}}</span></div>
+        <div style="background: rgba(255,255,255,0.04); border-radius: 14px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; color: #a19db3">좋아요</span><span style="font-size: 18px; font-weight: 800">{{c.likes}}</span></div>
+        <div style="background: rgba(255,255,255,0.04); border-radius: 14px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; color: #a19db3">유저 작품</span><span style="font-size: 18px; font-weight: 800">384</span></div>
+        <div style="background: rgba(255,255,255,0.04); border-radius: 14px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; color: #a19db3">다시 찾는 비율</span><span style="font-size: 18px; font-weight: 800; color: #6ee7b7">68%</span></div>
+      </div>
+
+      <div role="tablist" aria-label="캐릭터 정보" style="display: flex; gap: 18px; border-bottom: 1px solid rgba(255,255,255,0.08)">
+        <sc-for list="{{tabs}}" as="tb" hint-placeholder-count="3">
+          <button type="button" role="tab" aria-selected="{{tb.on}}" onClick="{{tb.pick}}" style="height: 40px; padding: 0; border: 0; border-bottom: 2px solid {{tb.line}}; background: transparent; color: {{tb.color}}; font-family: inherit; font-size: 14px; font-weight: 800; cursor: pointer">{{tb.name}}</button>
         </sc-for>
       </div>
-    </div>
-    <div style="display: flex; flex-direction: column; gap: 14px; min-width: 0; padding-right: 32px">
-      <div style="display: flex; gap: 6px; flex-wrap: wrap">
-        <span style="font-size: 11px; font-weight: 800; color: #ffffff; background: #3b82f6; border-radius: 6px; padding: 3px 8px">1:1 채팅</span>
-        <span style="font-size: 11px; font-weight: 800; color: #ffffff; background: #e11d63; border-radius: 6px; padding: 3px 8px">목소리</span>
-        <span style="font-size: 11px; font-weight: 800; color: #ffffff; background: #8b5cf6; border-radius: 6px; padding: 3px 8px">대화 중 AI 이미지</span>
-      </div>
-      <h2 style="margin: 0; font-size: 28px; font-weight: 800; line-height: 1.3">{{c.title}}</h2>
-      <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #d9d6e6">{{c.hook}}</p>
-      <div style="display: flex; gap: 6px; flex-wrap: wrap">
-        <sc-for list="{{c.tags}}" as="tg" hint-placeholder-count="3">
-          <span style="font-size: 12px; color: #c9c4da; background: rgba(255,255,255,0.06); border-radius: 99px; padding: 4px 10px">#{{tg}}</span>
-        </sc-for>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
-        <div style="background: #231f33; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; color: #a19db3">대화</span><span style="font-size: 18px; font-weight: 800">{{c.chats}}</span></div>
-        <div style="background: #231f33; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; color: #a19db3">좋아요</span><span style="font-size: 18px; font-weight: 800">{{c.likes}}</span></div>
-        <div style="background: #231f33; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; color: #a19db3">오늘 랭킹</span><span style="font-size: 18px; font-weight: 800; color: #ffc847">2위</span></div>
-      </div>
-      <div style="background: #231f33; border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 10px">
-        <div style="display: flex; justify-content: space-between; align-items: center">
-          <span style="font-size: 12px; font-weight: 800; color: #ff9cc0">첫 대사 미리보기</span>
-          <button type="button" style="display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: 99px; border: 0; background: rgba(255,255,255,0.1); color: #f3f1fa; font-family: inherit; font-size: 12px; font-weight: 700">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>목소리로 듣기
-          </button>
+
+      <sc-if value="{{isIntro}}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #e5e1ef">{{c.hook}} 新人時代から一緒に歩いてきたあなたにだけ、誰にも見せない弱さと甘えを見せてくれる。</p>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+            <div style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); padding: 10px 12px; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 11px; color: #a19db3">관계</span><span style="font-size: 13px; font-weight: 800">프로듀서 × 톱 아이돌</span></div>
+            <div style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); padding: 10px 12px; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 11px; color: #a19db3">시작 장소</span><span style="font-size: 13px; font-weight: 800">공연 후 대기실</span></div>
+            <div style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); padding: 10px 12px; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 11px; color: #a19db3">성격</span><span style="font-size: 13px; font-weight: 800">완벽주의 · 응석쟁이</span></div>
+          </div>
+          <div style="border-radius: 16px; background: linear-gradient(135deg, rgba(255,61,127,0.10) 0%, rgba(139,92,246,0.08) 100%); border: 1px solid rgba(255,61,127,0.25); padding: 14px; display: flex; flex-direction: column; gap: 10px">
+            <span style="font-size: 12px; font-weight: 800; color: #ff9cc0">첫 대사 미리보기</span>
+            <div style="display: flex; gap: 10px; align-items: flex-start">
+              <span style="flex: none; width: 38px; height: 38px; border-radius: 50%; overflow: hidden"><img src="{{c.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center"></span>
+              <div style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+                <span style="background: #0b0a10; border-radius: 4px 16px 16px 16px; padding: 10px 14px; font-size: 14px; line-height: 1.6">（汗を拭いながら振り返って）{{c.opening}}</span>
+                <button type="button" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; height: 36px; padding: 0 14px 0 6px; border-radius: 99px; border: 0; background: rgba(255,255,255,0.08); color: #f3f1fa; font-family: inherit; font-size: 12px; font-weight: 700; cursor: pointer">
+                  <span style="width: 26px; height: 26px; border-radius: 50%; background: #ff3d7f; display: flex; align-items: center; justify-content: center"><svg width="10" height="10" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg></span>
+                  <span style="display: flex; align-items: center; gap: 2px" aria-hidden="true">
+                    <sc-for list="{{wave}}" as="w" hint-placeholder-count="18"><span style="width: 2px; height: {{w}}px; border-radius: 1px; background: #ff9cc0"></span></sc-for>
+                  </span>
+                  목소리로 듣기 · 0:04
+                </button>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap">
+            <sc-for list="{{c.tags}}" as="tg" hint-placeholder-count="3">
+              <span style="font-size: 12px; color: #c9c4da; background: rgba(255,255,255,0.06); border-radius: 99px; padding: 5px 11px">#{{tg}}</span>
+            </sc-for>
+            <span style="font-size: 12px; color: #c9c4da; background: rgba(255,255,255,0.06); border-radius: 99px; padding: 5px 11px">#プロデューサー</span>
+          </div>
         </div>
-        <div style="display: flex; gap: 10px; align-items: flex-start">
-          <span style="flex: none; width: 36px; height: 36px; border-radius: 50%; overflow: hidden; background: {{c.tone}}"><sc-if value="{{c.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{c.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center"></sc-if></span>
-          <span style="background: #0f0d17; border-radius: 4px 14px 14px 14px; padding: 10px 12px; font-size: 14px; line-height: 1.6">{{c.opening}}</span>
+      </sc-if>
+
+      <sc-if value="{{isGallery}}" hint-placeholder-val="{{ false }}">
+        <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+          <sc-for list="{{gallery}}" as="g" hint-placeholder-count="8">
+            <span style="position: relative; aspect-ratio: 3 / 4; border-radius: 12px; overflow: hidden; background: #2a2235">
+              <img src="{{g.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: {{g.filter}}">
+              <span style="position: absolute; left: 6px; bottom: 6px; font-size: 10px; font-weight: 800; background: rgba(15,13,23,0.78); border-radius: 5px; padding: 2px 6px">{{g.label}}</span>
+            </span>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{isWorks}}" hint-placeholder-val="{{ false }}">
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+          <sc-for list="{{works}}" as="w2" hint-placeholder-count="3">
+            <span style="display: flex; flex-direction: column; gap: 6px">
+              <span style="position: relative; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden"><img src="{{w2.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center"><span style="position: absolute; left: 6px; top: 6px; font-size: 10px; font-weight: 800; background: rgba(15,13,23,0.78); border-radius: 5px; padding: 2px 6px">{{w2.kind}}</span></span>
+              <span style="font-size: 12px; color: #a19db3">{{w2.by}} · ♡ {{w2.likes}}</span>
+            </span>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 4px">
+        <div style="display: flex; justify-content: space-between; align-items: baseline">
+          <span style="font-size: 14px; font-weight: 800">이 캐릭터로 만들기</span>
+          <a href="MakeWith.dc.html" style="font-size: 12px; color: #a19db3">전체 보기 →</a>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+          <sc-for list="{{makes}}" as="mk" hint-placeholder-count="4">
+            <a href="MakeWith.dc.html" style="position: relative; display: flex; flex-direction: column; gap: 6px; padding: 10px; border-radius: 14px; background: {{mk.bg}}; border: {{mk.bd}}; color: #f3f1fa">
+              <span style="display: flex; align-items: center; justify-content: space-between"><span style="font-size: 13px; font-weight: 800">{{mk.title}}</span><sc-if value="{{mk.isNew}}" hint-placeholder-val="{{ false }}"><span style="font-size: 9px; font-weight: 800; background: #8b5cf6; color: #ffffff; border-radius: 4px; padding: 1px 5px">NEW</span></sc-if></span>
+              <span style="font-size: 11px; color: #a19db3; line-height: 1.4">{{mk.desc}}</span>
+              <span style="font-size: 11px; font-weight: 800; color: {{mk.priceColor}}">{{mk.price}}</span>
+            </a>
+          </sc-for>
         </div>
       </div>
-      <div style="display: flex; align-items: center; gap: 10px">
-        <span style="width: 36px; height: 36px; border-radius: 50%; background: {{c.creatorTone}}"></span>
-        <span style="display: flex; flex-direction: column; gap: 2px; flex: 1"><span style="font-size: 14px; font-weight: 800">{{c.creator}}</span><span style="font-size: 12px; color: #a19db3">캐릭터 12개 · 팔로워 3.8k</span></span>
-        <button type="button" style="height: 34px; padding: 0 14px; border-radius: 99px; border: 1px solid #ff3d7f; background: transparent; color: #ff9cc0; font-family: inherit; font-size: 13px; font-weight: 800">팔로우</button>
-      </div>
-      <div style="margin-top: auto; display: flex; gap: 8px">
-        <a href="#" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; height: 52px; border-radius: 14px; background: linear-gradient(95deg, #ff3d7f 0%, #c04dff 55%, #6f5bff 100%); color: #ffffff; font-size: 16px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 24px rgba(192,77,255,0.28)">대화 시작하기<span style="font-size: 12px; font-weight: 700; opacity: 0.85">1통 15pt</span></a>
-        <a href="#" style="display: flex; align-items: center; justify-content: center; height: 52px; padding: 0 16px; border-radius: 14px; background: #231f33; color: #f3f1fa; font-size: 14px; font-weight: 800; text-decoration: none">이 캐릭터로 만들기</a>
-        <button type="button" aria-label="좋아요" style="width: 52px; height: 52px; border-radius: 14px; border: 0; background: #231f33; color: #ff9cc0; display: flex; align-items: center; justify-content: center">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+
+      <div style="display: flex; gap: 8px; margin-top: auto">
+        <a href="#" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 10px; height: 56px; border-radius: 16px; background: linear-gradient(95deg, #ff3d7f 0%, #c04dff 55%, #6f5bff 100%); color: #ffffff; font-size: 17px; font-weight: 800; box-shadow: 0 10px 30px rgba(192,77,255,0.35)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 21l2.2-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+          대화 시작하기<span style="font-size: 12px; font-weight: 700; background: rgba(255,255,255,0.2); border-radius: 99px; padding: 3px 9px">1통 15pt</span>
+        </a>
+        <button type="button" aria-label="좋아요" style="width: 56px; height: 56px; border-radius: 16px; border: 0; background: rgba(255,255,255,0.08); color: #ff9cc0; display: flex; align-items: center; justify-content: center; cursor: pointer">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        </button>
+        <button type="button" aria-label="공유" style="width: 56px; height: 56px; border-radius: 16px; border: 0; background: rgba(255,255,255,0.08); color: #f3f1fa; display: flex; align-items: center; justify-content: center; cursor: pointer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13"/></svg>
         </button>
       </div>
     </div>
   </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1100}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { s: 0 }; }
+  constructor(props) { super(props); this.state = { s: 0, tab: '소개' }; }
   renderVals() {
     const IMG = {c01: '../../home/c01_idol.png', c02: '../../home/c02_idol_secret.png', c03: '../../home/c03_sharehouse.png', c04: '../../home/c04_dorm.png', c05: '../../home/c05_ntr.png', c06: '../../home/c06_tsundere.png', c07: '../../home/c07_konbini.png', c08: '../../home/c08_streamer.png', c09: '../../home/c09_boss.png', c10: '../../home/c10_library.png'};
     const CH = [
@@ -95,15 +185,29 @@ class Component extends DCLogic {
     ].map((c) => ({ ...c, img: IMG[c.key] || '' }));
 
     const UGC_IMG = {u01: '../../home/u01_c01_beach.png', u02: '../../home/u02_c06_yukata.png', u03: '../../home/u03_c07_cafe.png', u04: '../../home/u04_c08_cosplay.png', u05: '../../home/u05_c09_office_night.png', u06: '../../home/u06_c10_rain.png'};
-    const base = CH[0];
-    const c = { ...base, hasImg: !!base.img };
+    const BAN_IMG = {b01: '../../home/b01_animaka.png', b02: '../../home/b02_contest.png', b03: '../../home/b03_voice.png', b04: '../../home/b04_welcome.png'};
+    const c = CH[0];
     const list = [
-      { label: '프로필', img: base.img, tone: base.tone },
-      { label: '유저 작품 · 해변', img: UGC_IMG.u01 || '', tone: '#2b3a4a' }
+      { label: '프로필', img: c.img, locked: false },
+      { label: '유저 작품 · 해변', img: UGC_IMG.u01, locked: false },
+      { label: '대화 10턴 후 열림', img: UGC_IMG.u05, locked: true },
+      { label: '대화 30턴 후 열림', img: CH[1].img, locked: true },
+      { label: '대화 50턴 후 열림', img: UGC_IMG.u02, locked: true }
     ];
-    const shots = list.map((x, i) => ({ ...x, hasImg: !!x.img, bd: i === this.state.s ? '2px solid #ff3d7f' : '1px solid rgba(255,255,255,0.08)', pick: () => this.setState({ s: i }) }));
+    const shots = list.map((x, i) => ({ ...x, filter: x.locked ? 'blur(6px) brightness(0.7)' : 'none', bd: i === this.state.s ? '2px solid #ff3d7f' : '1px solid rgba(255,255,255,0.08)', pick: () => this.setState({ s: x.locked ? this.state.s : i }) }));
     const shot = shots[this.state.s];
-    return { c, shots, shot };
+    const T = ['소개', '갤러리', '유저 작품'];
+    const tabs = T.map((n) => ({ name: n, on: this.state.tab === n, line: this.state.tab === n ? '#ff3d7f' : 'transparent', color: this.state.tab === n ? '#ffffff' : '#a19db3', pick: () => this.setState({ tab: n }) }));
+    const gallery = [[c.img, '프로필', 0], [UGC_IMG.u01, '해변', 0], [UGC_IMG.u05, '10턴', 1], [CH[1].img, '30턴', 1], [UGC_IMG.u02, '50턴', 1], [UGC_IMG.u03, '70턴', 1], [UGC_IMG.u06, '90턴', 1], [UGC_IMG.u04, '100턴', 1]].map(([img, label, l]) => ({ img, label, filter: l ? 'blur(8px) brightness(0.65)' : 'none' }));
+    const works = [[UGC_IMG.u01, '이미지', 'さくら', '1.2k'], [UGC_IMG.u04, '영상', 'ネオランド', '2.1k'], [UGC_IMG.u05, '애니', 'あめや', '1.5k']].map(([img, kind, by, likes]) => ({ img, kind, by, likes }));
+    const makes = [
+      { title: '이미지', desc: '옷·장소·포즈를 골라서', price: '첫 5장 50%', isNew: false },
+      { title: '미니 망가', desc: '둘의 이야기를 만화로', price: '8컷부터', isNew: false },
+      { title: '영상', desc: '움직이는 그녀를', price: '첫 영상 50%', isNew: false },
+      { title: 'Animaka', desc: '목소리까지 들어간 애니', price: '1분 애니부터', isNew: true }
+    ].map((m) => ({ ...m, bg: m.isNew ? 'linear-gradient(135deg, rgba(255,61,127,0.18) 0%, rgba(111,91,255,0.18) 100%)' : 'rgba(255,255,255,0.04)', bd: m.isNew ? '1px solid rgba(192,77,255,0.6)' : '1px solid rgba(255,255,255,0.08)', priceColor: m.isNew ? '#c4b5fd' : '#ff9cc0' }));
+    const wave = [6, 10, 14, 8, 16, 12, 6, 14, 18, 10, 8, 12, 16, 6, 10, 14, 8, 6];
+    return { c, shots, shot, shotNo: (this.state.s + 1) + ' / ' + list.length, tabs, isIntro: this.state.tab === '소개', isGallery: this.state.tab === '갤러리', isWorks: this.state.tab === '유저 작품', gallery, works, makes, wave };
   }
 }
 </script>

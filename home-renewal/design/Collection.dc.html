@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>테마 모아보기</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#0b0a10}a{text-decoration:none}</style>
+</helmet>
+<div style="min-height: 2000px; background: #0b0a10; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #f3f1fa; display: flex; flex-direction: column">
+  <div style="height: 40px; background: #000000; display: flex; align-items: center; padding: 0 14px; font-size: 11px; color: #c9c1d4">Powered by FANZA キャラチャット</div>
+  <div style="display: flex; flex-wrap: wrap; flex: 1">
+    <div style="flex: 0 0 296px"><dc-import name="Sidebar" active="chars" hint-size="296px,1080px"></dc-import></div>
+    <main style="flex: 999 1 560px; min-width: 0; box-sizing: border-box">
+      <section aria-label="테마 소개" style="position: relative; height: 340px; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.06)">
+        <div style="position: absolute; right: 0; top: 0; bottom: 0; width: 62%; display: flex">
+          <sc-for list="{{hero}}" as="h" hint-placeholder-count="3">
+            <span style="flex: 1; position: relative; overflow: hidden"><img src="{{h}}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center"></span>
+          </sc-for>
+        </div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(90deg, #0b0a10 38%, rgba(11,10,16,0.75) 60%, rgba(11,10,16,0.15) 100%)"></div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,10,16,0) 60%, #0b0a10 100%)"></div>
+        <div style="position: relative; max-width: 1180px; margin: 0 auto; height: 100%; box-sizing: border-box; padding: 28px 32px; display: flex; flex-direction: column; justify-content: center; gap: 12px">
+          <a href="Main.dc.html" style="font-size: 13px; color: #a19db3">← 홈</a>
+          <span style="align-self: flex-start; font-size: 12px; font-weight: 800; color: #ff9cc0; background: rgba(255,61,127,0.14); border-radius: 99px; padding: 5px 12px">#アイドル × #ギャップ萌え</span>
+          <h1 style="margin: 0; font-size: 40px; font-weight: 800; line-height: 1.2; max-width: 560px">무대 위와 무대 뒤가<br>다른 그녀</h1>
+          <p style="margin: 0; font-size: 15px; color: #c9c4da; max-width: 520px; line-height: 1.6">무대 위에선 완벽한 센터. 둘만 있을 땐 무방비해지는 아이돌·방송인·상사들을 모았어요.</p>
+          <div style="display: flex; align-items: center; gap: 12px; margin-top: 4px">
+            <span style="font-size: 13px; color: #a19db3">캐릭터 <b style="color: #f3f1fa">128</b> · 누적 대화 <b style="color: #f3f1fa">4.2M</b></span>
+            <button type="button" onClick="{{toggleFollow}}" style="height: 38px; padding: 0 16px; border-radius: 99px; border: {{followBd}}; background: {{followBg}}; color: #ffffff; font-family: inherit; font-size: 13px; font-weight: 800; cursor: pointer">{{followText}}</button>
+          </div>
+        </div>
+      </section>
+
+      <div style="max-width: 1180px; margin: 0 auto; padding: 24px 32px 80px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap">
+          <div style="display: flex; gap: 6px; flex-wrap: wrap">
+            <sc-for list="{{subs}}" as="sb" hint-placeholder-count="6">
+              <button type="button" onClick="{{sb.pick}}" style="height: 36px; padding: 0 14px; border-radius: 99px; border: {{sb.bd}}; background: {{sb.bg}}; color: #f3f1fa; font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer">{{sb.name}}</button>
+            </sc-for>
+          </div>
+          <div style="display: flex; gap: 4px; background: #16131f; border-radius: 10px; padding: 3px">
+            <sc-for list="{{sorts}}" as="so" hint-placeholder-count="3">
+              <button type="button" onClick="{{so.pick}}" style="height: 32px; padding: 0 12px; border-radius: 8px; border: 0; background: {{so.bg}}; color: {{so.color}}; font-family: inherit; font-size: 13px; font-weight: 800; cursor: pointer">{{so.name}}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 22px 14px">
+          <sc-for list="{{grid}}" as="p" hint-placeholder-count="18">
+            <dc-import name="Card" item="{{p}}" hint-size="100%,330px"></dc-import>
+          </sc-for>
+        </div>
+        <button type="button" style="align-self: center; height: 46px; padding: 0 28px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); background: #16131f; color: #f3f1fa; font-family: inherit; font-size: 14px; font-weight: 800; cursor: pointer">18개 더 보기</button>
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 16px">
+          <span style="font-size: 18px; font-weight: 800">이 테마를 좋아한 사람들이 본 테마</span>
+          <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
+            <sc-for list="{{related}}" as="rl" hint-placeholder-count="4">
+              <a href="Collection.dc.html" style="position: relative; display: block; height: 120px; border-radius: 16px; overflow: hidden; color: #ffffff">
+                <img src="{{rl.img}}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%">
+                <span style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,10,16,0.92) 0%, rgba(11,10,16,0.3) 100%)"></span>
+                <span style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 4px"><span style="font-size: 16px; font-weight: 800">{{rl.name}}</span><span style="font-size: 12px; color: #c9c4da">{{rl.cnt}}</span></span>
+              </a>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2000}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { sub: '전체', sort: '인기순', follow: false }; }
+  renderVals() {
+    const IMG = {c01: '../../home/c01_idol.png', c02: '../../home/c02_idol_secret.png', c03: '../../home/c03_sharehouse.png', c04: '../../home/c04_dorm.png', c05: '../../home/c05_ntr.png', c06: '../../home/c06_tsundere.png', c07: '../../home/c07_konbini.png', c08: '../../home/c08_streamer.png', c09: '../../home/c09_boss.png', c10: '../../home/c10_library.png'};
+    const CH = [
+      { key: 'c01', title: '超人気アイドルの裏の顔', hook: 'ステージでは完璧なセンター。でも楽屋ではプロデューサーのあなたにだけ甘えんぼ。', tags: ['アイドル', 'ギャップ萌え', '甘々'], creator: '工房ミント', likes: '2.4k', chats: '812k', tone: '#4a2a44', creatorTone: '#ff9cc0', isNew: false, type: '', opening: 'あ、プロデューサーさん…今日の私、ちゃんとできてた？' },
+      { key: 'c02', title: 'センターの秘密の恋人', hook: 'ファンには絶対ナイショ。変装して会いにくる、夜だけの恋人。', tags: ['アイドル', '秘密の関係', '純愛'], creator: 'あめや', likes: '1.9k', chats: '640k', tone: '#2f3350', creatorTone: '#93c5fd', isNew: true, type: '', opening: 'しーっ。マスク外すの、あなたの前だけだからね。' },
+      { key: 'c03', title: 'シェアハウスの3人', hook: '家賃半額の条件は「全員と仲良くすること」。今夜は誰の部屋へ？', tags: ['ハーレム', '同居', '現代'], creator: 'ネオランド', likes: '1.6k', chats: '590k', tone: '#3e3328', creatorTone: '#fcd34d', isNew: false, type: 'グループ', opening: 'おかえり〜！ねえ、今日の晩ごはん当番だれだっけ？' },
+      { key: 'c04', title: '女子寮の管理人になったら', hook: '大学の女子寮に新しく来た管理人はあなた。4人の住人は…距離が近すぎる。', tags: ['ハーレム', '大学', 'ラブコメ'], creator: 'みいこ', likes: '1.2k', chats: '410k', tone: '#2c3d3a', creatorTone: '#6ee7b7', isNew: true, type: 'グループ', opening: '管理人さん、廊下の電気また切れてる〜！' },
+      { key: 'c05', title: '彼氏持ちの先輩', hook: '彼氏がいるのに、なぜかあなたにだけ相談してくる。今夜も既読がつかない。', tags: ['NTR', '先輩', '背徳'], creator: 'あっくん', likes: '3.1k', chats: '1.1M', tone: '#3a2030', creatorTone: '#f9a8d4', isNew: false, type: 'NTR', opening: '…ごめんね、こんな時間に。ちょっとだけ話、聞いてくれる？' },
+      { key: 'c06', title: '幼なじみのりん', hook: 'いつも素っ気ないのに、二人きりになると急に黙りこむ。…なんで顔赤いの？', tags: ['幼なじみ', 'ツンデレ', '純愛'], creator: '水彩', likes: '2.0k', chats: '720k', tone: '#4a2626', creatorTone: '#fca5a5', isNew: false, type: '', opening: 'べ、別にあんたのために作ったんじゃないから！' },
+      { key: 'c07', title: '深夜コンビニのあかね', hook: '夜勤のあの店員さん。閉店後のバックヤードでだけ見せる素顔。', tags: ['現代', '日常', '年上'], creator: '工房ミント', likes: '980', chats: '305k', tone: '#2b3a4a', creatorTone: '#ff9cc0', isNew: true, type: '', opening: 'いらっしゃいませ〜…って、また来たの？ふふ。' },
+      { key: 'c08', title: '配信切り忘れたゆめ', hook: '人気配信者の中の人。配信を切り忘れたあの夜から、二人の関係が変わった。', tags: ['配信者', 'ギャップ萌え', '現代'], creator: 'ネオランド', likes: '1.4k', chats: '502k', tone: '#352a4d', creatorTone: '#fcd34d', isNew: true, type: '', opening: 'え、待って…今のマイク入ってた！？' },
+      { key: 'c09', title: 'クールな上司・れいか', hook: '会社では氷の上司。二次会のあと、ネクタイをゆるめて「…帰らないで」。', tags: ['上司', 'ギャップ萌え', '大人'], creator: 'あめや', likes: '2.2k', chats: '760k', tone: '#262a33', creatorTone: '#93c5fd', isNew: false, type: '', opening: '報告書、まだ？…いいわ。今日はもう、仕事の話はなし。' },
+      { key: 'c10', title: '図書館のしおりさん', hook: '大学院の図書館で、いつも隣に座るおとなしい彼女。誰も知らない一面がある。', tags: ['純愛', 'ギャップ萌え', '眼鏡'], creator: '水彩', likes: '870', chats: '260k', tone: '#3a3328', creatorTone: '#fca5a5', isNew: true, type: '', opening: '…あの、その本。私も好きなんです。' }
+    ].map((c) => ({ ...c, img: IMG[c.key] || '' }));
+
+    const by = (k) => CH.find((c) => c.key === k);
+    const s = this.state;
+    const hero = ['c01', 'c08', 'c09'].map((k) => by(k).img);
+    const subs = ['전체', 'アイドル', '配信者', '上司', '眼鏡', '純愛'].map((n) => ({ name: n === '전체' ? n : '#' + n, bg: s.sub === n ? '#3a1428' : '#16131f', bd: s.sub === n ? '1px solid #ff3d7f' : '1px solid rgba(255,255,255,0.08)', pick: () => this.setState({ sub: n }) }));
+    const sorts = ['인기순', '신작순', '대화 많은 순'].map((n) => ({ name: n, bg: s.sort === n ? '#ff3d7f' : 'transparent', color: s.sort === n ? '#ffffff' : '#c9c4da', pick: () => this.setState({ sort: n }) }));
+    const keys = ['c01', 'c02', 'c09', 'c08', 'c10', 'c06', 'c07', 'c05', 'c03', 'c04', 'c01', 'c09', 'c02', 'c08', 'c06', 'c10', 'c07', 'c05'];
+    const grid = keys.map((k, i) => ({ ...by(k), isNew: i % 5 === 1 }));
+    const related = [['ハーレム · 함께 사는 그녀들', '86명', 'c03'], ['NTR · 그녀에게는 그가', '214명', 'c05'], ['幼なじみ · ツンデレ', '97명', 'c06'], ['深夜 · 현대 일상', '143명', 'c07']].map(([name, cnt, k]) => ({ name, cnt, img: by(k).img }));
+    return { hero, subs, sorts, grid, related, followText: s.follow ? '테마 팔로우 중' : '+ 테마 팔로우', followBg: s.follow ? 'rgba(255,255,255,0.1)' : '#ff3d7f', followBd: s.follow ? '1px solid rgba(255,255,255,0.2)' : '0', toggleFollow: () => this.setState({ follow: !s.follow }) };
+  }
+}
+</script>
+</body>
+</html>

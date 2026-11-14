@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>body{margin:0}.rail{scrollbar-width:none}.rail::-webkit-scrollbar{display:none}</style>
 </helmet>
-<div style="position: relative; width: 390px; height: 2400px; overflow: hidden; background: #0f0d17; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #f3f1fa">
+<div style="position: relative; width: 390px; height: 2400px; overflow: hidden; background: radial-gradient(500px 300px at 80% -60px, rgba(192,77,255,0.20), rgba(192,77,255,0) 70%), #0b0a10; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #f3f1fa">
   <header style="height: 56px; padding: 0 16px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.06)">
     <img src="../../images/fanza-app-icon-c4.png" alt="" style="width: 30px; height: 30px; border-radius: 9px">
     <span style="font-size: 20px; font-weight: 800">stipop</span>
@@ -162,7 +162,7 @@ class Component extends DCLogic {
       { title: '영상', short: '움직이는 캐릭터', badge: '첫 영상 50%', badgeBg: '#ff3d7f', tone: '#2b3a4a', img: UGC_IMG.u04 || by('c08').img },
       { title: 'Animaka 애니', short: '목소리까지 들어간 애니', badge: 'NEW', badgeBg: '#8b5cf6', tone: '#352a4d', img: UGC_IMG.u05 || by('c09').img }
     ].map((m) => ({ ...m, hasImg: !!m.img }));
-    const tags = ['すべて', 'アイドル', 'ハーレム', 'NTR', 'ギャップ萌え', 'ツンデレ', '幼なじみ', '純愛'].map((n, i) => ({ name: n, bg: i === 0 ? '#3a1428' : '#1a1726', bd: i === 0 ? '1px solid #ff3d7f' : '1px solid rgba(255,255,255,0.08)' }));
+    const tags = ['すべて', 'アイドル', 'ハーレム', 'NTR', 'ギャップ萌え', 'ツンデレ', '幼なじみ', '純愛'].map((n, i) => ({ name: n, bg: i === 0 ? '#3a1428' : '#16131f', bd: i === 0 ? '1px solid #ff3d7f' : '1px solid rgba(255,255,255,0.08)' }));
     const picks = ['c06', 'c01', 'c09', 'c08'].map(by);
     const ranked = ['c05', 'c01', 'c09', 'c06', 'c02'].map((k, i) => ({ ...by(k), rank: i + 1, move: ['–', '▲2', '▲1', '▼2', 'NEW'][i] }));
     const ugc = [['u01', '이미지', 'c01'], ['u02', '망가', 'c06'], ['u03', '이미지', 'c07'], ['u04', '영상', 'c08'], ['u05', '애니', 'c09'], ['u06', '이미지', 'c10']].map(([k, kind, f]) => { const img = UGC_IMG[k] || by(f).img; return { kind, img, hasImg: !!img, tone: by(f).tone }; });
