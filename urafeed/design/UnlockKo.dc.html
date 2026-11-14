@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>잠긴 포스트 잠금 해제</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#0b0a10}a{text-decoration:none;color:inherit}button{font-family:inherit;cursor:pointer}</style>
+</helmet>
+<div style="width: 1440px; height: 1000px; position: relative; overflow: hidden; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', sans-serif; color: #f3f1fa; background: #0b0a10">
+  <div style="position: absolute; inset: 0; display: flex; filter: blur(2px); opacity: 0.35">
+    <div style="flex: 0 0 296px"><dc-import name="SidebarKo" active="ura" hint-size="296px,1080px"></dc-import></div>
+  </div>
+  <div style="position: absolute; inset: 0; background: rgba(5,4,9,0.74)"></div>
+  <div role="dialog" aria-label="잠금 해제" style="position: absolute; left: 50%; top: 60px; transform: translateX(-50%); width: 480px; border-radius: 24px; background: #120f19; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 30px 80px rgba(0,0,0,0.6); overflow: hidden">
+    <div style="position: relative; aspect-ratio: 4 / 5; max-height: 560px; background: #1c1726; overflow: hidden">
+      <img src="../images/p04.jpg" alt="" style="position: absolute; inset: -24px; width: calc(100% + 48px); height: calc(100% + 48px); object-fit: cover; object-position: center 30%; filter: {{mFilter}}">
+      <a href="MainKo.dc.html" aria-label="닫기" style="position: absolute; right: 14px; top: 14px; width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,0.5); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 18px">✕</a>
+      <span style="position: absolute; left: 14px; bottom: 14px; display: flex; align-items: center; gap: 5px; height: 26px; padding: 0 9px; border-radius: 8px; background: rgba(0,0,0,0.6); font-size: 12px; font-weight: 800"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>0:15</span>
+      <sc-if value="{{locked}}" hint-placeholder-val="{{ true }}">
+        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center">
+          <span style="width: 72px; height: 72px; border-radius: 50%; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.35); display: flex; align-items: center; justify-content: center; color: #fff"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></span>
+          <span style="font-size: 15px; font-weight: 800">15초 영상 · 잠긴 포스트</span>
+        </div>
+      </sc-if>
+      <sc-if value="{{opened}}" hint-placeholder-val="{{ false }}">
+        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center">
+          <span style="width: 76px; height: 76px; border-radius: 50%; background: rgba(0,0,0,0.45); border: 1px solid rgba(255,255,255,0.4); display: flex; align-items: center; justify-content: center; color: #fff"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+        </div>
+        <span style="position: absolute; left: 50%; top: 18px; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 16px; border-radius: 99px; background: rgba(22,19,31,0.92); border: 1px solid rgba(255,61,127,0.5); font-size: 13px; font-weight: 800; white-space: nowrap">잠금 해제 완료 · 언제든 다시 볼 수 있어요</span>
+      </sc-if>
+    </div>
+    <div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 14px">
+      <div style="display: flex; align-items: center; gap: 10px">
+        <img src="../images/a11.jpg" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover">
+        <div style="display: flex; flex-direction: column"><span style="display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 800">리오의 속마음<span style="font-size: 10px; font-weight: 800; color: #ffffff; background: linear-gradient(95deg, #ff3d7f 0%, #c04dff 100%); border-radius: 5px; padding: 1px 5px; line-height: 16px">뒷</span></span><span style="font-size: 12px; color: #8f8aa3">@rio_honne</span></div>
+      </div>
+      <p style="margin: 0; font-size: 15px; line-height: 1.7">촬영 아닌 아침의 호텔. 15초만, 진짜 리오.</p>
+      <sc-if value="{{locked}}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); font-size: 13px">
+            <span style="color: #a19db3">보유 포인트</span>
+            <span style="display: flex; align-items: center; gap: 10px"><b>7pt</b><span style="color: #ffc847; font-weight: 800">+ 보너스 933pt</span></span>
+          </div>
+          <button type="button" onClick="{{unlock}}" style="height: 52px; border-radius: 14px; border: 0; background: linear-gradient(95deg, #ff3d7f 0%, #c04dff 55%, #6f5bff 100%); color: #ffffff; font-size: 16px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>30pt로 보기</button>
+          <a href="ProfileKo.dc.html" style="height: 46px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.18); color: #f3f1fa; font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center">팔로우하고 팔로워 한정 포스트도 보기</a>
+          <span style="font-size: 12px; color: #8f8aa3; text-align: center">보너스 포인트부터 먼저 사용돼요 · 한 번 열면 계속 볼 수 있어요</span>
+        </div>
+      </sc-if>
+      <sc-if value="{{opened}}" hint-placeholder-val="{{ false }}">
+        <a href="#" style="height: 52px; border-radius: 14px; background: #ffffff; color: #17151f; font-size: 15px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v11H8l-4 3z"/><path d="M8 10.5h8M8 13.5h5"/></svg>이 영상 얘기, 리오한테 DM으로 물어보기</a>
+      </sc-if>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview": {"width": 1440, "height": 1000}}'>
+class Component extends DCLogic {
+  state = {"opened": false};
+  renderVals() {
+    const opened = this.state.opened;
+    return { locked: !opened, opened, mFilter: opened ? 'none' : 'blur(28px) saturate(1.15) brightness(0.8)', unlock: () => this.setState({ opened: true }) };
+  }
+}
+</script>
+</body>
+</html>
