@@ -24,9 +24,14 @@ input::placeholder{color:#8a8296}
       <dc-import name="Sidebar" active="chars" hint-size="296px,1080px"></dc-import>
     </div>
     <main style="flex: 999 1 560px; min-width: 0; padding: 0 32px 80px; box-sizing: border-box">
-      <div style="max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
+      <div style="max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px">
 
-        <div style="position: sticky; top: 0; z-index: 5; background: rgba(11,10,16,0.92); backdrop-filter: blur(12px); padding: 18px 0 14px; display: flex; flex-direction: column; gap: 14px; border-bottom: 1px solid rgba(255,255,255,0.08)">
+        <div style="padding-top: 16px"><a href="#" style="display: flex; align-items: center; gap: 14px; padding: 10px 16px; border-radius: 14px; background: #2a2010; border: 1px solid rgba(255,200,71,0.35); color: #ffffff; text-decoration: none">
+              <span style="font-size: 12px; font-weight: 800; color: #17151f; background: #ffc847; border-radius: 99px; padding: 4px 10px; flex: none">콘테스트</span>
+              <span style="flex: 1; min-width: 0; font-size: 14px; font-weight: 700">캐릭터를 만들면 대화될 때마다 포인트가 쌓여요 · 이번 달 1위 50,000pt</span>
+              <span style="font-size: 13px; font-weight: 800; color: #ffc847">참가하기</span>
+            </a></div>
+        <div style="position: sticky; top: 0; z-index: 5; background: rgba(11,10,16,0.92); backdrop-filter: blur(12px); padding: 12px 0 12px; display: flex; flex-direction: column; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.08)">
           <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap">
             <h1 style="margin: 0; font-size: 24px; font-weight: 800">캐릭터</h1>
             <label for="q" style="position: absolute; width: 1px; height: 1px; overflow: hidden">캐릭터 검색</label>
@@ -44,18 +49,14 @@ input::placeholder{color:#8a8296}
         </div>
 
         <sc-if value="{{isHome}}" hint-placeholder-val="{{ true }}">
-          <div style="display: flex; flex-direction: column; gap: 40px">
-            <a href="#" style="display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-radius: 16px; background: #2a2010; border: 1px solid rgba(255,200,71,0.35); color: #ffffff; text-decoration: none">
-              <span style="font-size: 12px; font-weight: 800; color: #17151f; background: #ffc847; border-radius: 99px; padding: 4px 10px; flex: none">콘테스트</span>
-              <span style="flex: 1; min-width: 0; font-size: 14px; font-weight: 700">캐릭터를 만들면 대화될 때마다 포인트가 쌓여요 · 이번 달 1위 50,000pt</span>
-              <span style="font-size: 13px; font-weight: 800; color: #ffc847">참가하기</span>
-            </a>
+          <div style="display: flex; flex-direction: column; gap: 32px">
 
-            <section aria-label="인기 태그" style="display: flex; flex-direction: column; gap: 12px">
-              <h2 style="margin: 0; font-size: 20px; font-weight: 800">지금 인기 태그</h2>
-              <div style="display: flex; gap: 8px; flex-wrap: wrap">
+
+            <section aria-label="인기 태그" style="display: flex; flex-direction: column; gap: 0">
+              <div class="rail" style="display: flex; gap: 8px; overflow-x: auto; align-items: center">
+                <span style="flex: none; font-size: 12px; font-weight: 800; color: #a19db3">인기 태그</span>
                 <sc-for list="{{hotTags}}" as="ht" hint-placeholder-count="9">
-                  <button type="button" onClick="{{ht.pick}}" style="display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 16px; border-radius: 99px; border: 1px solid rgba(255,255,255,0.08); background: #16131f; color: #f3f1fa; font-family: inherit; font-size: 14px; font-weight: 800">#{{ht.name}}<span style="font-size: 11px; font-weight: 500; color: #a19db3">{{ht.cnt}}</span></button>
+                  <button type="button" onClick="{{ht.pick}}" style="flex: none; display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 16px; border-radius: 99px; border: 1px solid rgba(255,255,255,0.08); background: #16131f; color: #f3f1fa; font-family: inherit; font-size: 14px; font-weight: 800">#{{ht.name}}<span style="font-size: 11px; font-weight: 500; color: #a19db3">{{ht.cnt}}</span></button>
                 </sc-for>
               </div>
             </section>
