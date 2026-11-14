@@ -211,7 +211,7 @@ input::placeholder{color:#8a8296}
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { tab: '홈', range: '24시간', rtype: '전체', per: '일간', tag: 'アイドル' }; }
   renderVals() {
-    const IMG = {};
+    const IMG = {c01: '../../home/c01_idol.png', c02: '../../home/c02_idol_secret.png', c03: '../../home/c03_sharehouse.png', c04: '../../home/c04_dorm.png', c05: '../../home/c05_ntr.png', c06: '../../home/c06_tsundere.png', c07: '../../home/c07_konbini.png', c08: '../../home/c08_streamer.png', c09: '../../home/c09_boss.png', c10: '../../home/c10_library.png'};
     const CH = [
       { key: 'c01', title: '超人気アイドルの裏の顔', hook: 'ステージでは完璧なセンター。でも楽屋ではプロデューサーのあなたにだけ甘えんぼ。', tags: ['アイドル', 'ギャップ萌え', '甘々'], creator: '工房ミント', likes: '2.4k', chats: '812k', tone: '#4a2a44', creatorTone: '#ff9cc0', isNew: false, type: '', opening: 'あ、プロデューサーさん…今日の私、ちゃんとできてた？' },
       { key: 'c02', title: 'センターの秘密の恋人', hook: 'ファンには絶対ナイショ。変装して会いにくる、夜だけの恋人。', tags: ['アイドル', '秘密の関係', '純愛'], creator: 'あめや', likes: '1.9k', chats: '640k', tone: '#2f3350', creatorTone: '#93c5fd', isNew: true, type: '', opening: 'しーっ。マスク外すの、あなたの前だけだからね。' },

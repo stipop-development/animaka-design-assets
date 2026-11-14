@@ -65,7 +65,8 @@
 <script type="text/x-dc" data-dc-script data-props='{"item":{"editor":null},"hover":{"editor":"boolean","default":false},"$preview":{"width":200,"height":420}}'>
 class Component extends DCLogic {
   renderVals() {
-    const d = { title: '超人気アイドルの裏の顔', hook: 'ステージでは完璧なセンター。でも楽屋ではプロデューサーのあなたにだけ甘えんぼ。', tags: ['アイドル', 'ギャップ萌え', '甘々'], creator: '工房ミント', likes: '2.4k', chats: '812k', tone: '#4a2a44', creatorTone: '#ff9cc0', initial: 'ひ', isNew: true, type: '', img: '', rank: 0, opening: 'あ、プロデューサーさん…今日の私、ちゃんとできてた？' };
+    const d = { title: '超人気アイドルの裏の顔', hook: 'ステージでは完璧なセンター。でも楽屋ではプロデューサーのあなたにだけ甘えんぼ。', tags: ['アイドル', 'ギャップ萌え', '甘々'], creator: '工房ミント', likes: '2.4k', chats: '812k', tone: '#4a2a44', creatorTone: '#ff9cc0', initial: 'ひ', isNew: true, type: '', rank: 0, opening: 'あ、プロデューサーさん…今日の私、ちゃんとできてた？' };
+    d.img = '../../home/c01_idol.png';
     const it0 = this.props.item || d;
     const it = { ...it0,
       hasImg: !!it0.img, hasType: !!it0.type, hasRank: !!it0.rank,
