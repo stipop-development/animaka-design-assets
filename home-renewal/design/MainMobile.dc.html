@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>메인 홈 모바일</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>body{margin:0}.rail{scrollbar-width:none}.rail::-webkit-scrollbar{display:none}</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 2400px; overflow: hidden; background: #0f0d17; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #f3f1fa">
+  <header style="height: 56px; padding: 0 16px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.06)">
+    <img src="../../images/fanza-app-icon-c4.png" alt="" style="width: 30px; height: 30px; border-radius: 9px">
+    <span style="font-size: 20px; font-weight: 800">stipop</span>
+    <span style="margin-left: auto; font-size: 12px; font-weight: 800; color: #17151f; background: #ffc847; border-radius: 99px; padding: 5px 10px">4,517 pt</span>
+    <button type="button" aria-label="검색" style="width: 44px; height: 44px; border: 0; background: transparent; color: #f3f1fa; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+  </header>
+  <div style="display: flex; flex-direction: column; gap: 28px; padding: 14px 0 100px">
+    <div class="rail" style="display: flex; gap: 10px; overflow-x: auto; padding: 0 16px">
+      <sc-for list="{{banners}}" as="b" hint-placeholder-count="3">
+        <a href="#" style="position: relative; flex: none; width: 320px; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; background: {{b.bg}}; color: #ffffff; text-decoration: none">
+          <sc-if value="{{b.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{b.img}}" alt="{{b.title}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></sc-if>
+          <sc-if value="{{b.noImg}}" hint-placeholder-val="{{ true }}">
+            <span style="position: absolute; left: 18px; right: 18px; bottom: 18px; display: flex; flex-direction: column; gap: 6px">
+              <span style="align-self: flex-start; font-size: 11px; font-weight: 800; background: rgba(0,0,0,0.35); border-radius: 99px; padding: 3px 9px">{{b.kicker}}</span>
+              <span style="font-size: 22px; font-weight: 800; line-height: 1.25">{{b.title}}</span>
+            </span>
+          </sc-if>
+        </a>
+      </sc-for>
+    </div>
+
+    <section style="display: flex; flex-direction: column; gap: 12px; padding: 0 16px">
+      <h2 style="margin: 0; font-size: 18px; font-weight: 800">이어서 대화하기</h2>
+      <div class="rail" style="display: flex; gap: 14px; overflow-x: auto">
+        <sc-for list="{{recent}}" as="r" hint-placeholder-count="5">
+          <a href="#" style="flex: none; width: 64px; display: flex; flex-direction: column; align-items: center; gap: 6px; color: #f3f1fa; text-decoration: none">
+            <span style="position: relative; width: 60px; height: 60px; border-radius: 50%; overflow: hidden; background: {{r.tone}}; border: 2px solid {{r.ring}}">
+              <sc-if value="{{r.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{r.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center"></sc-if>
+            </span>
+            <span style="width: 64px; font-size: 11px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.name}}</span>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 12px; padding: 0 16px">
+      <h2 style="margin: 0; font-size: 18px; font-weight: 800">지금 바로 만들기</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+        <sc-for list="{{makers}}" as="m" hint-placeholder-count="4">
+          <a href="#" style="position: relative; display: block; aspect-ratio: 1 / 1; border-radius: 18px; overflow: hidden; background: {{m.tone}}; color: #ffffff; text-decoration: none">
+            <sc-if value="{{m.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{m.img}}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center"></sc-if>
+            <span style="position: absolute; top: 10px; left: 10px; font-size: 10px; font-weight: 800; background: {{m.badgeBg}}; border-radius: 99px; padding: 3px 8px">{{m.badge}}</span>
+            <span style="position: absolute; left: 0; right: 0; bottom: 0; padding: 36px 12px 12px; background: linear-gradient(180deg, rgba(15,13,23,0) 0%, rgba(15,13,23,0.9) 70%); display: flex; flex-direction: column; gap: 2px">
+              <span style="font-size: 16px; font-weight: 800">{{m.title}}</span>
+              <span style="font-size: 11px; color: #d9d6e6">{{m.short}}</span>
+            </span>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 0 16px">
+        <h2 style="margin: 0; font-size: 18px; font-weight: 800">당신을 위한 추천</h2>
+        <a href="CharactersMobile.dc.html" style="font-size: 12px; color: #a19db3; text-decoration: none">더 보기</a>
+      </div>
+      <div class="rail" style="display: flex; gap: 8px; overflow-x: auto; padding: 0 16px">
+        <sc-for list="{{tags}}" as="t" hint-placeholder-count="8">
+          <span style="flex: none; height: 34px; display: flex; align-items: center; padding: 0 12px; border-radius: 99px; background: {{t.bg}}; border: {{t.bd}}; font-size: 13px; font-weight: 700">#{{t.name}}</span>
+        </sc-for>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 10px; padding: 0 16px">
+        <sc-for list="{{picks}}" as="p" hint-placeholder-count="4">
+          <dc-import name="Card" item="{{p}}" hint-size="100%,330px"></dc-import>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 0 16px">
+        <h2 style="margin: 0; font-size: 18px; font-weight: 800">오늘의 랭킹</h2>
+        <a href="CharactersMobile.dc.html" style="font-size: 12px; color: #a19db3; text-decoration: none">전체</a>
+      </div>
+      <div class="rail" style="display: grid; grid-auto-flow: column; grid-auto-columns: 148px; gap: 10px; overflow-x: auto; padding: 0 16px">
+        <sc-for list="{{ranked}}" as="p" hint-placeholder-count="5">
+          <dc-import name="Card" item="{{p}}" hint-size="148px,300px"></dc-import>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 12px; padding: 0 16px">
+      <h2 style="margin: 0; font-size: 18px; font-weight: 800">모두의 작품</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px">
+        <sc-for list="{{ugc}}" as="u" hint-placeholder-count="6">
+          <span style="position: relative; aspect-ratio: 1 / 1; border-radius: 10px; overflow: hidden; background: {{u.tone}}">
+            <sc-if value="{{u.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{u.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center"></sc-if>
+            <span style="position: absolute; left: 6px; top: 6px; font-size: 9px; font-weight: 800; background: rgba(15,13,23,0.78); border-radius: 5px; padding: 2px 5px">{{u.kind}}</span>
+          </span>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="margin: 0 16px; border-radius: 18px; background: #2a2010; border: 1px solid rgba(255,200,71,0.35); padding: 16px; display: flex; flex-direction: column; gap: 8px">
+      <span style="align-self: flex-start; font-size: 11px; font-weight: 800; color: #17151f; background: #ffc847; border-radius: 99px; padding: 3px 9px">크리에이터 콘테스트</span>
+      <span style="font-size: 18px; font-weight: 800; line-height: 1.35">내 캐릭터가 대화될 때마다 포인트가 쌓여요</span>
+      <a href="#" style="margin-top: 4px; display: flex; align-items: center; justify-content: center; height: 46px; border-radius: 12px; background: linear-gradient(95deg, #ff3d7f 0%, #c04dff 55%, #6f5bff 100%); color: #ffffff; font-size: 15px; font-weight: 800; text-decoration: none">캐릭터 만들고 참가하기</a>
+    </section>
+  </div>
+  <nav aria-label="하단 메뉴" style="position: absolute; left: 0; right: 0; bottom: 0; height: 72px; background: rgba(19,17,28,0.96); border-top: 1px solid rgba(255,255,255,0.08); display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: center">
+    <a href="MainMobile.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; color: #ffffff; font-size: 11px; font-weight: 700; text-decoration: none">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>홈
+    </a>
+    <a href="CharactersMobile.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; color: #a19db3; font-size: 11px; font-weight: 700; text-decoration: none">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></svg>캐릭터
+    </a>
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 4px; color: #ffffff; font-size: 11px; font-weight: 700; text-decoration: none">
+      <span style="width: 44px; height: 32px; border-radius: 12px; background: linear-gradient(95deg, #ff3d7f 0%, #c04dff 55%, #6f5bff 100%); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>만들기
+    </a>
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 4px; color: #a19db3; font-size: 11px; font-weight: 700; text-decoration: none">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 21l2.2-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>채팅
+    </a>
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 4px; color: #a19db3; font-size: 11px; font-weight: 700; text-decoration: none">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>마이
+    </a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":2400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const IMG = {};
+    const CH = [
+      { key: 'c01', title: '超人気アイドルの裏の顔', hook: 'ステージでは完璧なセンター。でも楽屋ではプロデューサーのあなたにだけ甘えんぼ。', tags: ['アイドル', 'ギャップ萌え', '甘々'], creator: '工房ミント', likes: '2.4k', chats: '812k', tone: '#4a2a44', creatorTone: '#ff9cc0', isNew: false, type: '', opening: 'あ、プロデューサーさん…今日の私、ちゃんとできてた？' },
+      { key: 'c02', title: 'センターの秘密の恋人', hook: 'ファンには絶対ナイショ。変装して会いにくる、夜だけの恋人。', tags: ['アイドル', '秘密の関係', '純愛'], creator: 'あめや', likes: '1.9k', chats: '640k', tone: '#2f3350', creatorTone: '#93c5fd', isNew: true, type: '', opening: 'しーっ。マスク外すの、あなたの前だけだからね。' },
+      { key: 'c03', title: 'シェアハウスの3人', hook: '家賃半額の条件は「全員と仲良くすること」。今夜は誰の部屋へ？', tags: ['ハーレム', '同居', '現代'], creator: 'ネオランド', likes: '1.6k', chats: '590k', tone: '#3e3328', creatorTone: '#fcd34d', isNew: false, type: 'グループ', opening: 'おかえり〜！ねえ、今日の晩ごはん当番だれだっけ？' },
+      { key: 'c04', title: '女子寮の管理人になったら', hook: '大学の女子寮に新しく来た管理人はあなた。4人の住人は…距離が近すぎる。', tags: ['ハーレム', '大学', 'ラブコメ'], creator: 'みいこ', likes: '1.2k', chats: '410k', tone: '#2c3d3a', creatorTone: '#6ee7b7', isNew: true, type: 'グループ', opening: '管理人さん、廊下の電気また切れてる〜！' },
+      { key: 'c05', title: '彼氏持ちの先輩', hook: '彼氏がいるのに、なぜかあなたにだけ相談してくる。今夜も既読がつかない。', tags: ['NTR', '先輩', '背徳'], creator: 'あっくん', likes: '3.1k', chats: '1.1M', tone: '#3a2030', creatorTone: '#f9a8d4', isNew: false, type: 'NTR', opening: '…ごめんね、こんな時間に。ちょっとだけ話、聞いてくれる？' },
+      { key: 'c06', title: '幼なじみのりん', hook: 'いつも素っ気ないのに、二人きりになると急に黙りこむ。…なんで顔赤いの？', tags: ['幼なじみ', 'ツンデレ', '純愛'], creator: '水彩', likes: '2.0k', chats: '720k', tone: '#4a2626', creatorTone: '#fca5a5', isNew: false, type: '', opening: 'べ、別にあんたのために作ったんじゃないから！' },
+      { key: 'c07', title: '深夜コンビニのあかね', hook: '夜勤のあの店員さん。閉店後のバックヤードでだけ見せる素顔。', tags: ['現代', '日常', '年上'], creator: '工房ミント', likes: '980', chats: '305k', tone: '#2b3a4a', creatorTone: '#ff9cc0', isNew: true, type: '', opening: 'いらっしゃいませ〜…って、また来たの？ふふ。' },
+      { key: 'c08', title: '配信切り忘れたゆめ', hook: '人気配信者の中の人。配信を切り忘れたあの夜から、二人の関係が変わった。', tags: ['配信者', 'ギャップ萌え', '現代'], creator: 'ネオランド', likes: '1.4k', chats: '502k', tone: '#352a4d', creatorTone: '#fcd34d', isNew: true, type: '', opening: 'え、待って…今のマイク入ってた！？' },
+      { key: 'c09', title: 'クールな上司・れいか', hook: '会社では氷の上司。二次会のあと、ネクタイをゆるめて「…帰らないで」。', tags: ['上司', 'ギャップ萌え', '大人'], creator: 'あめや', likes: '2.2k', chats: '760k', tone: '#262a33', creatorTone: '#93c5fd', isNew: false, type: '', opening: '報告書、まだ？…いいわ。今日はもう、仕事の話はなし。' },
+      { key: 'c10', title: '図書館のしおりさん', hook: '大学院の図書館で、いつも隣に座るおとなしい彼女。誰も知らない一面がある。', tags: ['純愛', 'ギャップ萌え', '眼鏡'], creator: '水彩', likes: '870', chats: '260k', tone: '#3a3328', creatorTone: '#fca5a5', isNew: true, type: '', opening: '…あの、その本。私も好きなんです。' }
+    ].map((c) => ({ ...c, img: IMG[c.key] || '' }));
+
+    const UGC_IMG = {};
+    const BAN_IMG = {};
+    const by = (k) => CH.find((c) => c.key === k);
+    const banners = [
+      { key: 'b01', kicker: 'NEW · Animaka', title: '한 줄 아이디어로, 나만의 애니를', bg: '#3b1a4f' },
+      { key: 'b02', kicker: '크리에이터 콘테스트', title: '내 캐릭터로 50,000pt 받기', bg: '#3d2c0c' },
+      { key: 'b03', kicker: '새 기능', title: '이제 목소리로 대화해요', bg: '#1d2350' }
+    ].map((x) => ({ ...x, img: BAN_IMG[x.key] || '', hasImg: !!BAN_IMG[x.key], noImg: !BAN_IMG[x.key] }));
+    const recent = ['c06', 'c05', 'c09', 'c01', 'c08'].map((k, i) => { const c = by(k); return { name: c.title, tone: c.tone, img: c.img, hasImg: !!c.img, ring: i < 2 ? '#ff3d7f' : 'rgba(255,255,255,0.12)' }; });
+    const makers = [
+      { title: '이미지', short: '원하는 옷·장소·포즈로', badge: '첫 5장 50%', badgeBg: '#ff3d7f', tone: '#3a2a44', img: UGC_IMG.u01 || by('c01').img },
+      { title: '미니 망가', short: '한 줄로 만화 완성', badge: 'NEW', badgeBg: '#8b5cf6', tone: '#2f2a45', img: UGC_IMG.u02 || by('c06').img },
+      { title: '영상', short: '움직이는 캐릭터', badge: '첫 영상 50%', badgeBg: '#ff3d7f', tone: '#2b3a4a', img: UGC_IMG.u04 || by('c08').img },
+      { title: 'Animaka 애니', short: '목소리까지 들어간 애니', badge: 'NEW', badgeBg: '#8b5cf6', tone: '#352a4d', img: UGC_IMG.u05 || by('c09').img }
+    ].map((m) => ({ ...m, hasImg: !!m.img }));
+    const tags = ['すべて', 'アイドル', 'ハーレム', 'NTR', 'ギャップ萌え', 'ツンデレ', '幼なじみ', '純愛'].map((n, i) => ({ name: n, bg: i === 0 ? '#3a1428' : '#1a1726', bd: i === 0 ? '1px solid #ff3d7f' : '1px solid rgba(255,255,255,0.08)' }));
+    const picks = ['c06', 'c01', 'c09', 'c08'].map(by);
+    const ranked = ['c05', 'c01', 'c09', 'c06', 'c02'].map((k, i) => ({ ...by(k), rank: i + 1, move: ['–', '▲2', '▲1', '▼2', 'NEW'][i] }));
+    const ugc = [['u01', '이미지', 'c01'], ['u02', '망가', 'c06'], ['u03', '이미지', 'c07'], ['u04', '영상', 'c08'], ['u05', '애니', 'c09'], ['u06', '이미지', 'c10']].map(([k, kind, f]) => { const img = UGC_IMG[k] || by(f).img; return { kind, img, hasImg: !!img, tone: by(f).tone }; });
+    const nav = [
+      { name: '홈', mark: 'H', href: 'MainMobile.dc.html', color: '#ffffff', size: '28px', r: '8px', bg: 'transparent' },
+      { name: '캐릭터', mark: 'C', href: 'CharactersMobile.dc.html', color: '#a19db3', size: '28px', r: '8px', bg: 'transparent' },
+      { name: '만들기', mark: '+', href: '#', color: '#ffffff', size: '40px', r: '14px', bg: 'linear-gradient(95deg, #ff3d7f 0%, #c04dff 55%, #6f5bff 100%)' },
+      { name: '채팅', mark: 'T', href: '#', color: '#a19db3', size: '28px', r: '8px', bg: 'transparent' },
+      { name: '마이', mark: 'M', href: '#', color: '#a19db3', size: '28px', r: '8px', bg: 'transparent' }
+    ];
+    return { banners, recent, makers, tags, picks, ranked, ugc };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>캐릭터 상세</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div style="width: 1440px; height: 1000px; background: rgba(5,4,9,0.82); display: flex; align-items: center; justify-content: center; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #f3f1fa">
+  <div role="dialog" aria-label="{{c.title}}" style="position: relative; width: 920px; max-height: 900px; box-sizing: border-box; background: #1a1726; border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 24px; display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 24px">
+    <a href="Characters.dc.html" aria-label="닫기" style="position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border-radius: 50%; background: #231f33; color: #f3f1fa; display: flex; align-items: center; justify-content: center">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </a>
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <div style="position: relative; width: 100%; aspect-ratio: 3 / 4; border-radius: 18px; overflow: hidden; background: {{shot.tone}}">
+        <sc-if value="{{shot.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{shot.img}}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center"></sc-if>
+        <span style="position: absolute; left: 10px; bottom: 10px; font-size: 11px; font-weight: 800; background: rgba(15,13,23,0.78); color: #ffffff; border-radius: 6px; padding: 3px 8px">{{shot.label}}</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+        <sc-for list="{{shots}}" as="sh" hint-placeholder-count="4">
+          <button type="button" aria-label="{{sh.label}}" onClick="{{sh.pick}}" style="position: relative; aspect-ratio: 1 / 1; border-radius: 10px; overflow: hidden; padding: 0; background: {{sh.tone}}; border: {{sh.bd}}">
+            <sc-if value="{{sh.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{sh.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center"></sc-if>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 14px; min-width: 0; padding-right: 32px">
+      <div style="display: flex; gap: 6px; flex-wrap: wrap">
+        <span style="font-size: 11px; font-weight: 800; color: #ffffff; background: #3b82f6; border-radius: 6px; padding: 3px 8px">1:1 채팅</span>
+        <span style="font-size: 11px; font-weight: 800; color: #ffffff; background: #e11d63; border-radius: 6px; padding: 3px 8px">목소리</span>
+        <span style="font-size: 11px; font-weight: 800; color: #ffffff; background: #8b5cf6; border-radius: 6px; padding: 3px 8px">대화 중 AI 이미지</span>
+      </div>
+      <h2 style="margin: 0; font-size: 28px; font-weight: 800; line-height: 1.3">{{c.title}}</h2>
+      <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #d9d6e6">{{c.hook}}</p>
+      <div style="display: flex; gap: 6px; flex-wrap: wrap">
+        <sc-for list="{{c.tags}}" as="tg" hint-placeholder-count="3">
+          <span style="font-size: 12px; color: #c9c4da; background: rgba(255,255,255,0.06); border-radius: 99px; padding: 4px 10px">#{{tg}}</span>
+        </sc-for>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+        <div style="background: #231f33; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; color: #a19db3">대화</span><span style="font-size: 18px; font-weight: 800">{{c.chats}}</span></div>
+        <div style="background: #231f33; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; color: #a19db3">좋아요</span><span style="font-size: 18px; font-weight: 800">{{c.likes}}</span></div>
+        <div style="background: #231f33; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; color: #a19db3">오늘 랭킹</span><span style="font-size: 18px; font-weight: 800; color: #ffc847">2위</span></div>
+      </div>
+      <div style="background: #231f33; border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 10px">
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <span style="font-size: 12px; font-weight: 800; color: #ff9cc0">첫 대사 미리보기</span>
+          <button type="button" style="display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: 99px; border: 0; background: rgba(255,255,255,0.1); color: #f3f1fa; font-family: inherit; font-size: 12px; font-weight: 700">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>목소리로 듣기
+          </button>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: flex-start">
+          <span style="flex: none; width: 36px; height: 36px; border-radius: 50%; overflow: hidden; background: {{c.tone}}"><sc-if value="{{c.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{c.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top center"></sc-if></span>
+          <span style="background: #0f0d17; border-radius: 4px 14px 14px 14px; padding: 10px 12px; font-size: 14px; line-height: 1.6">{{c.opening}}</span>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px">
+        <span style="width: 36px; height: 36px; border-radius: 50%; background: {{c.creatorTone}}"></span>
+        <span style="display: flex; flex-direction: column; gap: 2px; flex: 1"><span style="font-size: 14px; font-weight: 800">{{c.creator}}</span><span style="font-size: 12px; color: #a19db3">캐릭터 12개 · 팔로워 3.8k</span></span>
+        <button type="button" style="height: 34px; padding: 0 14px; border-radius: 99px; border: 1px solid #ff3d7f; background: transparent; color: #ff9cc0; font-family: inherit; font-size: 13px; font-weight: 800">팔로우</button>
+      </div>
+      <div style="margin-top: auto; display: flex; gap: 8px">
+        <a href="#" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; height: 52px; border-radius: 14px; background: linear-gradient(95deg, #ff3d7f 0%, #c04dff 55%, #6f5bff 100%); color: #ffffff; font-size: 16px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 24px rgba(192,77,255,0.28)">대화 시작하기<span style="font-size: 12px; font-weight: 700; opacity: 0.85">1통 15pt</span></a>
+        <a href="#" style="display: flex; align-items: center; justify-content: center; height: 52px; padding: 0 16px; border-radius: 14px; background: #231f33; color: #f3f1fa; font-size: 14px; font-weight: 800; text-decoration: none">이 캐릭터로 만들기</a>
+        <button type="button" aria-label="좋아요" style="width: 52px; height: 52px; border-radius: 14px; border: 0; background: #231f33; color: #ff9cc0; display: flex; align-items: center; justify-content: center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { s: 0 }; }
+  renderVals() {
+    const IMG = {};
+    const CH = [
+      { key: 'c01', title: '超人気アイドルの裏の顔', hook: 'ステージでは完璧なセンター。でも楽屋ではプロデューサーのあなたにだけ甘えんぼ。', tags: ['アイドル', 'ギャップ萌え', '甘々'], creator: '工房ミント', likes: '2.4k', chats: '812k', tone: '#4a2a44', creatorTone: '#ff9cc0', isNew: false, type: '', opening: 'あ、プロデューサーさん…今日の私、ちゃんとできてた？' },
+      { key: 'c02', title: 'センターの秘密の恋人', hook: 'ファンには絶対ナイショ。変装して会いにくる、夜だけの恋人。', tags: ['アイドル', '秘密の関係', '純愛'], creator: 'あめや', likes: '1.9k', chats: '640k', tone: '#2f3350', creatorTone: '#93c5fd', isNew: true, type: '', opening: 'しーっ。マスク外すの、あなたの前だけだからね。' },
+      { key: 'c03', title: 'シェアハウスの3人', hook: '家賃半額の条件は「全員と仲良くすること」。今夜は誰の部屋へ？', tags: ['ハーレム', '同居', '現代'], creator: 'ネオランド', likes: '1.6k', chats: '590k', tone: '#3e3328', creatorTone: '#fcd34d', isNew: false, type: 'グループ', opening: 'おかえり〜！ねえ、今日の晩ごはん当番だれだっけ？' },
+      { key: 'c04', title: '女子寮の管理人になったら', hook: '大学の女子寮に新しく来た管理人はあなた。4人の住人は…距離が近すぎる。', tags: ['ハーレム', '大学', 'ラブコメ'], creator: 'みいこ', likes: '1.2k', chats: '410k', tone: '#2c3d3a', creatorTone: '#6ee7b7', isNew: true, type: 'グループ', opening: '管理人さん、廊下の電気また切れてる〜！' },
+      { key: 'c05', title: '彼氏持ちの先輩', hook: '彼氏がいるのに、なぜかあなたにだけ相談してくる。今夜も既読がつかない。', tags: ['NTR', '先輩', '背徳'], creator: 'あっくん', likes: '3.1k', chats: '1.1M', tone: '#3a2030', creatorTone: '#f9a8d4', isNew: false, type: 'NTR', opening: '…ごめんね、こんな時間に。ちょっとだけ話、聞いてくれる？' },
+      { key: 'c06', title: '幼なじみのりん', hook: 'いつも素っ気ないのに、二人きりになると急に黙りこむ。…なんで顔赤いの？', tags: ['幼なじみ', 'ツンデレ', '純愛'], creator: '水彩', likes: '2.0k', chats: '720k', tone: '#4a2626', creatorTone: '#fca5a5', isNew: false, type: '', opening: 'べ、別にあんたのために作ったんじゃないから！' },
+      { key: 'c07', title: '深夜コンビニのあかね', hook: '夜勤のあの店員さん。閉店後のバックヤードでだけ見せる素顔。', tags: ['現代', '日常', '年上'], creator: '工房ミント', likes: '980', chats: '305k', tone: '#2b3a4a', creatorTone: '#ff9cc0', isNew: true, type: '', opening: 'いらっしゃいませ〜…って、また来たの？ふふ。' },
+      { key: 'c08', title: '配信切り忘れたゆめ', hook: '人気配信者の中の人。配信を切り忘れたあの夜から、二人の関係が変わった。', tags: ['配信者', 'ギャップ萌え', '現代'], creator: 'ネオランド', likes: '1.4k', chats: '502k', tone: '#352a4d', creatorTone: '#fcd34d', isNew: true, type: '', opening: 'え、待って…今のマイク入ってた！？' },
+      { key: 'c09', title: 'クールな上司・れいか', hook: '会社では氷の上司。二次会のあと、ネクタイをゆるめて「…帰らないで」。', tags: ['上司', 'ギャップ萌え', '大人'], creator: 'あめや', likes: '2.2k', chats: '760k', tone: '#262a33', creatorTone: '#93c5fd', isNew: false, type: '', opening: '報告書、まだ？…いいわ。今日はもう、仕事の話はなし。' },
+      { key: 'c10', title: '図書館のしおりさん', hook: '大学院の図書館で、いつも隣に座るおとなしい彼女。誰も知らない一面がある。', tags: ['純愛', 'ギャップ萌え', '眼鏡'], creator: '水彩', likes: '870', chats: '260k', tone: '#3a3328', creatorTone: '#fca5a5', isNew: true, type: '', opening: '…あの、その本。私も好きなんです。' }
+    ].map((c) => ({ ...c, img: IMG[c.key] || '' }));
+
+    const UGC_IMG = {};
+    const base = CH[0];
+    const c = { ...base, hasImg: !!base.img };
+    const list = [
+      { label: '프로필', img: base.img, tone: base.tone },
+      { label: '대화 중 이미지 · 대기실', img: UGC_IMG.u01 || '', tone: '#3a2a44' },
+      { label: '대화 중 이미지 · 밤거리', img: (CH[1] || {}).img || '', tone: '#2f3350' },
+      { label: '유저 작품 · 해변', img: UGC_IMG.u01 || '', tone: '#2b3a4a' }
+    ];
+    const shots = list.map((x, i) => ({ ...x, hasImg: !!x.img, bd: i === this.state.s ? '2px solid #ff3d7f' : '1px solid rgba(255,255,255,0.08)', pick: () => this.setState({ s: i }) }));
+    const shot = shots[this.state.s];
+    return { c, shots, shot };
+  }
+}
+</script>
+</body>
+</html>
