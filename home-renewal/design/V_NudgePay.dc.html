@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>대화 중 만들기 제안</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0b0a10}
+a{color:#ff9cc0}
+.rail{scrollbar-width:none}.rail::-webkit-scrollbar{display:none}
+button{cursor:pointer}
+</style>
+</helmet>
+<div style="width: 900px; min-height: 900px; background: #0b0a10; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #f3f1fa; padding: 28px; box-sizing: border-box; display: flex; gap: 28px">
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #0b0a10; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #f3f1fa">
+  <div style="height: 56px; display: flex; align-items: center; gap: 10px; padding: 0 14px; border-bottom: 1px solid rgba(255,255,255,0.06)"><img src="../../home/c09_boss.png" alt="" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: top"><b style="font-size: 15px">クールな上司・れいか</b></div>
+  <div style="padding: 16px 14px; display: flex; flex-direction: column; gap: 10px"><div style="align-self: flex-start; max-width: 78%; padding: 10px 13px; border-radius: 16px; background: #221d2e; font-size: 13px; line-height: 1.55"><i style="color:#c9c4da">*ネクタイをゆるめて、ソファに座る*</i> …報告書は明日でいいわ。</div><div style="align-self: flex-end; max-width: 78%; padding: 10px 13px; border-radius: 16px; background: #ff3d7f; font-size: 13px; line-height: 1.55">今日は帰らないんですか？</div><div style="align-self: flex-start; max-width: 78%; padding: 10px 13px; border-radius: 16px; background: #221d2e; font-size: 13px; line-height: 1.55"><i style="color:#c9c4da">*少し目をそらして*</i> …あなたが帰るなら、ね。</div></div>
+  <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5)"></div>
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; border-radius: 24px 24px 0 0; background: #1c1626; padding: 20px 20px 28px; display: flex; flex-direction: column; gap: 12px">
+    <div style="align-self: center; width: 40px; height: 4px; border-radius: 99px; background: rgba(255,255,255,0.2)"></div>
+    <div style="display: flex; gap: 12px; align-items: center"><img src="../../home/c09_boss.png" alt="" style="width: 64px; height: 80px; border-radius: 12px; object-fit: cover; object-position: top"><div style="display: flex; flex-direction: column; gap: 6px">
+      <sc-if value="{{is_k_t10}}" hint-placeholder-val="{{ true }}"><b style="font-size: 18px; line-height: 1.4">れいか, 마음에 들어요?<br>설정 몇 개만 바꿔서 내 버전으로</b><span style="font-size: 13px; color: #c9c4da">외형·말투는 그대로 · 이름과 관계만 바꾸면 2분</span></sc-if><sc-if value="{{is_k_pay}}" hint-placeholder-val="{{ false }}"><b style="font-size: 18px; line-height: 1.4">결제 완료! 포인트로<br>내 캐릭터도 만들어 볼래요?</b><span style="font-size: 13px; color: #c9c4da">만들기는 무료 · 첫 캐릭터 미션 최대 120pt</span></sc-if></div></div>
+    <div style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 12px; background: rgba(255,61,127,0.12); font-size: 12px; font-weight: 700; color: #ffb3cd"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v9H5v-9"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>첫 캐릭터 미션 · 만들기만 해도 +30pt</div>
+    <a href="Remix.dc.html" style="height: 50px; border-radius: 14px; background: linear-gradient(95deg, #ff3d7f 0%, #c04dff 55%, #6f5bff 100%); color: #fff; font-size: 15px; font-weight: 800; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>{{cta}}</a>
+    <button type="button" style="height: 40px; border: 0; background: transparent; color: #a19db3; font-family: inherit; font-size: 13px">계속 대화하기</button>
+  </div>
+</div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 16px"><div style="display: flex; flex-direction: column; gap: 8px"><span style="font-size: 13px; font-weight: 800; color: #fcd34d">뜨는 타이밍 · 결제 직후</span></div>
+<div style=" border-radius: 14px; background: #1f1a2e; border: 1px dashed #fcd34d; padding: 14px 18px; color: #e9e4f5; font-size: 13px; line-height: 1.6">
+  <div style="font-size: 12px; font-weight: 800; color: #fcd34d; margin-bottom: 6px">기획 메모 · 대화 중 만들기 제안</div>
+  <ul style="margin: 0; padding-left: 18px"><li style="margin: 0 0 4px">대상: 공개 캐릭터 0개 유저만. 제작자는 안 띄움.</li><li style="margin: 0 0 4px"><b>대화 10턴째</b>: 같은 캐릭터와 답장 10번째에 1회. 버튼 → 그 캐릭터로 내 버전 만들기.</li><li style="margin: 0 0 4px"><b>결제 직후</b>: 포인트 구매 완료 화면 다음에 1회. 버튼 → 캐릭터 홈 만들기 탭.</li><li style="margin: 0 0 4px">빈도: 유저당 하루 1번, 7일에 최대 3번. "계속 대화하기" 2번 누르면 14일 쉬기.</li><li style="margin: 0 0 4px">원작자가 리메이크를 끈 캐릭터면 "새로 만들기"로 문구 변경.</li><li style="margin: 0 0 4px">1순위 대상: 결제는 했는데 아직 안 만든 유저 (479명).</li></ul>
+</div>
+</div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":900,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { k: 'pay' }; }
+  renderVals() {
+    const s = this.state;
+    return { cta: s.k === 'pay' ? '캐릭터 만들러 가기' : '내 버전 만들기', set_k_t10: () => this.setState({ k: 't10' }), bg_k_t10: s.k === 't10' ? '#ffffff' : 'transparent', fg_k_t10: s.k === 't10' ? '#17151f' : '#c9c4da', is_k_t10: s.k === 't10', set_k_pay: () => this.setState({ k: 'pay' }), bg_k_pay: s.k === 'pay' ? '#ffffff' : 'transparent', fg_k_pay: s.k === 'pay' ? '#17151f' : '#c9c4da', is_k_pay: s.k === 'pay' };
+  }
+}
+</script>
+</body>
+</html>
