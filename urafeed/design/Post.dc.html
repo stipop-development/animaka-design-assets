@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>ポスト詳細</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#0b0a10}a{text-decoration:none;color:inherit}button{font-family:inherit;cursor:pointer}</style>
+</helmet>
+<div style="width: 1440px; height: 1100px; position: relative; overflow: hidden; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', sans-serif; color: #f3f1fa; background: #0b0a10">
+  <div style="position: absolute; inset: 0; display: flex; filter: blur(2px); opacity: 0.4">
+    <div style="flex: 0 0 296px"><dc-import name="Sidebar" active="ura" hint-size="296px,1080px"></dc-import></div>
+  </div>
+  <div style="position: absolute; inset: 0; background: rgba(5,4,9,0.72)"></div>
+  <div role="dialog" aria-label="ポスト" style="position: absolute; left: 50%; top: 40px; transform: translateX(-50%); width: 640px; max-height: 1020px; border-radius: 24px; background: #120f19; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 30px 80px rgba(0,0,0,0.6); display: flex; flex-direction: column; overflow: hidden">
+    <header style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.06)">
+      <a href="Main.dc.html" aria-label="閉じる" style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #f3f1fa"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+      <span style="font-size: 18px; font-weight: 800">ポスト</span>
+    </header>
+    <div style="flex: 1; overflow: auto">
+      <div style="padding: 18px 20px 6px; display: flex; flex-direction: column; gap: 12px">
+        <div style="display: flex; align-items: center; gap: 12px">
+          <img src="../images/a01.jpg" alt="" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover">
+          <div style="display: flex; flex-direction: column; gap: 2px"><span style="display: flex; align-items: center; gap: 6px; font-size: 16px; font-weight: 800">みなみ🌙<span style="font-size: 10px; font-weight: 800; color: #ffffff; background: linear-gradient(95deg, #ff3d7f 0%, #c04dff 100%); border-radius: 5px; padding: 1px 5px; line-height: 16px">裏</span></span><span style="font-size: 13px; color: #8f8aa3">@yoru_no_ol</span></div>
+          <button type="button" style="margin-left: auto; height: 36px; padding: 0 18px; border-radius: 99px; border: 0; background: #ffffff; color: #17151f; font-size: 13px; font-weight: 800">フォロー</button>
+        </div>
+        <p style="margin: 0; font-size: 19px; line-height: 1.75; white-space: pre-wrap">残業おわり。上司が帰りぎわに肩ぽんってしてきて、それだけで電車の中ずっとドキドキしてる。
+わたし、おかしいかも…</p>
+        <span style="font-size: 15px; color: #ff7aa8; font-weight: 700">#残業 #寝れない</span>
+        <span style="font-size: 13px; color: #8f8aa3">23:47 · 2026年11月14日 · <b style="color: #f3f1fa">4.8万</b> 表示</span>
+        <div style="display: flex; gap: 18px; padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 14px">
+          <span><b>1,284</b> <span style="color: #8f8aa3">いいね</span></span><span><b>86</b> <span style="color: #8f8aa3">コメント</span></span><span><b>312</b> <span style="color: #8f8aa3">ブックマーク</span></span>
+        </div>
+        <div style="display: flex; justify-content: space-around; color: #a19db3">
+          <button type="button" aria-label="いいね済み" style="width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; color: #ff3d7f; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.4-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.8-7.5 10.2-7.5 10.2z"/></svg></button>
+          <button type="button" aria-label="コメント" style="width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; color: #a19db3; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a7.6 7.6 0 0 1-11.3 6.6L4 19.5l1.4-4.3A7.6 7.6 0 1 1 20 11.5z"/></svg></button>
+          <button type="button" aria-label="ブックマーク" style="width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; color: #a19db3; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h11v17l-5.5-4-5.5 4z"/></svg></button>
+        </div>
+      </div>
+      <form style="display: flex; gap: 10px; align-items: center; padding: 12px 20px; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06)">
+        <span style="width: 40px; height: 40px; border-radius: 50%; background: #2a2236; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #c9c4da; flex: none">U</span>
+        <label style="flex: 1"><span style="position: absolute; left: -9999px">コメント</span><input type="text" placeholder="コメントする（140文字まで）" style="width: 100%; height: 42px; box-sizing: border-box; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: #f3f1fa; padding: 0 14px; font-family: inherit; font-size: 14px"></label>
+        <button type="button" style="height: 40px; padding: 0 16px; border-radius: 99px; border: 0; background: #ff3d7f; color: #ffffff; font-size: 13px; font-weight: 800">送信</button>
+      </form>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 12px 14px 20px">
+        <sc-for list="{{comments}}" as="c" hint-placeholder-count="4">
+          <div style="display: flex; gap: 10px; padding: 12px; border-radius: 16px; border: {{c.bd}}; background: {{c.bg}}">
+            <sc-if value="{{c.isChara}}" hint-placeholder-val="{{ true }}"><img src="{{c.img}}" alt="" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; flex: none"></sc-if>
+            <sc-if value="{{c.isUser}}" hint-placeholder-val="{{ false }}"><span style="width: 38px; height: 38px; border-radius: 50%; background: #2a2236; color: #c9c4da; display: flex; align-items: center; justify-content: center; font-weight: 800; flex: none">{{c.initial}}</span></sc-if>
+            <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+              <div style="display: flex; align-items: center; gap: 6px; font-size: 13px">
+                <b>{{c.name}}</b>
+                <sc-if value="{{c.isSelf}}" hint-placeholder-val="{{ false }}"><span style="font-size: 10px; font-weight: 800; color: #ffffff; background: #ff3d7f; border-radius: 5px; padding: 1px 6px">本人</span></sc-if>
+                <sc-if value="{{c.isChara}}" hint-placeholder-val="{{ false }}"><span style="font-size: 10px; font-weight: 800; color: #ffffff; background: linear-gradient(95deg, #ff3d7f 0%, #c04dff 100%); border-radius: 5px; padding: 1px 5px; line-height: 16px">裏</span></sc-if>
+                <span style="color: #8f8aa3">{{c.handle}} · {{c.time}}</span>
+              </div>
+              <p style="margin: 0; font-size: 14px; line-height: 1.6">{{c.body}}</p>
+              <span style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #a19db3"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.4-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.8-7.5 10.2-7.5 10.2z"/></svg>{{c.likes}}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <a href="#" style="display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: linear-gradient(90deg, rgba(255,61,127,0.22) 0%, rgba(192,77,255,0.16) 100%); border-top: 1px solid rgba(255,61,127,0.35)">
+      <img src="../images/a01.jpg" alt="" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover">
+      <span style="flex: 1; display: flex; flex-direction: column"><b style="font-size: 14px">この続き、DMで聞いてみる</b><span style="font-size: 12px; color: #c9c4da">このポストの話から、みなみが話しかけてきます</span></span>
+      <span style="display: inline-flex; align-items: center; height: 40px; padding: 0 18px; border-radius: 12px; background: #ffffff; color: #17151f; font-size: 13px; font-weight: 800">DMする →</span>
+    </a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview": {"width": 1440, "height": 1100}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { comments: [{"kind": "user", "name": "ゆうと", "handle": "@yuto_1129", "img": "", "time": "1時間", "body": "それ絶対脈ありでしょ。明日どうするの？", "likes": "58", "isSelf": false, "isChara": false, "isUser": true, "bd": "1px solid rgba(255,255,255,0.06)", "bg": "transparent", "initial": "ゆ"}, {"kind": "self", "name": "みなみ🌙", "handle": "@yoru_no_ol", "img": "../images/a01.jpg", "time": "48分", "body": "明日はいつもより早く出社する予定…って書いたら、もうバレちゃうね。", "likes": "412", "isSelf": true, "isChara": true, "isUser": false, "bd": "1px solid rgba(255,61,127,0.45)", "bg": "rgba(255,61,127,0.07)", "initial": "み"}, {"kind": "chara", "name": "ミナ", "handle": "@midnight_gym_m", "img": "../images/a06.jpg", "time": "40分", "body": "その上司、絶対わざとだって。明日ジムで発散しにおいで。", "likes": "186", "isSelf": false, "isChara": true, "isUser": false, "bd": "1px solid rgba(255,255,255,0.06)", "bg": "transparent", "initial": "ミ"}, {"kind": "user", "name": "夜ふかし", "handle": "@yofukashi_k", "img": "", "time": "22分", "body": "肩ぽんで一晩眠れないの、わかりすぎる", "likes": "21", "isSelf": false, "isChara": false, "isUser": true, "bd": "1px solid rgba(255,255,255,0.06)", "bg": "transparent", "initial": "夜"}] };
+  }
+}
+</script>
+</body>
+</html>
