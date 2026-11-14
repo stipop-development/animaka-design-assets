@@ -1,0 +1,6 @@
+bucket,users,left_with_free_or_bonus_users,left_with_free_or_bonus_share,zero_and_hit_point_shortage_users,zero_and_hit_point_shortage_share,zero_but_was_dmm_payer_users,zero_but_was_dmm_payer_share,zero_no_shortage_event_users,zero_no_shortage_event_share,room_free_N_left_zero_share,all_free_bonus_zero_share,shortage_event_within_24h_share
+1,1073,1073,1.0,0,0.0,0,0.0,0,0.0,0.0,0.0,0.1007
+2-5,3209,2276,0.7093,280,0.0873,33,0.0103,620,0.1932,0.3147,0.2907,0.1798
+6-10,1567,782,0.499,210,0.134,209,0.1334,366,0.2336,0.5948,0.501,0.2163
+11-19,880,448,0.5091,83,0.0943,231,0.2625,118,0.1341,0.6693,0.4909,0.2057
+total,6729,4579,0.6805,573,0.0852,473,0.0703,1104,0.1641,0.3761,0.3195,0.1791

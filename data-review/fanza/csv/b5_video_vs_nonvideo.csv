@@ -1,0 +1,5 @@
+segment,video_7d,users,d30_eligible,d7,d30,pt_30d_per_user,pt_30d_per_user_excl_video,pt_30d_median
+all_signups,True,555,444,0.1075,0.045,7355.7207,2842.7477,1295.0
+all_signups,False,11394,8692,0.0191,0.0062,224.1332,152.0313,0.0
+paid_within_7d,True,541,430,0.1103,0.0465,7594.8372,2934.9302,1365.0
+paid_within_7d,False,2068,1506,0.0637,0.0133,1155.2105,799.6062,140.0

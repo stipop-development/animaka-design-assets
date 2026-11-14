@@ -1,0 +1,3 @@
+basis,definition,users,already_paid_before_excluded,paid_within_1h,eligible_1h,paid_within_24h,eligible_24h,paid_within_7d,eligible_7d,paid_ever
+room_free_exhausted,signups since 8/17 whose T_USER_CHAT_FREE row reached 5 (time = UPDATE_DATE); excludes users who paid DMM before,3241,602,0.2321,3235,0.2595,3194,0.294,3088,0.3187
+point_shortage_event,first Mixpanel Send Fail Point / point_short popup / point_shortage error (= free+bonus+DMM all insufficient); excludes prior DMM payers,2274,527,0.0749,2270,0.0936,2243,0.1231,2014,0.1447

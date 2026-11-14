@@ -1,0 +1,2484 @@
+{
+ "meta": {
+  "as_of": "2026-11-15T00:00:00+09:00",
+  "source": "fanza-stipop prod DB (read-only SELECT) + Mixpanel project 4030771 (through 2026-11-14)",
+  "excluded_accounts": "qa-agent-*, 762614, official-character owner 723711",
+  "points_unit": "DMM pt (usage, not cash revenue)",
+  "cohort_12w": "signups 2026-08-17..2026-11-08"
+ },
+ "b1_s1_to_s2_dropoff": {
+  "b1_first7d_msg_dist_12w": {
+   "signups": 11949,
+   "all_signups": [
+    {
+     "bucket": "0",
+     "users": 4240,
+     "share": 0.3548
+    },
+    {
+     "bucket": "1",
+     "users": 1144,
+     "share": 0.0957
+    },
+    {
+     "bucket": "2-5",
+     "users": 3381,
+     "share": 0.283
+    },
+    {
+     "bucket": "6-10",
+     "users": 1549,
+     "share": 0.1296
+    },
+    {
+     "bucket": "11-19",
+     "users": 826,
+     "share": 0.0691
+    },
+    {
+     "bucket": "20+",
+     "users": 809,
+     "share": 0.0677
+    }
+   ],
+   "senders_only": [
+    {
+     "bucket": "0",
+     "users": 0,
+     "share": 0.0
+    },
+    {
+     "bucket": "1",
+     "users": 1144,
+     "share": 0.1484
+    },
+    {
+     "bucket": "2-5",
+     "users": 3381,
+     "share": 0.4386
+    },
+    {
+     "bucket": "6-10",
+     "users": 1549,
+     "share": 0.2009
+    },
+    {
+     "bucket": "11-19",
+     "users": 826,
+     "share": 0.1071
+    },
+    {
+     "bucket": "20+",
+     "users": 809,
+     "share": 0.1049
+    }
+   ]
+  },
+  "b1_first7d_msg_dist_by_week": [
+   {
+    "week": "2026-08-17",
+    "signups": 1478,
+    "b_0": 0.3593,
+    "b_1": 0.0805,
+    "b_2-5": 0.3572,
+    "b_6-10": 0.1191,
+    "b_11-19": 0.0304,
+    "b_20+": 0.0535
+   },
+   {
+    "week": "2026-08-24",
+    "signups": 1286,
+    "b_0": 0.3802,
+    "b_1": 0.0871,
+    "b_2-5": 0.332,
+    "b_6-10": 0.0941,
+    "b_11-19": 0.0389,
+    "b_20+": 0.0677
+   },
+   {
+    "week": "2026-08-31",
+    "signups": 1065,
+    "b_0": 0.3465,
+    "b_1": 0.1014,
+    "b_2-5": 0.3277,
+    "b_6-10": 0.1333,
+    "b_11-19": 0.031,
+    "b_20+": 0.0601
+   },
+   {
+    "week": "2026-09-07",
+    "signups": 1108,
+    "b_0": 0.4125,
+    "b_1": 0.0939,
+    "b_2-5": 0.2897,
+    "b_6-10": 0.1273,
+    "b_11-19": 0.0244,
+    "b_20+": 0.0523
+   },
+   {
+    "week": "2026-09-14",
+    "signups": 981,
+    "b_0": 0.4475,
+    "b_1": 0.0856,
+    "b_2-5": 0.2946,
+    "b_6-10": 0.105,
+    "b_11-19": 0.0265,
+    "b_20+": 0.0408
+   },
+   {
+    "week": "2026-09-21",
+    "signups": 847,
+    "b_0": 0.3093,
+    "b_1": 0.0791,
+    "b_2-5": 0.3011,
+    "b_6-10": 0.1865,
+    "b_11-19": 0.0732,
+    "b_20+": 0.0508
+   },
+   {
+    "week": "2026-09-28",
+    "signups": 821,
+    "b_0": 0.3276,
+    "b_1": 0.0987,
+    "b_2-5": 0.2667,
+    "b_6-10": 0.1449,
+    "b_11-19": 0.0804,
+    "b_20+": 0.0816
+   },
+   {
+    "week": "2026-10-05",
+    "signups": 988,
+    "b_0": 0.2905,
+    "b_1": 0.1245,
+    "b_2-5": 0.2743,
+    "b_6-10": 0.1377,
+    "b_11-19": 0.1083,
+    "b_20+": 0.0648
+   },
+   {
+    "week": "2026-10-12",
+    "signups": 952,
+    "b_0": 0.3435,
+    "b_1": 0.1166,
+    "b_2-5": 0.23,
+    "b_6-10": 0.1303,
+    "b_11-19": 0.105,
+    "b_20+": 0.0746
+   },
+   {
+    "week": "2026-10-19",
+    "signups": 900,
+    "b_0": 0.3078,
+    "b_1": 0.0967,
+    "b_2-5": 0.2333,
+    "b_6-10": 0.1311,
+    "b_11-19": 0.13,
+    "b_20+": 0.1011
+   },
+   {
+    "week": "2026-10-26",
+    "signups": 777,
+    "b_0": 0.3359,
+    "b_1": 0.103,
+    "b_2-5": 0.2136,
+    "b_6-10": 0.1287,
+    "b_11-19": 0.13,
+    "b_20+": 0.0888
+   },
+   {
+    "week": "2026-11-02",
+    "signups": 746,
+    "b_0": 0.3646,
+    "b_1": 0.0912,
+    "b_2-5": 0.1702,
+    "b_6-10": 0.1488,
+    "b_11-19": 0.1233,
+    "b_20+": 0.1019
+   }
+  ],
+  "b1_free_allotment": {
+   "room_free_per_owner_category": 5,
+   "room_free_note": "T_USER_CHAT_FREE: 1 row per user x OWNER (N=others chars, Y=own chars), limit 5 (ROOM_FREE_LIMIT) -> max 10 if user also chats own char",
+   "return_reward": "3 free msgs/day on first 3 return days (not signup day); T_RETURN_REWARD since 2026-10-07 18:25:52",
+   "room_free_rows_12w_signups": 10805,
+   "room_free_N_used_dist_12w": {
+    "0": 4097,
+    "1": 959,
+    "2": 501,
+    "3": 441,
+    "4": 392,
+    "5": 3386
+   },
+   "return_reward_users_12w": 2657,
+   "return_reward_days_per_user_12w": {
+    "1": 1083,
+    "2": 439,
+    "3": 1135
+   },
+   "bonus_ledger_first": "2026-11-02 18:59:33",
+   "bonus_grant_users_12w": 335,
+   "bonus_grant_pt_median": 105.0,
+   "bonus_grant_by_campaign": [
+    {
+     "campaign": "instagram_follow_v1",
+     "users": 466,
+     "pt": 13980
+    },
+    {
+     "campaign": "none",
+     "users": 2,
+     "pt": 2000
+    },
+    {
+     "campaign": "signup_v1",
+     "users": 225,
+     "pt": 67500
+    },
+    {
+     "campaign": "welcome_v1",
+     "users": 113,
+     "pt": 4575
+    },
+    {
+     "campaign": "welcome_v1_test",
+     "users": 3,
+     "pt": 195
+    },
+    {
+     "campaign": "x_follow_v1",
+     "users": 582,
+     "pt": 26190
+    },
+    {
+     "campaign": "youtube_follow_v1",
+     "users": 552,
+     "pt": 16560
+    }
+   ],
+   "campaign_credit": {
+    "campaign": "autumn2026",
+    "first": "2026-10-23 17:37:31",
+    "users": 2320,
+    "grant_pt_median": 100.0
+   },
+   "signup_bonus": {
+    "first": "2026-11-13 11:11:55",
+    "users": 225,
+    "amount": 300
+   },
+   "chat_price_pt": 15
+  },
+  "b1_dropout_wall": {
+   "definition": "12w signups (8/17-11/07) with >=1 msg, <20 msgs ever, no activity in last 7d; balances at last message: room free (OWNER=N row), today return reward, bonus ledger BALANCE_AFTER, campaign credit; shortage event = Mixpanel Send Fail Point / Popup point_short / Error point_shortage within -10min..+24h of last msg",
+   "total": {
+    "users": 6729,
+    "left_with_free_or_bonus": {
+     "users": 4579,
+     "share": 0.6805
+    },
+    "zero_and_hit_point_shortage": {
+     "users": 573,
+     "share": 0.0852
+    },
+    "zero_but_was_dmm_payer": {
+     "users": 473,
+     "share": 0.0703
+    },
+    "zero_no_shortage_event": {
+     "users": 1104,
+     "share": 0.1641
+    },
+    "room_free_N_left_zero_share": 0.3761,
+    "all_free_bonus_zero_share": 0.3195,
+    "shortage_event_within_24h_share": 0.1791
+   },
+   "by_msg_bucket": [
+    {
+     "bucket": "1",
+     "users": 1073,
+     "left_with_free_or_bonus": {
+      "users": 1073,
+      "share": 1.0
+     },
+     "zero_and_hit_point_shortage": {
+      "users": 0,
+      "share": 0.0
+     },
+     "zero_but_was_dmm_payer": {
+      "users": 0,
+      "share": 0.0
+     },
+     "zero_no_shortage_event": {
+      "users": 0,
+      "share": 0.0
+     },
+     "room_free_N_left_zero_share": 0.0,
+     "all_free_bonus_zero_share": 0.0,
+     "shortage_event_within_24h_share": 0.1007
+    },
+    {
+     "bucket": "2-5",
+     "users": 3209,
+     "left_with_free_or_bonus": {
+      "users": 2276,
+      "share": 0.7093
+     },
+     "zero_and_hit_point_shortage": {
+      "users": 280,
+      "share": 0.0873
+     },
+     "zero_but_was_dmm_payer": {
+      "users": 33,
+      "share": 0.0103
+     },
+     "zero_no_shortage_event": {
+      "users": 620,
+      "share": 0.1932
+     },
+     "room_free_N_left_zero_share": 0.3147,
+     "all_free_bonus_zero_share": 0.2907,
+     "shortage_event_within_24h_share": 0.1798
+    },
+    {
+     "bucket": "6-10",
+     "users": 1567,
+     "left_with_free_or_bonus": {
+      "users": 782,
+      "share": 0.499
+     },
+     "zero_and_hit_point_shortage": {
+      "users": 210,
+      "share": 0.134
+     },
+     "zero_but_was_dmm_payer": {
+      "users": 209,
+      "share": 0.1334
+     },
+     "zero_no_shortage_event": {
+      "users": 366,
+      "share": 0.2336
+     },
+     "room_free_N_left_zero_share": 0.5948,
+     "all_free_bonus_zero_share": 0.501,
+     "shortage_event_within_24h_share": 0.2163
+    },
+    {
+     "bucket": "11-19",
+     "users": 880,
+     "left_with_free_or_bonus": {
+      "users": 448,
+      "share": 0.5091
+     },
+     "zero_and_hit_point_shortage": {
+      "users": 83,
+      "share": 0.0943
+     },
+     "zero_but_was_dmm_payer": {
+      "users": 231,
+      "share": 0.2625
+     },
+     "zero_no_shortage_event": {
+      "users": 118,
+      "share": 0.1341
+     },
+     "room_free_N_left_zero_share": 0.6693,
+     "all_free_bonus_zero_share": 0.4909,
+     "shortage_event_within_24h_share": 0.2057
+    }
+   ]
+  },
+  "b1_reach20_by_first_char_type": [
+   {
+    "first_type": "direct_official",
+    "users": 769,
+    "reach20_7d": 0.1222,
+    "reach20_ever": 0.1586,
+    "reach20_30d": 0.1329,
+    "n_30d_eligible": 557,
+    "pay_7d": 0.277
+   },
+   {
+    "first_type": "direct_ugc",
+    "users": 6187,
+    "reach20_7d": 0.1005,
+    "reach20_ever": 0.1298,
+    "reach20_30d": 0.1086,
+    "n_30d_eligible": 5011,
+    "pay_7d": 0.3031
+   },
+   {
+    "first_type": "group",
+    "users": 20,
+    "reach20_7d": 0.0,
+    "reach20_ever": 0.05,
+    "reach20_30d": 0.0714,
+    "n_30d_eligible": 14,
+    "pay_7d": 0.3
+   },
+   {
+    "first_type": "ntr",
+    "users": 1047,
+    "reach20_7d": 0.0888,
+    "reach20_ever": 0.1175,
+    "reach20_30d": 0.1077,
+    "n_30d_eligible": 557,
+    "pay_7d": 0.3505
+   },
+   {
+    "first_type": "story",
+    "users": 13,
+    "reach20_7d": 0.0,
+    "reach20_ever": 0.0769,
+    "reach20_30d": 0.0,
+    "n_30d_eligible": 1,
+    "pay_7d": 0.0769
+   }
+  ],
+  "b1_first_reply_latency": [
+   {
+    "latency": "10-20s",
+    "users": 274,
+    "reach20_ever": 0.1496,
+    "sent_2plus": 0.854
+   },
+   {
+    "latency": "20-40s",
+    "users": 16,
+    "reach20_ever": 0.125,
+    "sent_2plus": 0.875
+   },
+   {
+    "latency": "40s+",
+    "users": 2,
+    "reach20_ever": 0.0,
+    "sent_2plus": 0.0
+   },
+   {
+    "latency": "5-10s",
+    "users": 1614,
+    "reach20_ever": 0.1338,
+    "sent_2plus": 0.847
+   },
+   {
+    "latency": "<5s",
+    "users": 5009,
+    "reach20_ever": 0.1318,
+    "sent_2plus": 0.8978
+   },
+   {
+    "latency": "no_answer",
+    "users": 42,
+    "reach20_ever": 0.1429,
+    "sent_2plus": 0.8571
+   }
+  ],
+  "b1_first_reply_latency_median_s": 2.0,
+  "b1_first_reply_error": [
+   {
+    "first_reply_failed": false,
+    "users": 6891,
+    "reach20_ever": 0.1328,
+    "sent_2plus": 0.8852
+   },
+   {
+    "first_reply_failed": true,
+    "users": 66,
+    "reach20_ever": 0.1515,
+    "sent_2plus": 0.7273
+   }
+  ],
+  "b1_first5_reply_errors": [
+   {
+    "failed_in_first5": "0",
+    "users": 4461,
+    "reach20_ever": 0.2089
+   },
+   {
+    "failed_in_first5": "1",
+    "users": 176,
+    "reach20_ever": 0.233
+   },
+   {
+    "failed_in_first5": "2+",
+    "users": 39,
+    "reach20_ever": 0.3077
+   }
+  ],
+  "b1_first5_median_latency_vs_reach": [
+   {
+    "median_latency": "10-20s",
+    "users": 210,
+    "reach20_ever": 0.2762
+   },
+   {
+    "median_latency": "20-40s",
+    "users": 3,
+    "reach20_ever": 0.0
+   },
+   {
+    "median_latency": "5-10s",
+    "users": 440,
+    "reach20_ever": 0.2795
+   },
+   {
+    "median_latency": "<5s",
+    "users": 4022,
+    "reach20_ever": 0.1999
+   },
+   {
+    "median_latency": "no_answer",
+    "users": 1,
+    "reach20_ever": 0.0
+   }
+  ],
+  "b1_mp_first_response": {
+   "source": "Mixpanel Claude/Gemini Response Details (server), first event per userId, 12w signups",
+   "users": 6573,
+   "median_ms": 3342.0,
+   "fail_rate": 0.0091,
+   "by_latency": [
+    {
+     "latency": "10-20s",
+     "users": 338,
+     "reach20_ever": 0.2396,
+     "sent_2plus": 0.8964
+    },
+    {
+     "latency": "2-5s",
+     "users": 2631,
+     "reach20_ever": 0.103,
+     "sent_2plus": 0.8533
+    },
+    {
+     "latency": "20s+",
+     "users": 24,
+     "reach20_ever": 0.1667,
+     "sent_2plus": 0.8333
+    },
+    {
+     "latency": "5-10s",
+     "users": 1522,
+     "reach20_ever": 0.1281,
+     "sent_2plus": 0.8693
+    },
+    {
+     "latency": "<2s",
+     "users": 2054,
+     "reach20_ever": 0.2162,
+     "sent_2plus": 0.9508
+    },
+    {
+     "latency": "na",
+     "users": 4,
+     "reach20_ever": 0.0,
+     "sent_2plus": 0.5
+    }
+   ],
+   "by_fail": [
+    {
+     "first_response_failed": false,
+     "users": 6513,
+     "reach20_ever": 0.1511,
+     "sent_2plus": 0.8907
+    },
+    {
+     "first_response_failed": true,
+     "users": 60,
+     "reach20_ever": 0.1833,
+     "sent_2plus": 0.75
+    }
+   ]
+  },
+  "b1_mp_first5_fail": [
+   {
+    "fails_in_first5": 0,
+    "users": 4132,
+    "reach20_ever": 0.2362
+   },
+   {
+    "fails_in_first5": 1,
+    "users": 15,
+    "reach20_ever": 0.3333
+   },
+   {
+    "fails_in_first5": 2,
+    "users": 10,
+    "reach20_ever": 0.3
+   }
+  ],
+  "b_wall_events_raw": {
+   "rows": 22763,
+   "users": 4510,
+   "by_event": {
+    "Send Fail Point": 18008,
+    "Popup View": 2454,
+    "Error View": 2301
+   }
+  }
+ },
+ "b2_payment_wall": {
+  "b2_payment_wall": [
+   {
+    "basis": "room_free_exhausted",
+    "definition": "signups since 8/17 whose T_USER_CHAT_FREE row reached 5 (time = UPDATE_DATE); excludes users who paid DMM before",
+    "users": 3241,
+    "already_paid_before_excluded": 602,
+    "paid_within_1h": 0.2321,
+    "eligible_1h": 3235,
+    "paid_within_24h": 0.2595,
+    "eligible_24h": 3194,
+    "paid_within_7d": 0.294,
+    "eligible_7d": 3088,
+    "paid_ever": 0.3187
+   },
+   {
+    "basis": "point_shortage_event",
+    "definition": "first Mixpanel Send Fail Point / point_short popup / point_shortage error (= free+bonus+DMM all insufficient); excludes prior DMM payers",
+    "users": 2274,
+    "already_paid_before_excluded": 527,
+    "paid_within_1h": 0.0749,
+    "eligible_1h": 2270,
+    "paid_within_24h": 0.0936,
+    "eligible_24h": 2243,
+    "paid_within_7d": 0.1231,
+    "eligible_7d": 2014,
+    "paid_ever": 0.1447
+   }
+  ],
+  "b2_first_dmm_payment": {
+   "definition": "first T_DMM_POINT row (one charge) per user; first-24h = sum of charges in 24h after it",
+   "signups_12w": {
+    "users": 2946,
+    "median_pt": 20.0,
+    "mean_pt": 72.4986,
+    "dist": [
+     {
+      "bucket": "<=10",
+      "users": 1123,
+      "share": 0.3812
+     },
+     {
+      "bucket": "11-15",
+      "users": 154,
+      "share": 0.0523
+     },
+     {
+      "bucket": "16-50",
+      "users": 1206,
+      "share": 0.4094
+     },
+     {
+      "bucket": "51-100",
+      "users": 272,
+      "share": 0.0923
+     },
+     {
+      "bucket": "101-300",
+      "users": 16,
+      "share": 0.0054
+     },
+     {
+      "bucket": "301-1000",
+      "users": 160,
+      "share": 0.0543
+     },
+     {
+      "bucket": "1000+",
+      "users": 15,
+      "share": 0.0051
+     }
+    ],
+    "by_feature": [
+     {
+      "feature": "chat",
+      "users": 1616,
+      "share": 0.5485,
+      "median_pt": 10.0
+     },
+     {
+      "feature": "manga",
+      "users": 7,
+      "share": 0.0024,
+      "median_pt": 80.0
+     },
+     {
+      "feature": "other",
+      "users": 93,
+      "share": 0.0316,
+      "median_pt": 40.0
+     },
+     {
+      "feature": "other_moodshot",
+      "users": 926,
+      "share": 0.3143,
+      "median_pt": 50.0
+     },
+     {
+      "feature": "scene_image",
+      "users": 56,
+      "share": 0.019,
+      "median_pt": 40.0
+     },
+     {
+      "feature": "video",
+      "users": 174,
+      "share": 0.0591,
+      "median_pt": 650.0
+     },
+     {
+      "feature": "voice",
+      "users": 74,
+      "share": 0.0251,
+      "median_pt": 20.0
+     }
+    ]
+   },
+   "first24h_pt_12w": {
+    "median": 160.0,
+    "mean": 748.8537
+   }
+  },
+  "b2_feature_before_first_pay_12w": [
+   {
+    "feature": "chat_1to1",
+    "users": 1099,
+    "share": 0.373
+   },
+   {
+    "feature": "moodshot",
+    "users": 909,
+    "share": 0.3086
+   },
+   {
+    "feature": "ntr_room",
+    "users": 478,
+    "share": 0.1623
+   },
+   {
+    "feature": "video",
+    "users": 177,
+    "share": 0.0601
+   },
+   {
+    "feature": "none_within_30min",
+    "users": 101,
+    "share": 0.0343
+   },
+   {
+    "feature": "voice",
+    "users": 77,
+    "share": 0.0261
+   },
+   {
+    "feature": "scene_image",
+    "users": 56,
+    "share": 0.019
+   },
+   {
+    "feature": "creation",
+    "users": 25,
+    "share": 0.0085
+   },
+   {
+    "feature": "group_room",
+    "users": 14,
+    "share": 0.0048
+   },
+   {
+    "feature": "manga",
+    "users": 7,
+    "share": 0.0024
+   },
+   {
+    "feature": "story_room",
+    "users": 3,
+    "share": 0.001
+   }
+  ]
+ },
+ "b3_cohort_ltv": {
+  "b3_cohort_ltv": [
+   {
+    "week": "2026-08-17",
+    "signups": 1478,
+    "pt_per_signup_d1": 92.3309,
+    "eligible_d1": 1478,
+    "payer_rate_d1": 0.1671,
+    "pt_per_signup_d7": 175.088,
+    "eligible_d7": 1478,
+    "payer_rate_d7": 0.1867,
+    "pt_per_signup_d30": 255.8728,
+    "eligible_d30": 1478,
+    "payer_rate_d30": 0.205
+   },
+   {
+    "week": "2026-08-24",
+    "signups": 1286,
+    "pt_per_signup_d1": 156.4502,
+    "eligible_d1": 1286,
+    "payer_rate_d1": 0.1921,
+    "pt_per_signup_d7": 347.3289,
+    "eligible_d7": 1286,
+    "payer_rate_d7": 0.2146,
+    "pt_per_signup_d30": 570.1983,
+    "eligible_d30": 1286,
+    "payer_rate_d30": 0.2395
+   },
+   {
+    "week": "2026-08-31",
+    "signups": 1065,
+    "pt_per_signup_d1": 126.9906,
+    "eligible_d1": 1065,
+    "payer_rate_d1": 0.1915,
+    "pt_per_signup_d7": 244.5023,
+    "eligible_d7": 1065,
+    "payer_rate_d7": 0.2131,
+    "pt_per_signup_d30": 388.7746,
+    "eligible_d30": 1065,
+    "payer_rate_d30": 0.2272
+   },
+   {
+    "week": "2026-09-07",
+    "signups": 1108,
+    "pt_per_signup_d1": 103.4928,
+    "eligible_d1": 1108,
+    "payer_rate_d1": 0.1597,
+    "pt_per_signup_d7": 273.4612,
+    "eligible_d7": 1108,
+    "payer_rate_d7": 0.1805,
+    "pt_per_signup_d30": 712.2644,
+    "eligible_d30": 1108,
+    "payer_rate_d30": 0.2049
+   },
+   {
+    "week": "2026-09-14",
+    "signups": 981,
+    "pt_per_signup_d1": 139.4241,
+    "eligible_d1": 981,
+    "payer_rate_d1": 0.1713,
+    "pt_per_signup_d7": 251.3405,
+    "eligible_d7": 981,
+    "payer_rate_d7": 0.1947,
+    "pt_per_signup_d30": 482.5321,
+    "eligible_d30": 981,
+    "payer_rate_d30": 0.2192
+   },
+   {
+    "week": "2026-09-21",
+    "signups": 847,
+    "pt_per_signup_d1": 167.9339,
+    "eligible_d1": 847,
+    "payer_rate_d1": 0.1889,
+    "pt_per_signup_d7": 376.2279,
+    "eligible_d7": 847,
+    "payer_rate_d7": 0.2043,
+    "pt_per_signup_d30": 578.4864,
+    "eligible_d30": 847,
+    "payer_rate_d30": 0.2302
+   },
+   {
+    "week": "2026-09-28",
+    "signups": 821,
+    "pt_per_signup_d1": 172.028,
+    "eligible_d1": 821,
+    "payer_rate_d1": 0.2326,
+    "pt_per_signup_d7": 279.1121,
+    "eligible_d7": 821,
+    "payer_rate_d7": 0.2619,
+    "pt_per_signup_d30": 376.1973,
+    "eligible_d30": 821,
+    "payer_rate_d30": 0.2838
+   },
+   {
+    "week": "2026-10-05",
+    "signups": 988,
+    "pt_per_signup_d1": 101.3026,
+    "eligible_d1": 988,
+    "payer_rate_d1": 0.2247,
+    "pt_per_signup_d7": 203.9706,
+    "eligible_d7": 988,
+    "payer_rate_d7": 0.25,
+    "pt_per_signup_d30": 1101.1174,
+    "eligible_d30": 988,
+    "payer_rate_d30": 0.2682
+   },
+   {
+    "week": "2026-10-12",
+    "signups": 952,
+    "pt_per_signup_d1": 248.687,
+    "eligible_d1": 952,
+    "payer_rate_d1": 0.2174,
+    "pt_per_signup_d7": 425.7983,
+    "eligible_d7": 952,
+    "payer_rate_d7": 0.2353,
+    "pt_per_signup_d30": 959.6317,
+    "eligible_d30": 562,
+    "payer_rate_d30": 0.2633
+   },
+   {
+    "week": "2026-10-19",
+    "signups": 900,
+    "pt_per_signup_d1": 178.0644,
+    "eligible_d1": 900,
+    "payer_rate_d1": 0.2278,
+    "pt_per_signup_d7": 381.73,
+    "eligible_d7": 900,
+    "payer_rate_d7": 0.26,
+    "pt_per_signup_d30": null,
+    "eligible_d30": 0
+   },
+   {
+    "week": "2026-10-26",
+    "signups": 777,
+    "pt_per_signup_d1": 189.6268,
+    "eligible_d1": 777,
+    "payer_rate_d1": 0.2021,
+    "pt_per_signup_d7": 326.6988,
+    "eligible_d7": 777,
+    "payer_rate_d7": 0.2291,
+    "pt_per_signup_d30": null,
+    "eligible_d30": 0
+   },
+   {
+    "week": "2026-11-02",
+    "signups": 746,
+    "pt_per_signup_d1": 212.189,
+    "eligible_d1": 746,
+    "payer_rate_d1": 0.1903,
+    "pt_per_signup_d7": 405.2484,
+    "eligible_d7": 636,
+    "payer_rate_d7": 0.2107,
+    "pt_per_signup_d30": null,
+    "eligible_d30": 0
+   }
+  ],
+  "b3_last30d_pt_by_signup_age": [
+   {
+    "group": "signed_up_before",
+    "payers": 1503,
+    "pt": 6555812.0,
+    "share": 0.7952,
+    "pt_per_payer": 4361.8177
+   },
+   {
+    "group": "signed_up_last30d",
+    "payers": 822,
+    "pt": 1688549.0,
+    "share": 0.2048,
+    "pt_per_payer": 2054.1959
+   }
+  ],
+  "b3_last30d_pt_by_signup_age_excl_s7": [
+   {
+    "group": "signed_up_before",
+    "pt": 426932.0,
+    "share_of_non_s7": 0.5853
+   },
+   {
+    "group": "signed_up_last30d",
+    "pt": 302438.0,
+    "share_of_non_s7": 0.4147
+   }
+  ],
+  "b3_last30d_pt_by_signup_month": [
+   {
+    "signup_month": "2025-09",
+    "payers": 11,
+    "pt": 26208.0,
+    "share": 0.0032
+   },
+   {
+    "signup_month": "2025-10",
+    "payers": 154,
+    "pt": 622247.0,
+    "share": 0.0755
+   },
+   {
+    "signup_month": "2025-11",
+    "payers": 111,
+    "pt": 331282.0,
+    "share": 0.0402
+   },
+   {
+    "signup_month": "2025-12",
+    "payers": 87,
+    "pt": 336610.0,
+    "share": 0.0408
+   },
+   {
+    "signup_month": "2026-01",
+    "payers": 76,
+    "pt": 192335.0,
+    "share": 0.0233
+   },
+   {
+    "signup_month": "2026-02",
+    "payers": 78,
+    "pt": 159218.0,
+    "share": 0.0193
+   },
+   {
+    "signup_month": "2026-03",
+    "payers": 107,
+    "pt": 297790.0,
+    "share": 0.0361
+   },
+   {
+    "signup_month": "2026-04",
+    "payers": 95,
+    "pt": 303163.0,
+    "share": 0.0368
+   },
+   {
+    "signup_month": "2026-05",
+    "payers": 98,
+    "pt": 360005.0,
+    "share": 0.0437
+   },
+   {
+    "signup_month": "2026-06",
+    "payers": 92,
+    "pt": 381018.0,
+    "share": 0.0462
+   },
+   {
+    "signup_month": "2026-07",
+    "payers": 102,
+    "pt": 312271.0,
+    "share": 0.0379
+   },
+   {
+    "signup_month": "2026-08",
+    "payers": 158,
+    "pt": 769468.0,
+    "share": 0.0933
+   },
+   {
+    "signup_month": "2026-09",
+    "payers": 182,
+    "pt": 802466.0,
+    "share": 0.0973
+   },
+   {
+    "signup_month": "2026-10",
+    "payers": 682,
+    "pt": 2883954.0,
+    "share": 0.3498
+   },
+   {
+    "signup_month": "2026-11",
+    "payers": 292,
+    "pt": 466326.0,
+    "share": 0.0566
+   }
+  ],
+  "b3_d30_top1_effect": [
+   {
+    "week": "2026-10-05",
+    "pt_per_signup_d30": 1101,
+    "top1_share": 0.454,
+    "pt_per_signup_d30_excl_top1": 601
+   },
+   {
+    "week": "2026-09-07",
+    "pt_per_signup_d30": 712,
+    "top1_share": 0.56,
+    "pt_per_signup_d30_excl_top1": 313
+   }
+  ]
+ },
+ "b4_s7_profile": {
+  "b4_s7_signup_month": [
+   {
+    "signup_month": "2025-09",
+    "users": 6,
+    "share": 0.0096,
+    "pt30_share": 0.0033
+   },
+   {
+    "signup_month": "2025-10",
+    "users": 55,
+    "share": 0.0883,
+    "pt30_share": 0.075
+   },
+   {
+    "signup_month": "2025-11",
+    "users": 40,
+    "share": 0.0642,
+    "pt30_share": 0.0404
+   },
+   {
+    "signup_month": "2025-12",
+    "users": 21,
+    "share": 0.0337,
+    "pt30_share": 0.0408
+   },
+   {
+    "signup_month": "2026-01",
+    "users": 29,
+    "share": 0.0465,
+    "pt30_share": 0.0235
+   },
+   {
+    "signup_month": "2026-02",
+    "users": 28,
+    "share": 0.0449,
+    "pt30_share": 0.0189
+   },
+   {
+    "signup_month": "2026-03",
+    "users": 38,
+    "share": 0.061,
+    "pt30_share": 0.0366
+   },
+   {
+    "signup_month": "2026-04",
+    "users": 25,
+    "share": 0.0401,
+    "pt30_share": 0.0358
+   },
+   {
+    "signup_month": "2026-05",
+    "users": 25,
+    "share": 0.0401,
+    "pt30_share": 0.0439
+   },
+   {
+    "signup_month": "2026-06",
+    "users": 26,
+    "share": 0.0417,
+    "pt30_share": 0.0467
+   },
+   {
+    "signup_month": "2026-07",
+    "users": 34,
+    "share": 0.0546,
+    "pt30_share": 0.0374
+   },
+   {
+    "signup_month": "2026-08",
+    "users": 50,
+    "share": 0.0803,
+    "pt30_share": 0.0963
+   },
+   {
+    "signup_month": "2026-09",
+    "users": 53,
+    "share": 0.0851,
+    "pt30_share": 0.1007
+   },
+   {
+    "signup_month": "2026-10",
+    "users": 148,
+    "share": 0.2376,
+    "pt30_share": 0.3506
+   },
+   {
+    "signup_month": "2026-11",
+    "users": 45,
+    "share": 0.0722,
+    "pt30_share": 0.0501
+   }
+  ],
+  "b4_s7_days_signup_to_s7": {
+   "median": 4.5897,
+   "p25": 1.8353,
+   "p75": 21.5875,
+   "dist": [
+    {
+     "bucket": "same_day(<1d)",
+     "users": 62
+    },
+    {
+     "bucket": "1-7d",
+     "users": 311
+    },
+    {
+     "bucket": "7-30d",
+     "users": 113
+    },
+    {
+     "bucket": "30-90d",
+     "users": 60
+    },
+    {
+     "bucket": "90d+",
+     "users": 77
+    }
+   ],
+   "definition": "S7 time = first day the S7 rule (3+ pay days or pt>=P90 in trailing 30d) was met, from all DMM history"
+  },
+  "b4_s7_first_feature": [
+   {
+    "feature": "chat_1to1",
+    "users": 433,
+    "share": 0.695
+   },
+   {
+    "feature": "creation",
+    "users": 72,
+    "share": 0.1156
+   },
+   {
+    "feature": "moodshot",
+    "users": 42,
+    "share": 0.0674
+   },
+   {
+    "feature": "video",
+    "users": 32,
+    "share": 0.0514
+   },
+   {
+    "feature": "ntr_room",
+    "users": 26,
+    "share": 0.0417
+   },
+   {
+    "feature": "scene_image",
+    "users": 15,
+    "share": 0.0241
+   },
+   {
+    "feature": "group_room",
+    "users": 2,
+    "share": 0.0032
+   },
+   {
+    "feature": "voice",
+    "users": 1,
+    "share": 0.0016
+   }
+  ],
+  "b4_s7_pt_share_by_feature": [
+   {
+    "feature": "video",
+    "pt": 3361760.0,
+    "share": 0.4473
+   },
+   {
+    "feature": "chat",
+    "pt": 2460666.0,
+    "share": 0.3274
+   },
+   {
+    "feature": "scene_image",
+    "pt": 779615.0,
+    "share": 0.1037
+   },
+   {
+    "feature": "other_moodshot",
+    "pt": 602120.0,
+    "share": 0.0801
+   },
+   {
+    "feature": "manga",
+    "pt": 181350.0,
+    "share": 0.0241
+   },
+   {
+    "feature": "other",
+    "pt": 87855.0,
+    "share": 0.0117
+   },
+   {
+    "feature": "voice",
+    "pt": 41625.0,
+    "share": 0.0055
+   }
+  ],
+  "b4_s7_creator_share": 0.5361,
+  "b4_s7_active_days_30d": {
+   "median": 6.0,
+   "mean": 8.2279,
+   "dist": [
+    {
+     "bucket": "0",
+     "users": 0
+    },
+    {
+     "bucket": "1-2",
+     "users": 25
+    },
+    {
+     "bucket": "3-6",
+     "users": 331
+    },
+    {
+     "bucket": "7-14",
+     "users": 168
+    },
+    {
+     "bucket": "15-29",
+     "users": 92
+    },
+    {
+     "bucket": "30",
+     "users": 7
+    }
+   ],
+   "pay_days_median": 5.0,
+   "note": "active day = message or feature event that day (JST)"
+  },
+  "b4_s7_top10": [
+   {
+    "rank": 1,
+    "pt30": 775503.0,
+    "share_of_total_30d": 0.0941,
+    "active_days_30d": 10,
+    "pay_days_30d": 10,
+    "creator": true,
+    "signup_month": "2026-10",
+    "pt_chat": 863.0,
+    "pt_video": 751460.0,
+    "pt_scene_image": 17160.0,
+    "pt_other_moodshot": 1440.0,
+    "pt_manga": 3800.0,
+    "pt_voice": 0.0,
+    "pt_other": 780.0
+   },
+   {
+    "rank": 2,
+    "pt30": 430840.0,
+    "share_of_total_30d": 0.0523,
+    "active_days_30d": 8,
+    "pay_days_30d": 8,
+    "creator": false,
+    "signup_month": "2026-08",
+    "pt_chat": 0.0,
+    "pt_video": 425590.0,
+    "pt_scene_image": 5250.0,
+    "pt_other_moodshot": 0.0,
+    "pt_manga": 0.0,
+    "pt_voice": 0.0,
+    "pt_other": 0.0
+   },
+   {
+    "rank": 3,
+    "pt30": 209660.0,
+    "share_of_total_30d": 0.0254,
+    "active_days_30d": 25,
+    "pay_days_30d": 25,
+    "creator": true,
+    "signup_month": "2026-09",
+    "pt_chat": 2090.0,
+    "pt_video": 176080.0,
+    "pt_scene_image": 25710.0,
+    "pt_other_moodshot": 5220.0,
+    "pt_manga": 0.0,
+    "pt_voice": 20.0,
+    "pt_other": 540.0
+   },
+   {
+    "rank": 4,
+    "pt30": 151795.0,
+    "share_of_total_30d": 0.0184,
+    "active_days_30d": 9,
+    "pay_days_30d": 9,
+    "creator": true,
+    "signup_month": "2026-10",
+    "pt_chat": 125.0,
+    "pt_video": 149630.0,
+    "pt_scene_image": 1680.0,
+    "pt_other_moodshot": 360.0,
+    "pt_manga": 0.0,
+    "pt_voice": 0.0,
+    "pt_other": 0.0
+   },
+   {
+    "rank": 5,
+    "pt30": 134335.0,
+    "share_of_total_30d": 0.0163,
+    "active_days_30d": 27,
+    "pay_days_30d": 26,
+    "creator": true,
+    "signup_month": "2026-05",
+    "pt_chat": 11815.0,
+    "pt_video": 95690.0,
+    "pt_scene_image": 23880.0,
+    "pt_other_moodshot": 2250.0,
+    "pt_manga": 0.0,
+    "pt_voice": 400.0,
+    "pt_other": 300.0
+   },
+   {
+    "rank": 6,
+    "pt30": 133150.0,
+    "share_of_total_30d": 0.0162,
+    "active_days_30d": 21,
+    "pay_days_30d": 20,
+    "creator": false,
+    "signup_month": "2026-06",
+    "pt_chat": 0.0,
+    "pt_video": 90720.0,
+    "pt_scene_image": 42430.0,
+    "pt_other_moodshot": 0.0,
+    "pt_manga": 0.0,
+    "pt_voice": 0.0,
+    "pt_other": 0.0
+   },
+   {
+    "rank": 7,
+    "pt30": 130615.0,
+    "share_of_total_30d": 0.0158,
+    "active_days_30d": 22,
+    "pay_days_30d": 22,
+    "creator": true,
+    "signup_month": "2026-10",
+    "pt_chat": 91895.0,
+    "pt_video": 2400.0,
+    "pt_scene_image": 300.0,
+    "pt_other_moodshot": 30780.0,
+    "pt_manga": 0.0,
+    "pt_voice": 140.0,
+    "pt_other": 5100.0
+   },
+   {
+    "rank": 8,
+    "pt30": 104425.0,
+    "share_of_total_30d": 0.0127,
+    "active_days_30d": 23,
+    "pay_days_30d": 23,
+    "creator": true,
+    "signup_month": "2026-10",
+    "pt_chat": 1245.0,
+    "pt_video": 72110.0,
+    "pt_scene_image": 16800.0,
+    "pt_other_moodshot": 0.0,
+    "pt_manga": 13570.0,
+    "pt_voice": 0.0,
+    "pt_other": 700.0
+   },
+   {
+    "rank": 9,
+    "pt30": 98610.0,
+    "share_of_total_30d": 0.012,
+    "active_days_30d": 13,
+    "pay_days_30d": 13,
+    "creator": true,
+    "signup_month": "2025-10",
+    "pt_chat": 59100.0,
+    "pt_video": 0.0,
+    "pt_scene_image": 0.0,
+    "pt_other_moodshot": 35910.0,
+    "pt_manga": 0.0,
+    "pt_voice": 900.0,
+    "pt_other": 2700.0
+   },
+   {
+    "rank": 10,
+    "pt30": 93020.0,
+    "share_of_total_30d": 0.0113,
+    "active_days_30d": 23,
+    "pay_days_30d": 23,
+    "creator": false,
+    "signup_month": "2026-09",
+    "pt_chat": 220.0,
+    "pt_video": 60400.0,
+    "pt_scene_image": 32400.0,
+    "pt_other_moodshot": 0.0,
+    "pt_manga": 0.0,
+    "pt_voice": 0.0,
+    "pt_other": 0.0
+   }
+  ]
+ },
+ "b5_video_funnel": {
+  "b5_video_funnel": {
+   "definition": "video = non-failed T_SCENE video generation row or DMM charge with feature ntr_video/char-video; events within 2 min of the previous one for the same user merged as one video (dedupe gen row vs charge)",
+   "video_events_raw": 14355,
+   "video_events_dedup": 13345,
+   "signups_12w": 11949,
+   "video_within_7d": 555,
+   "video_within_7d_rate": 0.0464,
+   "video_within_7d_rate_among_senders": 0.0597,
+   "video_within_7d_rate_among_payers7d": 0.2074,
+   "second_video_ever_rate": 0.4793,
+   "second_video_within_24h_of_first": 0.409,
+   "second_video_within_7d_of_first": 0.4559,
+   "median_hours_first_to_second": 0.3788,
+   "median_hours_signup_to_first_video": 0.4022
+  },
+  "b5_video_vs_nonvideo": [
+   {
+    "segment": "all_signups",
+    "video_7d": true,
+    "users": 555,
+    "d30_eligible": 444,
+    "d7": 0.1075,
+    "d30": 0.045,
+    "pt_30d_per_user": 7355.7207,
+    "pt_30d_per_user_excl_video": 2842.7477,
+    "pt_30d_median": 1295.0
+   },
+   {
+    "segment": "all_signups",
+    "video_7d": false,
+    "users": 11394,
+    "d30_eligible": 8692,
+    "d7": 0.0191,
+    "d30": 0.0062,
+    "pt_30d_per_user": 224.1332,
+    "pt_30d_per_user_excl_video": 152.0313,
+    "pt_30d_median": 0.0
+   },
+   {
+    "segment": "paid_within_7d",
+    "video_7d": true,
+    "users": 541,
+    "d30_eligible": 430,
+    "d7": 0.1103,
+    "d30": 0.0465,
+    "pt_30d_per_user": 7594.8372,
+    "pt_30d_per_user_excl_video": 2934.9302,
+    "pt_30d_median": 1365.0
+   },
+   {
+    "segment": "paid_within_7d",
+    "video_7d": false,
+    "users": 2068,
+    "d30_eligible": 1506,
+    "d7": 0.0637,
+    "d30": 0.0133,
+    "pt_30d_per_user": 1155.2105,
+    "pt_30d_per_user_excl_video": 799.6062,
+    "pt_30d_median": 140.0
+   }
+  ]
+ },
+ "b6_s0_users": {
+  "b6_s0": {
+   "definition": "signups 8/17-11/14 with 0 messages ever (1:1+group/NTR/story). Mixpanel Page View/Button Click/Chat Room View 8/10-11/14, $insert_id dedupe, distinct_id = user id (includes merged pre-signup guest events)",
+   "s0_users": 4187,
+   "with_mixpanel_events": 3877,
+   "coverage": 0.926,
+   "also_no_feature_use": 3751,
+   "first_page_top": [
+    {
+     "page": "fan_18_agree_popup",
+     "users": 1990,
+     "share": 0.5133
+    },
+    {
+     "page": "chat_room",
+     "users": 1436,
+     "share": 0.3704
+    },
+    {
+     "page": "(none)",
+     "users": 356,
+     "share": 0.0918
+    },
+    {
+     "page": "(no page view)",
+     "users": 56,
+     "share": 0.0144
+    },
+    {
+     "page": "n-group_lobby",
+     "users": 20,
+     "share": 0.0052
+    },
+    {
+     "page": "home_icon_tip",
+     "users": 5,
+     "share": 0.0013
+    },
+    {
+     "page": "discover_bots",
+     "users": 5,
+     "share": 0.0013
+    },
+    {
+     "page": "motion_create_page",
+     "users": 3,
+     "share": 0.0008
+    },
+    {
+     "page": "create_bots",
+     "users": 2,
+     "share": 0.0005
+    },
+    {
+     "page": "chat_ai_model_intro",
+     "users": 1,
+     "share": 0.0003
+    },
+    {
+     "page": "createV2_step1",
+     "users": 1,
+     "share": 0.0003
+    },
+    {
+     "page": "story_list",
+     "users": 1,
+     "share": 0.0003
+    }
+   ],
+   "last_page_top": [
+    {
+     "page": "chat_room",
+     "users": 1957,
+     "share": 0.5048
+    },
+    {
+     "page": "(none)",
+     "users": 310,
+     "share": 0.08
+    },
+    {
+     "page": "motion_create_page",
+     "users": 242,
+     "share": 0.0624
+    },
+    {
+     "page": "n-group_lobby",
+     "users": 238,
+     "share": 0.0614
+    },
+    {
+     "page": "create_bots",
+     "users": 210,
+     "share": 0.0542
+    },
+    {
+     "page": "chat_ai_model_intro",
+     "users": 166,
+     "share": 0.0428
+    },
+    {
+     "page": "ntr_home_promo",
+     "users": 107,
+     "share": 0.0276
+    },
+    {
+     "page": "discover_bots",
+     "users": 107,
+     "share": 0.0276
+    },
+    {
+     "page": "n-group_room",
+     "users": 96,
+     "share": 0.0248
+    },
+    {
+     "page": "home_c",
+     "users": 76,
+     "share": 0.0196
+    },
+    {
+     "page": "(no page view)",
+     "users": 56,
+     "share": 0.0144
+    },
+    {
+     "page": "Artist",
+     "users": 45,
+     "share": 0.0116
+    }
+   ],
+   "page_view_count_dist": [
+    {
+     "bucket": "0",
+     "users": 56,
+     "share": 0.0144
+    },
+    {
+     "bucket": "1",
+     "users": 120,
+     "share": 0.031
+    },
+    {
+     "bucket": "2-3",
+     "users": 962,
+     "share": 0.2481
+    },
+    {
+     "bucket": "4-10",
+     "users": 1788,
+     "share": 0.4612
+    },
+    {
+     "bucket": "11-30",
+     "users": 786,
+     "share": 0.2027
+    },
+    {
+     "bucket": "31+",
+     "users": 165,
+     "share": 0.0426
+    }
+   ],
+   "page_view_median": 6.0,
+   "button_click_median": 8.0,
+   "reached": {
+    "chat_room_page_or_view": 0.7949,
+    "chat_room_1to1_view_event": 0.0539,
+    "artist_profile_page": 0.0622,
+    "discover_bots": 0.154,
+    "home_c": 0.1086,
+    "group_or_ntr_lobby": 0.2082,
+    "create_pages": 0.3054,
+    "motion_or_scene_pages": 0.2357
+   },
+   "note": "no dedicated character-detail page_name exists; character detail = Artist (creator profile) page; chat room = chat_room / n-group_room / story_room Page View or Chat Room View event"
+  }
+ },
+ "b7_d1_d7_splits": {
+  "b7_d1_d7_splits": [
+   {
+    "split": "first_char_type(senders)",
+    "value": "direct_official",
+    "users": 769,
+    "d1": 0.1183,
+    "d1_eligible": 769,
+    "d7": 0.0329,
+    "d7_eligible": 761
+   },
+   {
+    "split": "first_char_type(senders)",
+    "value": "direct_ugc",
+    "users": 6187,
+    "d1": 0.1262,
+    "d1_eligible": 6187,
+    "d7": 0.0313,
+    "d7_eligible": 6143
+   },
+   {
+    "split": "first_char_type(senders)",
+    "value": "group",
+    "users": 20,
+    "d1": 0.0,
+    "d1_eligible": 20,
+    "d7": 0.0,
+    "d7_eligible": 19
+   },
+   {
+    "split": "first_char_type(senders)",
+    "value": "ntr",
+    "users": 1047,
+    "d1": 0.1156,
+    "d1_eligible": 1047,
+    "d7": 0.0495,
+    "d7_eligible": 1031
+   },
+   {
+    "split": "first_char_type(senders)",
+    "value": "story",
+    "users": 13,
+    "d1": 0.2308,
+    "d1_eligible": 13,
+    "d7": 0.0,
+    "d7_eligible": 11
+   },
+   {
+    "split": "platform(all_signups)",
+    "value": "mobile",
+    "users": 9127,
+    "d1": 0.0866,
+    "d1_eligible": 9127,
+    "d7": 0.0236,
+    "d7_eligible": 9052
+   },
+   {
+    "split": "platform(all_signups)",
+    "value": "pc",
+    "users": 2018,
+    "d1": 0.0877,
+    "d1_eligible": 2018,
+    "d7": 0.0226,
+    "d7_eligible": 1991
+   },
+   {
+    "split": "platform(all_signups)",
+    "value": "unknown(no_mixpanel)",
+    "users": 804,
+    "d1": 0.0721,
+    "d1_eligible": 804,
+    "d7": 0.0201,
+    "d7_eligible": 796
+   },
+   {
+    "split": "platform(senders)",
+    "value": "mobile",
+    "users": 6224,
+    "d1": 0.1239,
+    "d1_eligible": 6224,
+    "d7": 0.0342,
+    "d7_eligible": 6175
+   },
+   {
+    "split": "platform(senders)",
+    "value": "pc",
+    "users": 1290,
+    "d1": 0.1295,
+    "d1_eligible": 1290,
+    "d7": 0.0322,
+    "d7_eligible": 1274
+   },
+   {
+    "split": "platform(senders)",
+    "value": "unknown(no_mixpanel)",
+    "users": 522,
+    "d1": 0.1111,
+    "d1_eligible": 522,
+    "d7": 0.031,
+    "d7_eligible": 516
+   },
+   {
+    "split": "first_talk_received_by_d1(senders, signups>=10/03)",
+    "value": false,
+    "users": 2558,
+    "d1": 0.1536,
+    "d1_eligible": 2558,
+    "d7": 0.0472,
+    "d7_eligible": 2502
+   },
+   {
+    "split": "first_talk_received_by_d1(senders, signups>=10/03)",
+    "value": true,
+    "users": 640,
+    "d1": 0.2297,
+    "d1_eligible": 640,
+    "d7": 0.0512,
+    "d7_eligible": 625
+   },
+   {
+    "split": "first_talk_opened(receivers)",
+    "value": false,
+    "users": 442,
+    "d1": 0.0837,
+    "d1_eligible": 442,
+    "d7": 0.0254,
+    "d7_eligible": 433
+   },
+   {
+    "split": "first_talk_opened(receivers)",
+    "value": true,
+    "users": 198,
+    "d1": 0.5556,
+    "d1_eligible": 198,
+    "d7": 0.1094,
+    "d7_eligible": 192
+   },
+   {
+    "split": "welcome_7day_bonus_enrolled(signups>=11/13)",
+    "value": false,
+    "users": 33,
+    "d1": 0.0909,
+    "d1_eligible": 33,
+    "d7": null,
+    "d7_eligible": 0
+   },
+   {
+    "split": "welcome_7day_bonus_enrolled(signups>=11/13)",
+    "value": true,
+    "users": 225,
+    "d1": 0.1837,
+    "d1_eligible": 49,
+    "d7": null,
+    "d7_eligible": 0
+   }
+  ],
+  "b7_first_talk_reach": {
+   "signups_since_1003": 4630,
+   "senders": 3198,
+   "received_by_d1_share_of_senders": 0.2001
+  }
+ },
+ "b8_d1_rise": {
+  "b8_daily_d1": [
+   {
+    "signup_date": "2026-09-14",
+    "signups": 180,
+    "d1": 0.0389,
+    "d1_users": 7,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.5889
+   },
+   {
+    "signup_date": "2026-09-15",
+    "signups": 126,
+    "d1": 0.0317,
+    "d1_users": 4,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.5317
+   },
+   {
+    "signup_date": "2026-09-16",
+    "signups": 128,
+    "d1": 0.0781,
+    "d1_users": 10,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.5312
+   },
+   {
+    "signup_date": "2026-09-17",
+    "signups": 109,
+    "d1": 0.0826,
+    "d1_users": 9,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.6514
+   },
+   {
+    "signup_date": "2026-09-18",
+    "signups": 124,
+    "d1": 0.0726,
+    "d1_users": 9,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.6452
+   },
+   {
+    "signup_date": "2026-09-19",
+    "signups": 161,
+    "d1": 0.0683,
+    "d1_users": 11,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.5963
+   },
+   {
+    "signup_date": "2026-09-20",
+    "signups": 153,
+    "d1": 0.0719,
+    "d1_users": 11,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.6471
+   },
+   {
+    "signup_date": "2026-09-21",
+    "signups": 125,
+    "d1": 0.056,
+    "d1_users": 7,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.712
+   },
+   {
+    "signup_date": "2026-09-22",
+    "signups": 102,
+    "d1": 0.0882,
+    "d1_users": 9,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.7745
+   },
+   {
+    "signup_date": "2026-09-23",
+    "signups": 134,
+    "d1": 0.0597,
+    "d1_users": 8,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.7015
+   },
+   {
+    "signup_date": "2026-09-24",
+    "signups": 113,
+    "d1": 0.0619,
+    "d1_users": 7,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.6991
+   },
+   {
+    "signup_date": "2026-09-25",
+    "signups": 98,
+    "d1": 0.0714,
+    "d1_users": 7,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.7143
+   },
+   {
+    "signup_date": "2026-09-26",
+    "signups": 137,
+    "d1": 0.0876,
+    "d1_users": 12,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.7664
+   },
+   {
+    "signup_date": "2026-09-27",
+    "signups": 138,
+    "d1": 0.0362,
+    "d1_users": 5,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.6957
+   },
+   {
+    "signup_date": "2026-09-28",
+    "signups": 121,
+    "d1": 0.0661,
+    "d1_users": 8,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.6942
+   },
+   {
+    "signup_date": "2026-09-29",
+    "signups": 109,
+    "d1": 0.0826,
+    "d1_users": 9,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.6789
+   },
+   {
+    "signup_date": "2026-09-30",
+    "signups": 113,
+    "d1": 0.0796,
+    "d1_users": 9,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.708
+   },
+   {
+    "signup_date": "2026-10-01",
+    "signups": 96,
+    "d1": 0.1146,
+    "d1_users": 11,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.7396
+   },
+   {
+    "signup_date": "2026-10-02",
+    "signups": 115,
+    "d1": 0.0783,
+    "d1_users": 9,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 2,
+    "sender_share": 0.7565
+   },
+   {
+    "signup_date": "2026-10-03",
+    "signups": 128,
+    "d1": 0.0781,
+    "d1_users": 10,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 4,
+    "sender_share": 0.6016
+   },
+   {
+    "signup_date": "2026-10-04",
+    "signups": 139,
+    "d1": 0.0432,
+    "d1_users": 6,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 2,
+    "sender_share": 0.777
+   },
+   {
+    "signup_date": "2026-10-05",
+    "signups": 139,
+    "d1": 0.0863,
+    "d1_users": 12,
+    "d1_users_with_return_reward_that_day": 0,
+    "d1_users_with_first_talk_by_d1": 5,
+    "sender_share": 0.7698
+   },
+   {
+    "signup_date": "2026-10-06",
+    "signups": 151,
+    "d1": 0.0662,
+    "d1_users": 10,
+    "d1_users_with_return_reward_that_day": 4,
+    "d1_users_with_first_talk_by_d1": 4,
+    "sender_share": 0.7086
+   },
+   {
+    "signup_date": "2026-10-07",
+    "signups": 136,
+    "d1": 0.1397,
+    "d1_users": 19,
+    "d1_users_with_return_reward_that_day": 19,
+    "d1_users_with_first_talk_by_d1": 4,
+    "sender_share": 0.75
+   },
+   {
+    "signup_date": "2026-10-08",
+    "signups": 122,
+    "d1": 0.082,
+    "d1_users": 10,
+    "d1_users_with_return_reward_that_day": 10,
+    "d1_users_with_first_talk_by_d1": 1,
+    "sender_share": 0.7049
+   },
+   {
+    "signup_date": "2026-10-09",
+    "signups": 136,
+    "d1": 0.1765,
+    "d1_users": 24,
+    "d1_users_with_return_reward_that_day": 24,
+    "d1_users_with_first_talk_by_d1": 8,
+    "sender_share": 0.7426
+   },
+   {
+    "signup_date": "2026-10-10",
+    "signups": 150,
+    "d1": 0.1533,
+    "d1_users": 23,
+    "d1_users_with_return_reward_that_day": 22,
+    "d1_users_with_first_talk_by_d1": 4,
+    "sender_share": 0.7267
+   },
+   {
+    "signup_date": "2026-10-11",
+    "signups": 154,
+    "d1": 0.0909,
+    "d1_users": 14,
+    "d1_users_with_return_reward_that_day": 14,
+    "d1_users_with_first_talk_by_d1": 3,
+    "sender_share": 0.7143
+   },
+   {
+    "signup_date": "2026-10-12",
+    "signups": 153,
+    "d1": 0.0784,
+    "d1_users": 12,
+    "d1_users_with_return_reward_that_day": 11,
+    "d1_users_with_first_talk_by_d1": 2,
+    "sender_share": 0.7386
+   },
+   {
+    "signup_date": "2026-10-13",
+    "signups": 147,
+    "d1": 0.0884,
+    "d1_users": 13,
+    "d1_users_with_return_reward_that_day": 13,
+    "d1_users_with_first_talk_by_d1": 2,
+    "sender_share": 0.7483
+   },
+   {
+    "signup_date": "2026-10-14",
+    "signups": 137,
+    "d1": 0.1898,
+    "d1_users": 26,
+    "d1_users_with_return_reward_that_day": 24,
+    "d1_users_with_first_talk_by_d1": 8,
+    "sender_share": 0.6423
+   },
+   {
+    "signup_date": "2026-10-15",
+    "signups": 125,
+    "d1": 0.12,
+    "d1_users": 15,
+    "d1_users_with_return_reward_that_day": 15,
+    "d1_users_with_first_talk_by_d1": 1,
+    "sender_share": 0.672
+   },
+   {
+    "signup_date": "2026-10-16",
+    "signups": 111,
+    "d1": 0.1081,
+    "d1_users": 12,
+    "d1_users_with_return_reward_that_day": 12,
+    "d1_users_with_first_talk_by_d1": 3,
+    "sender_share": 0.6036
+   },
+   {
+    "signup_date": "2026-10-17",
+    "signups": 116,
+    "d1": 0.181,
+    "d1_users": 21,
+    "d1_users_with_return_reward_that_day": 20,
+    "d1_users_with_first_talk_by_d1": 4,
+    "sender_share": 0.6207
+   },
+   {
+    "signup_date": "2026-10-18",
+    "signups": 163,
+    "d1": 0.1288,
+    "d1_users": 21,
+    "d1_users_with_return_reward_that_day": 20,
+    "d1_users_with_first_talk_by_d1": 5,
+    "sender_share": 0.7055
+   },
+   {
+    "signup_date": "2026-10-19",
+    "signups": 99,
+    "d1": 0.1313,
+    "d1_users": 13,
+    "d1_users_with_return_reward_that_day": 13,
+    "d1_users_with_first_talk_by_d1": 5,
+    "sender_share": 0.6162
+   },
+   {
+    "signup_date": "2026-10-20",
+    "signups": 144,
+    "d1": 0.0903,
+    "d1_users": 13,
+    "d1_users_with_return_reward_that_day": 13,
+    "d1_users_with_first_talk_by_d1": 3,
+    "sender_share": 0.6806
+   },
+   {
+    "signup_date": "2026-10-21",
+    "signups": 101,
+    "d1": 0.1287,
+    "d1_users": 13,
+    "d1_users_with_return_reward_that_day": 13,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.6832
+   },
+   {
+    "signup_date": "2026-10-22",
+    "signups": 69,
+    "d1": 0.2029,
+    "d1_users": 14,
+    "d1_users_with_return_reward_that_day": 14,
+    "d1_users_with_first_talk_by_d1": 4,
+    "sender_share": 0.8261
+   },
+   {
+    "signup_date": "2026-10-23",
+    "signups": 124,
+    "d1": 0.129,
+    "d1_users": 16,
+    "d1_users_with_return_reward_that_day": 16,
+    "d1_users_with_first_talk_by_d1": 6,
+    "sender_share": 0.7258
+   },
+   {
+    "signup_date": "2026-10-24",
+    "signups": 174,
+    "d1": 0.1379,
+    "d1_users": 24,
+    "d1_users_with_return_reward_that_day": 23,
+    "d1_users_with_first_talk_by_d1": 7,
+    "sender_share": 0.7069
+   },
+   {
+    "signup_date": "2026-10-25",
+    "signups": 189,
+    "d1": 0.127,
+    "d1_users": 24,
+    "d1_users_with_return_reward_that_day": 23,
+    "d1_users_with_first_talk_by_d1": 9,
+    "sender_share": 0.7196
+   },
+   {
+    "signup_date": "2026-10-26",
+    "signups": 145,
+    "d1": 0.131,
+    "d1_users": 19,
+    "d1_users_with_return_reward_that_day": 18,
+    "d1_users_with_first_talk_by_d1": 6,
+    "sender_share": 0.6897
+   },
+   {
+    "signup_date": "2026-10-27",
+    "signups": 141,
+    "d1": 0.0993,
+    "d1_users": 14,
+    "d1_users_with_return_reward_that_day": 14,
+    "d1_users_with_first_talk_by_d1": 4,
+    "sender_share": 0.6809
+   },
+   {
+    "signup_date": "2026-10-28",
+    "signups": 115,
+    "d1": 0.0522,
+    "d1_users": 6,
+    "d1_users_with_return_reward_that_day": 6,
+    "d1_users_with_first_talk_by_d1": 2,
+    "sender_share": 0.7391
+   },
+   {
+    "signup_date": "2026-10-29",
+    "signups": 76,
+    "d1": 0.1184,
+    "d1_users": 9,
+    "d1_users_with_return_reward_that_day": 8,
+    "d1_users_with_first_talk_by_d1": 2,
+    "sender_share": 0.6447
+   },
+   {
+    "signup_date": "2026-10-30",
+    "signups": 76,
+    "d1": 0.1184,
+    "d1_users": 9,
+    "d1_users_with_return_reward_that_day": 8,
+    "d1_users_with_first_talk_by_d1": 3,
+    "sender_share": 0.6447
+   },
+   {
+    "signup_date": "2026-10-31",
+    "signups": 103,
+    "d1": 0.1748,
+    "d1_users": 18,
+    "d1_users_with_return_reward_that_day": 18,
+    "d1_users_with_first_talk_by_d1": 3,
+    "sender_share": 0.7087
+   },
+   {
+    "signup_date": "2026-11-01",
+    "signups": 121,
+    "d1": 0.124,
+    "d1_users": 15,
+    "d1_users_with_return_reward_that_day": 15,
+    "d1_users_with_first_talk_by_d1": 7,
+    "sender_share": 0.6281
+   },
+   {
+    "signup_date": "2026-11-02",
+    "signups": 114,
+    "d1": 0.1053,
+    "d1_users": 12,
+    "d1_users_with_return_reward_that_day": 12,
+    "d1_users_with_first_talk_by_d1": 8,
+    "sender_share": 0.6228
+   },
+   {
+    "signup_date": "2026-11-03",
+    "signups": 112,
+    "d1": 0.1071,
+    "d1_users": 12,
+    "d1_users_with_return_reward_that_day": 12,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.625
+   },
+   {
+    "signup_date": "2026-11-04",
+    "signups": 90,
+    "d1": 0.1444,
+    "d1_users": 13,
+    "d1_users_with_return_reward_that_day": 13,
+    "d1_users_with_first_talk_by_d1": 2,
+    "sender_share": 0.6889
+   },
+   {
+    "signup_date": "2026-11-05",
+    "signups": 84,
+    "d1": 0.0833,
+    "d1_users": 7,
+    "d1_users_with_return_reward_that_day": 7,
+    "d1_users_with_first_talk_by_d1": 2,
+    "sender_share": 0.619
+   },
+   {
+    "signup_date": "2026-11-06",
+    "signups": 106,
+    "d1": 0.1415,
+    "d1_users": 15,
+    "d1_users_with_return_reward_that_day": 15,
+    "d1_users_with_first_talk_by_d1": 3,
+    "sender_share": 0.6698
+   },
+   {
+    "signup_date": "2026-11-07",
+    "signups": 130,
+    "d1": 0.1462,
+    "d1_users": 19,
+    "d1_users_with_return_reward_that_day": 19,
+    "d1_users_with_first_talk_by_d1": 5,
+    "sender_share": 0.6385
+   },
+   {
+    "signup_date": "2026-11-08",
+    "signups": 110,
+    "d1": 0.1818,
+    "d1_users": 20,
+    "d1_users_with_return_reward_that_day": 19,
+    "d1_users_with_first_talk_by_d1": 6,
+    "sender_share": 0.6455
+   },
+   {
+    "signup_date": "2026-11-09",
+    "signups": 96,
+    "d1": 0.1771,
+    "d1_users": 17,
+    "d1_users_with_return_reward_that_day": 17,
+    "d1_users_with_first_talk_by_d1": 0,
+    "sender_share": 0.6458
+   },
+   {
+    "signup_date": "2026-11-10",
+    "signups": 100,
+    "d1": 0.09,
+    "d1_users": 9,
+    "d1_users_with_return_reward_that_day": 9,
+    "d1_users_with_first_talk_by_d1": 3,
+    "sender_share": 0.53
+   },
+   {
+    "signup_date": "2026-11-11",
+    "signups": 116,
+    "d1": 0.0776,
+    "d1_users": 9,
+    "d1_users_with_return_reward_that_day": 9,
+    "d1_users_with_first_talk_by_d1": 1,
+    "sender_share": 0.5172
+   },
+   {
+    "signup_date": "2026-11-12",
+    "signups": 117,
+    "d1": 0.1538,
+    "d1_users": 18,
+    "d1_users_with_return_reward_that_day": 16,
+    "d1_users_with_first_talk_by_d1": 5,
+    "sender_share": 0.5641
+   },
+   {
+    "signup_date": "2026-11-13",
+    "signups": 82,
+    "d1": 0.1463,
+    "d1_users": 12,
+    "d1_users_with_return_reward_that_day": 11,
+    "d1_users_with_first_talk_by_d1": 3,
+    "sender_share": 0.6098
+   }
+  ],
+  "b8_d1_by_period": [
+   {
+    "period": "a_0914-0928",
+    "signups": 1949,
+    "d1_activity": 0.0636,
+    "d1_page_view": 0.1401,
+    "d1_page_view_but_no_activity": 0.0821,
+    "sender_share": 0.6583
+   },
+   {
+    "period": "b_0929-1001",
+    "signups": 318,
+    "d1_activity": 0.0912,
+    "d1_page_view": 0.1918,
+    "d1_page_view_but_no_activity": 0.1069,
+    "sender_share": 0.7075
+   },
+   {
+    "period": "c_1002-1006(first_talk)",
+    "signups": 672,
+    "d1_activity": 0.0699,
+    "d1_page_view": 0.1607,
+    "d1_page_view_but_no_activity": 0.1012,
+    "sender_share": 0.7232
+   },
+   {
+    "period": "d_1007-1013(+return_reward)",
+    "signups": 998,
+    "d1_activity": 0.1152,
+    "d1_page_view": 0.1643,
+    "d1_page_view_but_no_activity": 0.0571,
+    "sender_share": 0.7325
+   },
+   {
+    "period": "e_1014-1113",
+    "signups": 3586,
+    "d1_activity": 0.1297,
+    "d1_page_view": 0.1815,
+    "d1_page_view_but_no_activity": 0.0639,
+    "sender_share": 0.6578
+   }
+  ]
+ }
+}
