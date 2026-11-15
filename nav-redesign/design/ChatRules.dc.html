@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>대화방 규칙</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#0b0a10}a{color:inherit}button{cursor:pointer}</style>
+</helmet>
+<div style="width: 820px; height: 844px; box-sizing: border-box; padding: 26px; background: #0b0a10; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #f3f1fa; display: flex; flex-direction: column; gap: 14px">
+  <span style="font-size: 12px; font-weight: 800; color: #fcd34d">B 최종 · 대화방 상단/하단 규칙</span>
+  <span style="font-size: 24px; font-weight: 800">대화방에서는 "지금 이 관계"를 보여줘요</span>
+  <table style="border-collapse: collapse; font-size: 13px; line-height: 1.6"><thead><tr><th style="text-align: left; padding: 8px 10px; color: #a7a2b8">구분</th><th style="text-align: left; padding: 8px 10px; color: #a7a2b8">보이는 것</th><th style="text-align: left; padding: 8px 10px; color: #a7a2b8">메모</th></tr></thead><tbody><tr><td style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.08); font-weight: 800; white-space: nowrap; vertical-align: top">공통 상단</td><td style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.08); vertical-align: top">← · 아바타 · 이름 · <b>상태 한 줄</b> · 액션 최대 3개 · DMM pt 미니칩 · ⋯</td><td style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.08); color: #a7a2b8; vertical-align: top">하단탭 숨김. pt 칩은 주황 P 아이콘 유지(잔액 부족 시 빨간 테두리)</td></tr><tr><td style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.08); font-weight: 800; white-space: nowrap; vertical-align: top">1:1</td><td style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.08); vertical-align: top">상태: 온라인·好感度 Lv / 액션: 음성 · 동영상 · ⋯</td><td style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.08); color: #a7a2b8; vertical-align: top">⋯ = 컬렉션·기억·모델·신고·초기화</td></tr><tr><td style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.08); font-weight: 800; white-space: nowrap; vertical-align: top">NTR</td><td style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.08); vertical-align: top">아바타 2개(그녀+그) · 상태: 그의 위치·귀가까지 남은 시간 / 2줄: 「いまの場面」 칩 + 「ふたりの距離」 게이지 / 액션: 証拠・記録(새 증거 빨간 점)</td><td style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.08); color: #a7a2b8; vertical-align: top">분기 카드는 대화 안에 / 입력 왼쪽 行動 버튼</td></tr><tr><td style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.08); font-weight: 800; white-space: nowrap; vertical-align: top">그룹</td><td style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.08); vertical-align: top">아바타 3개 겹침 · 멤버 이름 / 액션: 멤버 추가</td><td style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.08); color: #a7a2b8; vertical-align: top">입력 위 「話しかける相手」 칩(みんな/개별)</td></tr><tr><td style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.08); font-weight: 800; white-space: nowrap; vertical-align: top">공통 하단</td><td style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.08); vertical-align: top">답장 추천 칩 3개 → 입력란(음성 입력 포함) → 전송 / 맨 아래 한 줄: 모델 선택 · 무료 남은 횟수 · 1회 비용</td><td style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.08); color: #a7a2b8; vertical-align: top">비용은 항상 보이게 (차감 투명성 → 결제 신뢰)</td></tr></tbody></table>
+</div></x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":820,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = {}; }
+  renderVals() {
+    const s = this.state;
+    return {};
+  }
+}
+</script>
+</body>
+</html>
