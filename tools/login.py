@@ -33,7 +33,7 @@ def body(t, m=False):
       f'<span style="font-size: {21 if m else 24}px; font-weight: 800; line-height: 1.3; letter-spacing: -0.01em">ログインで、<span style="background: {GRAD}; -webkit-background-clip: text; background-clip: text; color: transparent">ぜんぶ無料</span>でひらく。</span></div>'
       f'<div style="display: flex; flex-direction: column; gap: 8px">{rows}</div>'
       f'<div style="display: flex; flex-direction: column; gap: 8px; align-items: stretch">'
-      f'<span style="height: 52px; border-radius: 14px; background: {GRAD}; color: #fff; font-size: 16px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 10px 28px rgba(192,77,255,.38)"><img src="{DMM}" style="width: 26px; height: 26px; border-radius: 6px">DMMで無料ログイン</span>'
+      f'<span style="height: 52px; border-radius: 14px; background: {GRAD}; color: #fff; font-size: 16px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 10px 28px rgba(192,77,255,.38)">DMMで無料ログイン</span>'
       f'<span style="text-align: center; font-size: 11.5px; color: {t["sub"]}">DMMアカウントで10びょう・はじめてでも無料で登録OK</span></div>'
       f'<div style="display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 11px; color: {t["ok"]}; font-weight: 700">{ic("lock",t["ok"],13)}ほかのユーザーに、登録情報が見えることはありません</div>'
       f'<span style="text-align: center; font-size: 12px; color: {t["sub"]}">あとで</span></div>')
