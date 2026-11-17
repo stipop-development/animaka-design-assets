@@ -1,0 +1,15 @@
+1ebdbff0d066a223b306e7dff07f6272 /home/claude/animaka-design-assets/home/c01_idol.png
+3f70b5c0882b3b44c3272fb6b8f0691d /home/claude/animaka-design-assets/home/c02_idol_secret.png
+0db405bd3e41a5c08379f0c28c046cda /home/claude/animaka-design-assets/home/c03_sharehouse.png
+ce6764cc314a1f59cb0065cac6f350c7 /home/claude/animaka-design-assets/home/c04_dorm.png
+86aa6fe5fc680ef962f3fe14a53fe207 /home/claude/animaka-design-assets/home/c05_ntr.png
+7dcbe240edbc92204d0cbcef99df4979 /home/claude/animaka-design-assets/home/c06_tsundere.png
+ecaa5854cef2a6c42b1713075758bfed /home/claude/animaka-design-assets/home/c07_konbini.png
+01b33091e880a1cfe59d1e70eb724985 /home/claude/animaka-design-assets/home/c08_streamer.png
+8ee4bc03b8330856ccd4e8e0fc93bc81 /home/claude/animaka-design-assets/home/c09_boss.png
+0c7c69ab24b578199d4749fde14b1d52 /home/claude/animaka-design-assets/home/c10_library.png
+fea9ac5bf7af50ebbdf8e5fcd07c7bca /home/claude/animaka-design-assets/home/u01_c01_beach.png
+defb7ebcc4725dc4963f7db0cf1a8576 /home/claude/animaka-design-assets/home/u02_c06_yukata.png
+1b3214766389e78e33fd72453613e222 /home/claude/animaka-design-assets/home/u04_c08_cosplay.png
+c8fe7c11bd9f8d2198220c38817a7e0f /home/claude/animaka-design-assets/home/u05_c09_office_night.png
+b430972ff8c29777df2b8c4abad50213 /home/claude/animaka-design-assets/urafeed/images/logo.png

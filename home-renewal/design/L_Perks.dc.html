@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>특전 · 첫 캐릭터 미션 · 라이트</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f6f6f9}
+a{color:#c11554}
+.rail{scrollbar-width:none}.rail::-webkit-scrollbar{display:none}
+button{cursor:pointer}
+</style>
+</helmet>
+<div style="width: 1200px; min-height: 1500px; font-family: Poppins, 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif; color: #17151f; background: #f6f6f9; padding: 32px 40px; box-sizing: border-box; display: flex; gap: 32px">
+  <div style="width: 600px; display: flex; flex-direction: column; gap: 16px">
+    <div style="display: flex; align-items: center; justify-content: space-between"><span style="font-size: 30px; font-weight: 800">특전</span><div style="display: inline-flex; gap: 4px; padding: 4px; border-radius: 99px; background: #ffffff; border: 1px solid rgba(20,16,40,0.1)"><button type="button" onClick="{{set_p_0}}" style="height: 34px; padding: 0 14px; border: 0; border-radius: 99px; background: {{bg_p_0}}; color: {{fg_p_0}}; font-family: inherit; font-size: 13px; font-weight: 800">시작 전 0/3</button><button type="button" onClick="{{set_p_2}}" style="height: 34px; padding: 0 14px; border: 0; border-radius: 99px; background: {{bg_p_2}}; color: {{fg_p_2}}; font-family: inherit; font-size: 13px; font-weight: 800">진행 중 2/3</button><button type="button" onClick="{{set_p_3}}" style="height: 34px; padding: 0 14px; border: 0; border-radius: 99px; background: {{bg_p_3}}; color: {{fg_p_3}}; font-family: inherit; font-size: 13px; font-weight: 800">완료 3/3</button></div></div>
+    <div style="border-radius: 16px; padding: 18px 20px; background: #ffffff"><b style="font-size: 20px">보너스 포인트 858</b><div style="font-size: 12px; color: #6c6878; margin-top: 4px">유료 기능에 쓸 수 있는 무료 포인트 · 부족한 만큼만 DMM 포인트 사용</div></div>
+    <div style="border-radius: 20px; padding: 22px; background: radial-gradient(600px 260px at 100% 0%, rgba(192,77,255,0.28), rgba(192,77,255,0) 70%), #ffffff; border: 1px solid rgba(255,61,127,0.45); display: flex; flex-direction: column; gap: 14px">
+  <div style="display: flex; align-items: center; gap: 8px"><span style="font-size: 12px; font-weight: 800; color: #fff; background: linear-gradient(95deg, #ff3d7f 0%, #c04dff 55%, #6f5bff 100%); border-radius: 99px; padding: 4px 10px">NEW · 크리에이터 첫걸음</span><span style="font-size: 11px; font-weight: 800; color: #b45309; border: 1px solid #b45309; border-radius: 99px; padding: 2px 8px">v1.4</span></div>
+  <div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 22px; font-weight: 800">첫 캐릭터 미션</span><span style="font-size: 18px; font-weight: 800; color: #ff3d7f">{{doneN}} / 3 달성</span></div>
+  <span style="font-size: 13px; color: #3d3a4a">내 최애를 직접 만들어 보세요. 다 하면 최대 120pt + 씬 이미지 1장 무료.</span>
+  <div style="display: flex; gap: 6px"><span style="flex: 1; height: 6px; border-radius: 99px; background: {{bar_1}}"></span><span style="flex: 1; height: 6px; border-radius: 99px; background: {{bar_2}}"></span><span style="flex: 1; height: 6px; border-radius: 99px; background: {{bar_3}}"></span></div>
+  <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px; border: {{mbd_1}}; background: {{mbg_1}}">
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 4px"><b style="font-size: 15px">캐릭터 만들기</b><span style="font-size: 12px; color: #6c6878">빠른 시작 · 리메이크 · 처음부터 모두 OK</span></div>
+  <sc-if value="{{done_1}}" hint-placeholder-val="{{ false }}"><span style="font-size: 13px; font-weight: 800; color: #34d399; display: flex; align-items: center; gap: 4px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>달성 +30pt</span></sc-if>
+  <sc-if value="{{todo_1}}" hint-placeholder-val="{{ true }}"><a href="#" style="height: 36px; padding: 0 14px; border-radius: 10px; background: {{mcta_1}}; color: #17151f; font-size: 13px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center">+30pt 받기 →</a></sc-if>
+</div><div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px; border: {{mbd_2}}; background: {{mbg_2}}">
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 4px"><b style="font-size: 15px">내 캐릭터와 대화 5번</b><span style="font-size: 12px; color: #6c6878">내가 만든 캐릭터에게 답장 5번 받기</span><div style="display: flex; align-items: center; gap: 8px; margin-top: 4px"><div style="flex: 1; height: 5px; border-radius: 99px; background: rgba(20,16,40,0.08)"><div style="width: {{chatW}}; height: 100%; border-radius: 99px; background: #ff3d7f"></div></div><span style="font-size: 11px; color: #3d3a4a">{{chatN}} / 5</span></div></div>
+  <sc-if value="{{done_2}}" hint-placeholder-val="{{ false }}"><span style="font-size: 13px; font-weight: 800; color: #34d399; display: flex; align-items: center; gap: 4px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>달성 +30pt</span></sc-if>
+  <sc-if value="{{todo_2}}" hint-placeholder-val="{{ true }}"><a href="#" style="height: 36px; padding: 0 14px; border-radius: 10px; background: {{mcta_2}}; color: #17151f; font-size: 13px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center">+30pt 받기 →</a></sc-if>
+</div><div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px; border: {{mbd_3}}; background: {{mbg_3}}">
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 4px"><b style="font-size: 15px">공개하고 첫 손님 받기</b><span style="font-size: 12px; color: #6c6878">다른 유저 1명이 내 캐릭터와 대화하면 달성</span></div>
+  <sc-if value="{{done_3}}" hint-placeholder-val="{{ false }}"><span style="font-size: 13px; font-weight: 800; color: #34d399; display: flex; align-items: center; gap: 4px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>달성 +60pt</span></sc-if>
+  <sc-if value="{{todo_3}}" hint-placeholder-val="{{ true }}"><a href="#" style="height: 36px; padding: 0 14px; border-radius: 10px; background: {{mcta_3}}; color: #17151f; font-size: 13px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center">+60pt 받기 →</a></sc-if>
+</div>
+  <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px; background: {{bonusBg}}; border: 1px dashed rgba(252,211,77,0.6)">
+    <span style="width: 40px; height: 40px; border-radius: 12px; background: rgba(252,211,77,0.16); color: #b45309; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v9H5v-9"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg></span>
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 14px">3개 모두 달성 보너스 · 씬 이미지 1장 무료</b><span style="font-size: 12px; color: #6c6878">내가 만든 캐릭터로만 쓸 수 있어요</span></div>
+    <span style="font-size: 13px; font-weight: 800; color: #b45309">{{bonusTxt}}</span>
+  </div>
+  <span style="font-size: 12px; color: #6c6878">참여 기한: 없음 (가입 후 언제든) · 보너스 유효기간은 지급 후 14일 · <a href="#">조건 보기</a></span>
+</div><div style="border-radius: 20px; padding: 20px 22px; background: #ffffff; border: 1px solid rgba(20,16,40,0.1); display: flex; flex-direction: column">
+  <div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 6px"><span style="font-size: 18px; font-weight: 800">크리에이터 보상 <span style="font-size: 12px; color: #6c6878; font-weight: 500">상시</span></span><span style="font-size: 13px; color: #1eb87b; font-weight: 800">이번 달 받은 보상 +373pt</span></div>
+  <div style="display: flex; gap: 12px; padding: 14px 0; border-top: 1px solid rgba(20,16,40,0.08)"><span style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: rgba(255,61,127,0.16); color: #c11554; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5h4.5a1.75 1.75 0 0 1 0 3.5h-3a1.75 1.75 0 0 0 0 3.5H15"/></svg></span><div style="display: flex; flex-direction: column; gap: 3px"><b style="font-size: 14px">내 캐릭터로 대화가 일어나면 포인트 환급</b><span style="font-size: 12px; color: #6c6878; line-height: 1.5">다른 유저가 내 캐릭터와 대화에 쓴 포인트의 일부를 보너스 포인트로 매일 지급 (본인 대화 제외)</span></div></div>
+  <div style="display: flex; gap: 12px; padding: 14px 0; border-top: 1px solid rgba(20,16,40,0.08)"><span style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: rgba(255,61,127,0.16); color: #c11554; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><div style="display: flex; flex-direction: column; gap: 3px"><b style="font-size: 14px">공개 후 72시간 노출 보장</b><span style="font-size: 12px; color: #6c6878; line-height: 1.5">품질 기준을 통과한 새 캐릭터는 홈 "새로 온 캐릭터" 줄에 반드시 노출</span></div></div>
+  <div style="display: flex; gap: 12px; padding: 14px 0; border-top: 1px solid rgba(20,16,40,0.08)"><span style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: rgba(255,61,127,0.16); color: #c11554; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2s5 5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5 0 2 1 3 2 3 0-3 1-6 1-8.5z"/></svg></span><div style="display: flex; flex-direction: column; gap: 3px"><b style="font-size: 14px">주간 크리에이터 랭킹 TOP10 +300pt</b><span style="font-size: 12px; color: #6c6878; line-height: 1.5">매주 월요일 지급 · 캐릭터 홈 랭킹 탭에서 확인</span></div></div>
+  <div style="display: flex; gap: 12px; padding: 14px 0; border-top: 1px solid rgba(20,16,40,0.08)"><span style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: rgba(255,61,127,0.16); color: #c11554; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v9H5v-9"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg></span><div style="display: flex; flex-direction: column; gap: 3px"><b style="font-size: 14px">장르 보너스 +20pt</b><span style="font-size: 12px; color: #6c6878; line-height: 1.5">"지금 새 캐릭터가 필요한 장르"로 공개하면 추가 지급</span></div></div>
+</div><div style="border-radius: 20px; padding: 18px 22px; background: #ffffff; border: 1px solid rgba(20,16,40,0.1); display: flex; align-items: center; justify-content: space-between"><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 11px; font-weight: 800; color: #c11554">신규 가입 혜택</span><b style="font-size: 16px">나의 7일 보너스 · 첫 체험 미션</b><span style="font-size: 12px; color: #6c6878">기존 카드 그대로 (접힌 상태로 아래로)</span></div><span style="font-size: 15px; font-weight: 800">3 / 7일 달성 ›</span></div>
+  </div>
+  <div style="width: 480px; display: flex; flex-direction: column; gap: 20px"><div style="display: flex; flex-direction: column; gap: 10px"><span style="font-size: 13px; font-weight: 800; color: #b45309">어디에 보이나</span>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #3d3a4a; line-height: 1.6">
+<div style="padding: 12px 14px; border-radius: 12px; background: #ffffff">① 메인 홈 「이어서 대화하기」 첫 칸 — 미션 끝날 때까지</div>
+<div style="padding: 12px 14px; border-radius: 12px; background: #ffffff">② 특전 페이지 — 7일 보너스 카드보다 <b>위</b> (가입 3일 이후) / 아래 (가입 3일 이내)</div>
+<div style="padding: 12px 14px; border-radius: 12px; background: #ffffff">③ 좌측바 「특전」 옆 빨간 점 — 받을 보상이 있을 때</div>
+<div style="padding: 12px 14px; border-radius: 12px; background: #ffffff">④ 미션 달성 순간 토스트 + 다음 미션 안내</div>
+</div></div>
+  <div style=" border-radius: 14px; background: #f1f0f6; border: 1px dashed #b45309; padding: 14px 18px; color: #17151f; font-size: 13px; line-height: 1.6">
+  <div style="font-size: 12px; font-weight: 800; color: #b45309; margin-bottom: 6px">기획 메모 · 첫 캐릭터 미션</div>
+  <ul style="margin: 0; padding-left: 18px"><li style="margin: 0 0 4px">대상: 공개 캐릭터가 0개인 모든 유저 (기존 유저 포함).</li><li style="margin: 0 0 4px">미션 1은 "저장" 기준 (비공개 저장도 OK). 미션 2는 내 캐릭터의 답장 5번. 미션 3은 공개 후 <b>다른 유저</b> 1명이 첫 메시지를 보내면 달성.</li><li style="margin: 0 0 4px">미션 3은 노출 보장(72시간) 덕분에 대부분 달성 가능. 72시간 안에 못 받으면 "새로 온" 줄에 24시간 한 번 더.</li><li style="margin: 0 0 4px">포인트 금액(30/30/60)과 씬 이미지 1장은 제안값 — 운영에서 바꿀 수 있게 설정값으로.</li><li style="margin: 0 0 4px">어뷰징 방지: 미션 3은 같은 기기·같은 결제 계정 유저는 손님으로 안 셈.</li></ul>
+</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1200,"height":1500}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { p: '0' }; }
+  renderVals() {
+    const s = this.state;
+    const p = Number(s.p);
+    const d1 = p >= 1, d2 = p >= 2, d3 = p >= 3;
+    const doneArr = [d1, d2, d3];
+    const g = (d) => d ? '#e6f6ee' : '#ffffff';
+    const b = (d) => d ? '1px solid #34d399' : '1px solid rgba(255,255,255,0.10)';
+    const firstTodo = doneArr.indexOf(false) + 1;
+    const o = { doneN: p, chatW: (p >= 2 ? 100 : 0) + '%', chatN: p >= 2 ? 5 : 0, bonusBg: d3 ? 'rgba(252,211,77,0.10)' : 'transparent', bonusTxt: d3 ? '받기 →' : '잠김', set_p_0: () => this.setState({ p: '0' }), bg_p_0: s.p === '0' ? '#17151f' : 'transparent', fg_p_0: s.p === '0' ? '#ffffff' : '#6c6878', is_p_0: s.p === '0', set_p_2: () => this.setState({ p: '2' }), bg_p_2: s.p === '2' ? '#17151f' : 'transparent', fg_p_2: s.p === '2' ? '#ffffff' : '#6c6878', is_p_2: s.p === '2', set_p_3: () => this.setState({ p: '3' }), bg_p_3: s.p === '3' ? '#17151f' : 'transparent', fg_p_3: s.p === '3' ? '#ffffff' : '#6c6878', is_p_3: s.p === '3' };
+    [1, 2, 3].forEach((n) => { const d = doneArr[n - 1]; o['done_' + n] = d; o['todo_' + n] = !d; o['mbg_' + n] = g(d); o['mbd_' + n] = b(d); o['mcta_' + n] = n === firstTodo ? 'linear-gradient(95deg, #ff3d7f 0%, #c04dff 55%, #6f5bff 100%)' : 'rgba(20,16,40,0.10)'; o['bar_' + n] = d ? '#ff3d7f' : 'rgba(20,16,40,0.12)'; });
+    return o;
+  }
+}
+</script>
+</body>
+</html>
